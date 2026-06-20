@@ -1,0 +1,31 @@
+Stage A: crawling 113 homepages...
+Stage A done. Collected 678 article URLs.
+Stage B: crawling 678 articles...
+  25/678 crawled, 25 with footprint
+  50/678 crawled, 50 with footprint
+  75/678 crawled, 75 with footprint
+  100/678 crawled, 100 with footprint
+  125/678 crawled, 125 with footprint
+  150/678 crawled, 150 with footprint
+  175/678 crawled, 175 with footprint
+  200/678 crawled, 200 with footprint
+  225/678 crawled, 225 with footprint
+  250/678 crawled, 250 with footprint
+  275/678 crawled, 275 with footprint
+  300/678 crawled, 300 with footprint
+  325/678 crawled, 325 with footprint
+  350/678 crawled, 350 with footprint
+  375/678 crawled, 375 with footprint
+  400/678 crawled, 400 with footprint
+  425/678 crawled, 425 with footprint
+  450/678 crawled, 450 with footprint
+  475/678 crawled, 475 with footprint
+  500/678 crawled, 500 with footprint
+  525/678 crawled, 525 with footprint
+  550/678 crawled, 550 with footprint
+  575/678 crawled, 575 with footprint
+  600/678 crawled, 600 with footprint
+  625/678 crawled, 625 with footprint
+  650/678 crawled, 650 with footprint
+  675/678 crawled, 675 with footprint
+Stage B done. 678 articles, 678 with footprint. -> results.jsonl

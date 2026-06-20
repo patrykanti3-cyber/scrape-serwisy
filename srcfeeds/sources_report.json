@@ -1,0 +1,1697 @@
+{
+  "warszawa": {
+    "city": "Warszawa",
+    "municipal": {
+      "base": "https://um.warszawa.pl",
+      "status": "ok",
+      "listing": "https://um.warszawa.pl/aktualnosci-warszawa",
+      "rss": null
+    },
+    "police": {
+      "base": "https://ksp.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://ksp.policja.gov.pl/pl/dzialania/aktualnosci",
+      "rss": null
+    }
+  },
+  "krakow": {
+    "city": "Kraków",
+    "municipal": {
+      "base": "http://www.krakow.pl/",
+      "status": "ok",
+      "listing": "https://www.krakow.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://krakow.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://krakow.policja.gov.pl/kr1/aktualnosci",
+      "rss": null
+    }
+  },
+  "wroclaw": {
+    "city": "Wrocław",
+    "municipal": {
+      "base": "http://www.wroclaw.pl/",
+      "status": "ok",
+      "listing": "https://www.wroclaw.pl/kultura/aktualnosci",
+      "rss": "https://www.wroclaw.pl/dla-mieszkanca/rss/"
+    },
+    "police": {
+      "base": "https://wroclaw.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://wroclaw.policja.gov.pl/dwr/aktualnosci",
+      "rss": "https://wroclaw.policja.gov.pl/dokumenty/rss/412-rss-o-2567.rss"
+    }
+  },
+  "lodz": {
+    "city": "Łódź",
+    "municipal": {
+      "base": "https://lodz.pl",
+      "status": "ok",
+      "listing": "https://lodz.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://lodz.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://lodz.policja.gov.pl/eld/komunikaty-1",
+      "rss": null
+    }
+  },
+  "poznan": {
+    "city": "Poznań",
+    "municipal": {
+      "base": "https://www.poznan.pl/",
+      "status": "ok",
+      "listing": "https://www.poznan.pl/infoteka",
+      "rss": null
+    },
+    "police": {
+      "base": "https://poznan.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://poznan.policja.gov.pl/w21/dzialania-policji/aktualnosci",
+      "rss": null
+    }
+  },
+  "gdansk": {
+    "city": "Gdańsk",
+    "municipal": {
+      "base": "https://www.gdansk.pl/",
+      "status": "ok",
+      "listing": "https://www.gdansk.pl/akcja/link/194956/Wiadomosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://gdansk.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://gdansk.policja.gov.pl/pm1/informacje/wiadomosci",
+      "rss": null
+    }
+  },
+  "szczecin": {
+    "city": "Szczecin",
+    "municipal": {
+      "base": "https://www.szczecin.eu/pl",
+      "status": "ok",
+      "listing": "https://sbo.szczecin.eu/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://szczecin.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://szczecin.policja.gov.pl/szm/dzialania-policji",
+      "rss": null
+    }
+  },
+  "lublin": {
+    "city": "Lublin",
+    "municipal": {
+      "base": "https://lublin.eu",
+      "status": "ok",
+      "listing": "https://lublin.eu/sport/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://lublin.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://lublin.policja.gov.pl/llu/informacje/aktualnosci",
+      "rss": null
+    }
+  },
+  "bydgoszcz": {
+    "city": "Bydgoszcz",
+    "municipal": {
+      "base": "https://www.bydgoszcz.pl",
+      "status": "ok",
+      "listing": "https://www.bydgoszcz.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://bydgoszcz.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://bydgoszcz.policja.gov.pl/kb1/informacje/wiadomosci",
+      "rss": "https://bydgoszcz.policja.gov.pl/dokumenty/rss/137-rss-928.rss"
+    }
+  },
+  "bialystok": {
+    "city": "Białystok",
+    "municipal": {
+      "base": "http://www.bialystok.pl",
+      "status": "ok",
+      "listing": "https://www.bialystok.pl/pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://bialystok.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://bialystok.policja.gov.pl/po2/aktualnosci",
+      "rss": "https://bialystok.policja.gov.pl/dokumenty/rss/117-rss-1394.rss"
+    }
+  },
+  "katowice": {
+    "city": "Katowice",
+    "municipal": {
+      "base": "https://www.katowice.eu/",
+      "status": "ok",
+      "listing": "https://www.katowice.eu/czas-wolny/kultura/aktualności",
+      "rss": null
+    },
+    "police": {
+      "base": "https://katowice.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://katowice.policja.gov.pl/k14/informacje/wiadomosci",
+      "rss": "https://katowice.policja.gov.pl/dokumenty/rss/49-rss-o-282.rss"
+    }
+  },
+  "gdynia": {
+    "city": "Gdynia",
+    "municipal": {
+      "base": "https://www.gdynia.pl/",
+      "status": "ok",
+      "listing": "https://www.gdynia.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://gdynia.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://gdynia.policja.gov.pl/m17/informacje/wiadomosci",
+      "rss": null
+    }
+  },
+  "czestochowa": {
+    "city": "Częstochowa",
+    "municipal": {
+      "base": "https://www.czestochowa.pl/",
+      "status": "ok",
+      "listing": "https://www.czestochowa.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://czestochowa.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://czestochowa.policja.gov.pl/ka7/informacje/wiadomosci",
+      "rss": "https://czestochowa.policja.gov.pl/dokumenty/rss/42-rss-2341.rss"
+    }
+  },
+  "radom": {
+    "city": "Radom",
+    "municipal": {
+      "base": "https://www.radom.pl/",
+      "status": "ok",
+      "listing": "https://www.radom.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://mazowiecka.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://mazowiecka.policja.gov.pl/ra/aktualnosci",
+      "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
+    }
+  },
+  "torun": {
+    "city": "Toruń",
+    "municipal": {
+      "base": "https://torun.pl/",
+      "status": "ok",
+      "listing": "https://torun.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://torun.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://torun.policja.gov.pl/kb3/prewencja/aktualnosci",
+      "rss": "https://torun.policja.gov.pl/dokumenty/rss/139-rss-1149.rss"
+    }
+  },
+  "rzeszow": {
+    "city": "Rzeszów",
+    "municipal": {
+      "base": "https://www.erzeszow.pl/",
+      "status": "ok",
+      "listing": "https://www.erzeszow.pl/41-miasto-rzeszow/1713-aktualnosci.html",
+      "rss": null
+    },
+    "police": {
+      "base": "https://rzeszow.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://rzeszow.policja.gov.pl/rz/aktualnosci",
+      "rss": "https://rzeszow.policja.gov.pl/dokumenty/rss/443-rss-o-2956.rss"
+    }
+  },
+  "kielce": {
+    "city": "Kielce",
+    "municipal": {
+      "base": "http://www.um.kielce.pl/",
+      "status": "ok",
+      "listing": "http://www.um.kielce.pl/pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://kielce.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://kielce.policja.gov.pl/kmp/dzialania-policji/aktualnosci",
+      "rss": null
+    }
+  },
+  "sosnowiec": {
+    "city": "Sosnowiec",
+    "municipal": {
+      "base": "http://www.sosnowiec.pl",
+      "status": "ok",
+      "listing": "https://www.sosnowiec.pl/samorzad/samorzad-aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://sosnowiec.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://sosnowiec.policja.gov.pl/k24/informacje/wiadomosci",
+      "rss": "https://sosnowiec.policja.gov.pl/dokumenty/rss/59-rss-o-322.rss"
+    }
+  },
+  "gliwice": {
+    "city": "Gliwice",
+    "municipal": {
+      "base": "https://www.gliwice.eu/",
+      "status": "ok",
+      "listing": "https://www.gliwice.eu/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://gliwice.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://gliwice.policja.gov.pl/ka9/informacje/wiadomosci",
+      "rss": "https://gliwice.policja.gov.pl/dokumenty/rss/44-rss-o-262.rss"
+    }
+  },
+  "olsztyn": {
+    "city": "Olsztyn",
+    "municipal": {
+      "base": "https://www.olsztyn.eu/o-olsztynie.html",
+      "status": "ok",
+      "listing": "https://www.olsztyn.eu/o-olsztynie/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://olsztyn.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://olsztyn.policja.gov.pl/o02/aktualnosci",
+      "rss": "https://olsztyn.policja.gov.pl/dokumenty/rss/87-rss-1396.rss"
+    }
+  },
+  "bielsko-biala": {
+    "city": "Bielsko-Biała",
+    "municipal": {
+      "base": "https://bielsko-biala.pl/",
+      "status": "ok",
+      "listing": "https://bielsko-biala.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://bielsko-biala.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://bielsko-biala.policja.gov.pl/ka2/informacje/wiadomosci",
+      "rss": "https://bielsko-biala.policja.gov.pl/dokumenty/rss/37-rss-o-234.rss"
+    }
+  },
+  "zabrze": {
+    "city": "Zabrze",
+    "municipal": {
+      "base": "https://miastozabrze.pl/",
+      "status": "ok",
+      "listing": "https://miastozabrze.pl/2026/06/17/bezpieczne-wakacje-zabrze-2026/",
+      "rss": null
+    },
+    "police": {
+      "base": "https://zabrze.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://zabrze.policja.gov.pl/k29/informacje/wiadomosci",
+      "rss": "https://zabrze.policja.gov.pl/dokumenty/rss/64-rss-o-342.rss"
+    }
+  },
+  "bytom": {
+    "city": "Bytom",
+    "municipal": {
+      "base": "http://www.bytom.pl",
+      "status": "ok",
+      "listing": "https://www.bytom.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://bytom.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://bytom.policja.gov.pl/ka4/informacje/wiadomosci",
+      "rss": "https://bytom.policja.gov.pl/dokumenty/rss/39-rss-o-242.rss"
+    }
+  },
+  "zielona-gora": {
+    "city": "Zielona Góra",
+    "municipal": {
+      "base": "http://www.zielona-gora.pl/",
+      "status": "ok",
+      "listing": "https://www.zielona-gora.pl/wydarzenia",
+      "rss": null
+    },
+    "police": {
+      "base": "https://zielona-gora.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://zielona-gora.policja.gov.pl/go2/serwis-informacyjny/aktualnosci",
+      "rss": "https://zielona-gora.policja.gov.pl/dokumenty/rss/157-rss-1285.rss"
+    }
+  },
+  "ruda-slaska": {
+    "city": "Ruda Śląska",
+    "municipal": {
+      "base": "http://www.rudaslaska.pl/",
+      "status": "ok",
+      "listing": "https://www.rudaslaska.pl/ruda-slaska/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://ruda-slaska.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://ruda-slaska.policja.gov.pl/k21/informacje/wiadomosci",
+      "rss": "https://ruda-slaska.policja.gov.pl/dokumenty/rss/56-rss-o-310.rss"
+    }
+  },
+  "rybnik": {
+    "city": "Rybnik",
+    "municipal": {
+      "base": "http://www.rybnik.pl/",
+      "status": "ok",
+      "listing": "http://www.rybnik.pl/rewitalizacja/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://rybnik.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://rybnik.policja.gov.pl/k22/informacje/wiadomosci",
+      "rss": "https://rybnik.policja.gov.pl/dokumenty/rss/57-rss-o-314.rss"
+    }
+  },
+  "opole": {
+    "city": "Opole",
+    "municipal": {
+      "base": "http://www.opole.pl",
+      "status": "ok",
+      "listing": "http://www.opole.pl/dla-mieszkanca",
+      "rss": null
+    },
+    "police": {
+      "base": "https://opole.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://opole.policja.gov.pl/opo/kmp-opole/aktualnosci",
+      "rss": null
+    }
+  },
+  "gorzow-wielkopolski": {
+    "city": "Gorzów Wielkopolski",
+    "municipal": {
+      "base": "https://um.gorzow.pl",
+      "status": "ok",
+      "listing": "https://um.gorzow.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://gorzow-wielkopolski.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://gorzow-wielkopolski.policja.gov.pl/go1/aktualnosci",
+      "rss": null
+    }
+  },
+  "elblag": {
+    "city": "Elbląg",
+    "municipal": {
+      "base": "http://www.umelblag.pl/",
+      "status": "ok",
+      "listing": "http://www.umelblag.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://elblag.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://elblag.policja.gov.pl/o01/aktualnosci",
+      "rss": "https://elblag.policja.gov.pl/dokumenty/rss/86-rss-1374.rss"
+    }
+  },
+  "plock": {
+    "city": "Płock",
+    "municipal": {
+      "base": "https://nowy.plock.eu",
+      "status": "ok",
+      "listing": "https://nowy.plock.eu/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://mazowiecka.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://mazowiecka.policja.gov.pl/ra/aktualnosci",
+      "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
+    }
+  },
+  "dabrowa-gornicza": {
+    "city": "Dąbrowa Górnicza",
+    "municipal": {
+      "base": "http://www.dabrowa-gornicza.pl/",
+      "status": "ok",
+      "listing": "https://www.dabrowa-gornicza.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://dabrowa-gornicza.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://dabrowa-gornicza.policja.gov.pl/ka8/informacje/wiadomosci",
+      "rss": "https://dabrowa-gornicza.policja.gov.pl/dokumenty/rss/43-rss-o-258.rss"
+    }
+  },
+  "koszalin": {
+    "city": "Koszalin",
+    "municipal": {
+      "base": "https://www.koszalin.pl/",
+      "status": "ok",
+      "listing": "https://www.koszalin.pl/pl/odpady",
+      "rss": null
+    },
+    "police": {
+      "base": "https://koszalin.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://koszalin.policja.gov.pl/zk/aktual",
+      "rss": null
+    }
+  },
+  "wloclawek": {
+    "city": "Włocławek",
+    "municipal": {
+      "base": "http://www.wloclawek.pl",
+      "status": "ok",
+      "listing": "https://www.wloclawek.pl/aktualnosci.xml",
+      "rss": null
+    },
+    "police": {
+      "base": "https://wloclawek.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://wloclawek.policja.gov.pl/kb4/informacje/wiadomosci",
+      "rss": "https://wloclawek.policja.gov.pl/dokumenty/rss/140-rss-1561.rss"
+    }
+  },
+  "walbrzych": {
+    "city": "Wałbrzych",
+    "municipal": {
+      "base": "http://www.um.walbrzych.pl/",
+      "status": "ok",
+      "listing": "http://www.um.walbrzych.pl/pl/aktualnosci-geodezja",
+      "rss": null
+    },
+    "police": {
+      "base": "https://walbrzych.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://walbrzych.policja.gov.pl/dba/aktualnosci",
+      "rss": "https://walbrzych.policja.gov.pl/dokumenty/rss/415-rss-o-2584.rss"
+    }
+  },
+  "chorzow": {
+    "city": "Chorzów",
+    "municipal": {
+      "base": "https://mieszkancy.chorzow.eu",
+      "status": "ok",
+      "listing": "https://mieszkancy.chorzow.eu/category/komunikaty-urzedowe",
+      "rss": null
+    },
+    "police": {
+      "base": "https://chorzow.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://chorzow.policja.gov.pl/ka5/informacje/wiadomosci",
+      "rss": "https://chorzow.policja.gov.pl/dokumenty/rss/40-rss-o-246.rss"
+    }
+  },
+  "tarnow": {
+    "city": "Tarnów",
+    "municipal": {
+      "base": "http://www.tarnow.pl",
+      "status": "ok",
+      "listing": "https://www.tarnow.pl/Dla-mieszkancow/Aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://tarnow.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://tarnow.policja.gov.pl/kt/aktualnosci",
+      "rss": null
+    }
+  },
+  "kalisz": {
+    "city": "Kalisz",
+    "municipal": {
+      "base": "http://www.kalisz.pl",
+      "status": "ok",
+      "listing": "http://www.kalisz.pl/dla-mieszkanca/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://kalisz.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://kalisz.policja.gov.pl/wl7/aktualnosci",
+      "rss": null
+    }
+  },
+  "legnica": {
+    "city": "Legnica",
+    "municipal": {
+      "base": "http://www.portal.legnica.eu/",
+      "status": "ok",
+      "listing": "https://portal.legnica.eu/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://legnica.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://legnica.policja.gov.pl/dle/aktualnosci",
+      "rss": "https://legnica.policja.gov.pl/dokumenty/rss/414-rss-o-2577.rss"
+    }
+  },
+  "grudziadz": {
+    "city": "Grudziądz",
+    "municipal": {
+      "base": "http://www.grudziadz.pl/",
+      "status": "ok",
+      "listing": "https://grudziadz.pl/artykuly/621/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://grudziadz.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://grudziadz.policja.gov.pl/kb2/informacje/wiadomosci",
+      "rss": "https://grudziadz.policja.gov.pl/dokumenty/rss/138-rss-1479.rss"
+    }
+  },
+  "jaworzno": {
+    "city": "Jaworzno",
+    "municipal": {
+      "base": "https://www.jaworzno.pl",
+      "status": "ok",
+      "listing": "https://www.jaworzno.pl/category/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://jaworzno.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://jaworzno.policja.gov.pl/k11/informacje/wiadomosci",
+      "rss": "https://jaworzno.policja.gov.pl/dokumenty/rss/46-rss-o-270.rss"
+    }
+  },
+  "slupsk": {
+    "city": "Słupsk",
+    "municipal": {
+      "base": "http://www.slupsk.pl",
+      "status": "ok",
+      "listing": "https://www.slupsk.pl/ratusz/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://slupsk.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://slupsk.policja.gov.pl/m19/aktualnosci",
+      "rss": "https://slupsk.policja.gov.pl/dokumenty/rss/385-rss-2772.rss"
+    }
+  },
+  "jastrzebie-zdroj": {
+    "city": "Jastrzębie-Zdrój",
+    "municipal": {
+      "base": "https://www.jastrzebie.pl",
+      "status": "ok",
+      "listing": "https://www.jastrzebie.pl/dla-mieszkanca/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://jastrzebie-zdroj.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://jastrzebie-zdroj.policja.gov.pl/k10/informacje/wiadomosci",
+      "rss": "https://jastrzebie-zdroj.policja.gov.pl/dokumenty/rss/45-rss-o-266.rss"
+    }
+  },
+  "nowy-sacz": {
+    "city": "Nowy Sącz",
+    "municipal": {
+      "base": "http://www.nowysacz.pl",
+      "status": "ok",
+      "listing": "https://nowysacz.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://nowy-sacz.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://nowy-sacz.policja.gov.pl/kn/aktualnosci",
+      "rss": null
+    }
+  },
+  "jelenia-gora": {
+    "city": "Jelenia Góra",
+    "municipal": {
+      "base": "http://www.jeleniagora.pl",
+      "status": "ok",
+      "listing": "https://www.jeleniagora.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://jelenia-gora.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://jelenia-gora.policja.gov.pl/dje/aktualnosci",
+      "rss": "https://jelenia-gora.policja.gov.pl/dokumenty/rss/416-rss-o-2591.rss"
+    }
+  },
+  "siedlce": {
+    "city": "Siedlce",
+    "municipal": {
+      "base": "http://www.siedlce.pl/",
+      "status": "ok",
+      "listing": "https://www.siedlce.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://mazowiecka.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://mazowiecka.policja.gov.pl/ra/aktualnosci",
+      "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
+    }
+  },
+  "myslowice": {
+    "city": "Mysłowice",
+    "municipal": {
+      "base": "http://www.myslowice.pl",
+      "status": "ok",
+      "listing": "https://www.myslowice.pl/strefa-mieszkanca/gospodarka-odpadami/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://myslowice.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://myslowice.policja.gov.pl/k16/informacje/wiadomosci",
+      "rss": "https://myslowice.policja.gov.pl/dokumenty/rss/51-rss-o-290.rss"
+    }
+  },
+  "pila": {
+    "city": "Piła",
+    "municipal": {
+      "base": "https://www.pila.pl/",
+      "status": "ok",
+      "listing": "https://www.pila.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://pila.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://pila.policja.gov.pl/w19/aktualnosci",
+      "rss": null
+    }
+  },
+  "ostrow-wielkopolski": {
+    "city": "Ostrów Wielkopolski",
+    "municipal": {
+      "base": "https://umostrow.pl",
+      "status": "ok",
+      "listing": "https://umostrow.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://ostrow-wielkopolski.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://ostrow-wielkopolski.policja.gov.pl/w17/aktualnosci",
+      "rss": null
+    }
+  },
+  "lubin": {
+    "city": "Lubin",
+    "municipal": {
+      "base": "http://www.lubin.pl",
+      "status": "ok",
+      "listing": "http://www.lubin.pl/wiadomosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://lubin.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://lubin.policja.gov.pl/dlu/aktualnosci",
+      "rss": "https://lubin.policja.gov.pl/dokumenty/rss/425-rss-o-2654.rss"
+    }
+  },
+  "konin": {
+    "city": "Konin",
+    "municipal": {
+      "base": "http://www.konin.pl",
+      "status": "ok",
+      "listing": "http://www.konin.pl/archiwum/",
+      "rss": null
+    },
+    "police": {
+      "base": "https://konin.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://konin.policja.gov.pl/w10/aktualnosci",
+      "rss": null
+    }
+  },
+  "inowroclaw": {
+    "city": "Inowrocław",
+    "municipal": {
+      "base": "http://www.inowroclaw.pl",
+      "status": "ok",
+      "listing": "https://www.inowroclaw.pl/aktualnosc-lista.html",
+      "rss": null
+    },
+    "police": {
+      "base": "https://inowroclaw.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://inowroclaw.policja.gov.pl/kb9/informacje/wiadomosci",
+      "rss": "https://inowroclaw.policja.gov.pl/dokumenty/rss/145-rss-1749.rss"
+    }
+  },
+  "suwalki": {
+    "city": "Suwałki",
+    "municipal": {
+      "base": "http://www.um.suwalki.pl/",
+      "status": "ok",
+      "listing": "https://um.suwalki.pl/aktualnosci,2577292",
+      "rss": null
+    },
+    "police": {
+      "base": "https://suwalki.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://suwalki.policja.gov.pl/po3/informacje/aktualnosci",
+      "rss": null
+    }
+  },
+  "piotrkow-trybunalski": {
+    "city": "Piotrków Trybunalski",
+    "municipal": {
+      "base": "http://www.piotrkow.pl",
+      "status": "ok",
+      "listing": "https://www.piotrkow.pl/nasze-miasto-t70/aktualnosci-a75",
+      "rss": null
+    },
+    "police": {
+      "base": "https://piotrkow-trybunalski.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://piotrkow-trybunalski.policja.gov.pl/ep/aktualnosci",
+      "rss": null
+    }
+  },
+  "stargard": {
+    "city": "Stargard",
+    "municipal": {
+      "base": "http://www.stargard.pl",
+      "status": "ok",
+      "listing": "http://www.stargard.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://stargard.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://stargard.policja.gov.pl/zst/dzialania-policji",
+      "rss": null
+    }
+  },
+  "gniezno": {
+    "city": "Gniezno",
+    "municipal": {
+      "base": "https://gniezno.eu",
+      "status": "ok",
+      "listing": "https://gniezno.eu/aktualnosci-z-miasta",
+      "rss": null
+    },
+    "police": {
+      "base": "https://gniezno.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://gniezno.policja.gov.pl/wl3/aktualnosci",
+      "rss": null
+    }
+  },
+  "pruszkow": {
+    "city": "Pruszków",
+    "municipal": {
+      "base": "http://www.pruszkow.pl/",
+      "status": "ok",
+      "listing": "https://www.pruszkow.pl/aktualnosci-sport",
+      "rss": null
+    },
+    "police": {
+      "base": "https://pruszkow.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://pruszkow.policja.gov.pl/ppr/aktualnosci",
+      "rss": "https://pruszkow.policja.gov.pl/dokumenty/rss/176-rss-414.rss"
+    }
+  },
+  "ostrowiec-swietokrzyski": {
+    "city": "Ostrowiec Świętokrzyski",
+    "municipal": {
+      "base": "http://www.um.ostrowiec.pl",
+      "status": "ok",
+      "listing": "https://um.ostrowiec.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://ostrowiec-swietokrzyski.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://ostrowiec-swietokrzyski.policja.gov.pl/tos/dzialania-policji/aktualnosci",
+      "rss": null
+    }
+  },
+  "glogow": {
+    "city": "Głogów",
+    "municipal": {
+      "base": "http://www.glogow.pl/",
+      "status": "ok",
+      "listing": "https://www.glogow.pl/miasto",
+      "rss": null
+    },
+    "police": {
+      "base": "https://glogow.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://glogow.policja.gov.pl/dgl/aktualnosci",
+      "rss": "https://glogow.policja.gov.pl/dokumenty/rss/420-rss-o-2619.rss"
+    }
+  },
+  "siemianowice-slaskie": {
+    "city": "Siemianowice Śląskie",
+    "municipal": {
+      "base": "https://siemianowice.pl",
+      "status": "ok",
+      "listing": "https://siemianowice.pl",
+      "rss": null
+    },
+    "police": {
+      "base": "https://siemianowice-slaskie.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://siemianowice-slaskie.policja.gov.pl/k23/informacje/wiadomosci",
+      "rss": "https://siemianowice-slaskie.policja.gov.pl/dokumenty/rss/58-rss-o-318.rss"
+    }
+  },
+  "pabianice": {
+    "city": "Pabianice",
+    "municipal": {
+      "base": "http://www.um.pabianice.pl",
+      "status": "ok",
+      "listing": "https://um.pabianice.pl/artykuly/94/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://pabianice.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://pabianice.policja.gov.pl/epa/prewencja/aktualnosci",
+      "rss": null
+    }
+  },
+  "zory": {
+    "city": "Żory",
+    "municipal": {
+      "base": "https://www.zory.pl/",
+      "status": "ok",
+      "listing": "https://www.zory.pl/dla-mieszkancow/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://zory.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://zory.policja.gov.pl/k31/informacje/wiadomosci",
+      "rss": "https://zory.policja.gov.pl/dokumenty/rss/66-rss-o-350.rss"
+    }
+  },
+  "leszno": {
+    "city": "Leszno",
+    "municipal": {
+      "base": "http://www.leszno.pl/",
+      "status": "ok",
+      "listing": "https://www.leszno.pl/Aktualnosci_170.html",
+      "rss": null
+    },
+    "police": {
+      "base": "https://leszno.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://leszno.policja.gov.pl/w13/aktualnosci",
+      "rss": null
+    }
+  },
+  "tarnowskie-gory": {
+    "city": "Tarnowskie Góry",
+    "municipal": {
+      "base": "http://www.tarnowskiegory.pl",
+      "status": "ok",
+      "listing": "https://tarnowskiegory.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://tarnowskie-gory.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://tarnowskie-gory.policja.gov.pl/k26/informacje/wiadomosci",
+      "rss": "https://tarnowskie-gory.policja.gov.pl/dokumenty/rss/61-rss-o-330.rss"
+    }
+  },
+  "lomza": {
+    "city": "Łomża",
+    "municipal": {
+      "base": "http://www.lomza.pl/",
+      "status": "ok",
+      "listing": "https://www.lomza.pl/index.php",
+      "rss": null
+    },
+    "police": {
+      "base": "https://lomza.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://lomza.policja.gov.pl/po4/aktualnosci",
+      "rss": "https://lomza.policja.gov.pl/dokumenty/rss/119-rss-924.rss"
+    }
+  },
+  "elk": {
+    "city": "Ełk",
+    "municipal": {
+      "base": "http://www.elk.pl/",
+      "status": "ok",
+      "listing": "https://www.elk.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://elk.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://elk.policja.gov.pl/o05/aktualnosci",
+      "rss": "https://elk.policja.gov.pl/dokumenty/rss/90-rss-1446.rss"
+    }
+  },
+  "zamosc": {
+    "city": "Zamość",
+    "municipal": {
+      "base": "http://www.zamosc.pl",
+      "status": "ok",
+      "listing": "https://www.zamosc.pl/news",
+      "rss": null
+    },
+    "police": {
+      "base": "https://zamosc.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://zamosc.policja.gov.pl/lza/informacje/aktualnosci",
+      "rss": null
+    }
+  },
+  "chelm": {
+    "city": "Chełm",
+    "municipal": {
+      "base": "https://samorzad.gov.pl/web/miasto-chelm",
+      "status": "ok",
+      "listing": "https://samorzad.gov.pl/web/miasto-chelm/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://chelm.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://chelm.policja.gov.pl/lch/informacje/aktualnosci",
+      "rss": null
+    }
+  },
+  "tomaszow-mazowiecki": {
+    "city": "Tomaszów Mazowiecki",
+    "municipal": {
+      "base": "https://tomaszow-maz.pl",
+      "status": "ok",
+      "listing": "https://tomaszow-maz.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://tomaszow-mazowiecki.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://tomaszow-mazowiecki.policja.gov.pl/etm/informacje/119982,Policjanci-oraz-Bank-PKO-BP-SA-razem-dla-bezpieczenstwa-finansowego-mieszkancow-.html",
+      "rss": null
+    }
+  },
+  "przemysl": {
+    "city": "Przemyśl",
+    "municipal": {
+      "base": "https://przemysl.pl",
+      "status": "ok",
+      "listing": "https://przemysl.pl/13/aktualnosci.html",
+      "rss": null
+    },
+    "police": {
+      "base": "https://przemysl.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://przemysl.policja.gov.pl/rpr/aktualnosci",
+      "rss": "https://przemysl.policja.gov.pl/dokumenty/rss/457-rss-o-3050.rss"
+    }
+  },
+  "mielec": {
+    "city": "Mielec",
+    "municipal": {
+      "base": "http://www.mielec.pl/",
+      "status": "ok",
+      "listing": "https://www.mielec.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://mielec.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://mielec.policja.gov.pl/rmi/informacje/wydarzenia",
+      "rss": "https://mielec.policja.gov.pl/dokumenty/rss/455-rss-o-3040.rss"
+    }
+  },
+  "tczew": {
+    "city": "Tczew",
+    "municipal": {
+      "base": "https://wrotatczewa.pl/",
+      "status": "ok",
+      "listing": "https://wrotatczewa.pl/k/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://tczew.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://tczew.policja.gov.pl/m15/informacje/wiadomosci",
+      "rss": null
+    }
+  },
+  "stalowa-wola": {
+    "city": "Stalowa Wola",
+    "municipal": {
+      "base": "http://www.stalowawola.pl",
+      "status": "ok",
+      "listing": "https://www.stalowawola.pl/pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://stalowa-wola.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://stalowa-wola.policja.gov.pl/rst/aktualnosci",
+      "rss": "https://stalowa-wola.policja.gov.pl/dokumenty/rss/460-rss-o-3065.rss"
+    }
+  },
+  "kedzierzyn-kozle": {
+    "city": "Kędzierzyn-Koźle",
+    "municipal": {
+      "base": "http://www.kedzierzynkozle.pl",
+      "status": "ok",
+      "listing": "https://kedzierzynkozle.pl/pl/strona/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://kedzierzyn-kozle.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://kedzierzyn-kozle.policja.gov.pl/ok/kpp-kedzierzyn-kozle/aktualnosci",
+      "rss": null
+    }
+  },
+  "bedzin": {
+    "city": "Będzin",
+    "municipal": {
+      "base": "http://www.bedzin.pl",
+      "status": "ok",
+      "listing": "https://www.bedzin.pl/aktualnosci.xml",
+      "rss": null
+    },
+    "police": {
+      "base": "https://bedzin.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://bedzin.policja.gov.pl/ka1/informacje/wiadomosci",
+      "rss": "https://bedzin.policja.gov.pl/dokumenty/rss/36-rss-o-230.rss"
+    }
+  },
+  "zgierz": {
+    "city": "Zgierz",
+    "municipal": {
+      "base": "https://www.miasto.zgierz.pl/",
+      "status": "ok",
+      "listing": "https://www.miasto.zgierz.pl/pl/vbanner/click/32",
+      "rss": null
+    },
+    "police": {
+      "base": "https://zgierz.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://zgierz.policja.gov.pl/ezg/twoj-dzielnicowy/dzielnicowi-aktualnosci",
+      "rss": null
+    }
+  },
+  "swidnica": {
+    "city": "Świdnica",
+    "municipal": {
+      "base": "http://www.um.swidnica.pl",
+      "status": "ok",
+      "listing": "https://um.swidnica.pl/pages/pl/aktualnosci.php",
+      "rss": null
+    },
+    "police": {
+      "base": "https://swidnica.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://swidnica.policja.gov.pl/dsw/aktualnosci",
+      "rss": "https://swidnica.policja.gov.pl/dokumenty/rss/433-rss-o-2710.rss"
+    }
+  },
+  "belchatow": {
+    "city": "Bełchatów",
+    "municipal": {
+      "base": "http://www.belchatow.pl",
+      "status": "ok",
+      "listing": "https://belchatow.pl/category/news",
+      "rss": null
+    },
+    "police": {
+      "base": "https://belchatow.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://belchatow.policja.gov.pl/ebe/informacje",
+      "rss": null
+    }
+  },
+  "legionowo": {
+    "city": "Legionowo",
+    "municipal": {
+      "base": "http://www.legionowo.pl",
+      "status": "ok",
+      "listing": "https://legionowo.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://legionowo.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://legionowo.policja.gov.pl/ple/aktualnosci",
+      "rss": null
+    }
+  },
+  "piekary-slaskie": {
+    "city": "Piekary Śląskie",
+    "municipal": {
+      "base": "http://www.piekary.pl/",
+      "status": "ok",
+      "listing": "https://piekary.pl/sport/",
+      "rss": null
+    },
+    "police": {
+      "base": "https://piekary-slaskie.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://piekary-slaskie.policja.gov.pl/k18/informacje/wiadomosci",
+      "rss": "https://piekary-slaskie.policja.gov.pl/dokumenty/rss/53-rss-o-298.rss"
+    }
+  },
+  "piaseczno": {
+    "city": "Piaseczno",
+    "municipal": {
+      "base": "https://www.piaseczno.eu",
+      "status": "ok",
+      "listing": "https://piaseczno.eu/category/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://piaseczno.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://piaseczno.policja.gov.pl/pp1/aktualnosci",
+      "rss": null
+    }
+  },
+  "raciborz": {
+    "city": "Racibórz",
+    "municipal": {
+      "base": "http://www.raciborz.pl/main/index.html",
+      "status": "ok",
+      "listing": "https://www.raciborz.pl/urban-lab/PorozmawiajMy__spotkania_z_mieszkancami",
+      "rss": null
+    },
+    "police": {
+      "base": "https://raciborz.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://raciborz.policja.gov.pl/k20/informacje/wiadomosci",
+      "rss": "https://raciborz.policja.gov.pl/dokumenty/rss/55-rss-o-306.rss"
+    }
+  },
+  "ostroleka": {
+    "city": "Ostrołęka",
+    "municipal": {
+      "base": "https://www.ostroleka.pl/",
+      "status": "ok",
+      "listing": "https://www.ostroleka.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://mazowiecka.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://mazowiecka.policja.gov.pl/ra/aktualnosci",
+      "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
+    }
+  },
+  "zawiercie": {
+    "city": "Zawiercie",
+    "municipal": {
+      "base": "https://zawiercie.eu",
+      "status": "ok",
+      "listing": "https://zawiercie.eu/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://zawiercie.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://zawiercie.policja.gov.pl/k30/informacje/wiadomosci",
+      "rss": "https://zawiercie.policja.gov.pl/dokumenty/rss/65-rss-o-346.rss"
+    }
+  },
+  "swietochlowice": {
+    "city": "Świętochłowice",
+    "municipal": {
+      "base": "https://www.swietochlowice.pl/",
+      "status": "ok",
+      "listing": "https://swietochlowice.pl/kategoria/wiadomosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://swietochlowice.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://swietochlowice.policja.gov.pl/k25/informacje/wiadomosci",
+      "rss": "https://swietochlowice.policja.gov.pl/dokumenty/rss/60-rss-o-326.rss"
+    }
+  },
+  "wejherowo": {
+    "city": "Wejherowo",
+    "municipal": {
+      "base": "http://www.wejherowo.pl",
+      "status": "ok",
+      "listing": "https://www.wejherowo.pl/artykuly/aktualnosci.html",
+      "rss": null
+    },
+    "police": {
+      "base": "https://wejherowo.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://wejherowo.policja.gov.pl/m16/informacje/wiadomosci",
+      "rss": null
+    }
+  },
+  "starachowice": {
+    "city": "Starachowice",
+    "municipal": {
+      "base": "https://starachowice.eu/",
+      "status": "ok",
+      "listing": "https://starachowice.eu/pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://starachowice.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://starachowice.policja.gov.pl/tst/dzialania-policji/aktualnosci",
+      "rss": null
+    }
+  },
+  "krosno": {
+    "city": "Krosno",
+    "municipal": {
+      "base": "https://www.krosno.pl/",
+      "status": "ok",
+      "listing": "https://www.krosno.pl/dla-mieszkancow/rozwoj-lokalny/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://krosno.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://krosno.policja.gov.pl/rkr/aktualnosci",
+      "rss": "https://krosno.policja.gov.pl/dokumenty/rss/445-rss-o-2987.rss"
+    }
+  },
+  "otwock": {
+    "city": "Otwock",
+    "municipal": {
+      "base": "http://www.otwock.pl",
+      "status": "ok",
+      "listing": "https://otwock.pl//category/all/",
+      "rss": null
+    },
+    "police": {
+      "base": "https://otwock.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://otwock.policja.gov.pl/po/aktualnosci",
+      "rss": null
+    }
+  },
+  "debica": {
+    "city": "Dębica",
+    "municipal": {
+      "base": "https://debica.pl/",
+      "status": "ok",
+      "listing": "https://debica.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://debica.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://debica.policja.gov.pl/de/aktualnosci",
+      "rss": "https://debica.policja.gov.pl/dokumenty/rss/446-rss-o-2993.rss"
+    }
+  },
+  "ciechanow": {
+    "city": "Ciechanów",
+    "municipal": {
+      "base": "https://umciechanow.pl",
+      "status": "ok",
+      "listing": "https://umciechanow.pl/samorzad/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://mazowiecka.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://mazowiecka.policja.gov.pl/ra/aktualnosci",
+      "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
+    }
+  },
+  "minsk-mazowiecki": {
+    "city": "Mińsk Mazowiecki",
+    "municipal": {
+      "base": "http://www.minsk-maz.pl",
+      "status": "ok",
+      "listing": "https://www.minsk-maz.pl/wiadomosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://minsk.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://minsk.policja.gov.pl/pmm/aktualnosci",
+      "rss": null
+    }
+  },
+  "zyrardow": {
+    "city": "Żyrardów",
+    "municipal": {
+      "base": "http://www.zyrardow.pl",
+      "status": "ok",
+      "listing": "https://www.zyrardow.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://mazowiecka.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://mazowiecka.policja.gov.pl/ra/aktualnosci",
+      "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
+    }
+  },
+  "boleslawiec": {
+    "city": "Bolesławiec",
+    "municipal": {
+      "base": "https://bolesławiec.pl/miasto/",
+      "status": "ok",
+      "listing": "https://bolesławiec.pl/index.php/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://boleslawiec.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://boleslawiec.policja.gov.pl/dbl/aktualnosci",
+      "rss": "https://boleslawiec.policja.gov.pl/dokumenty/rss/417-rss-o-2598.rss"
+    }
+  },
+  "oswiecim": {
+    "city": "Oświęcim",
+    "municipal": {
+      "base": "https://oswiecim.pl/",
+      "status": "ok",
+      "listing": "https://oswiecim.pl/dla-turysty/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://oswiecim.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://oswiecim.policja.gov.pl/kos/o-nas/aktualnosci",
+      "rss": null
+    }
+  },
+  "chrzanow": {
+    "city": "Chrzanów",
+    "municipal": {
+      "base": "http://www.chrzanow.pl",
+      "status": "ok",
+      "listing": "https://www.chrzanow.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://chrzanow.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://chrzanow.policja.gov.pl/kch/aktualnosci",
+      "rss": null
+    }
+  },
+  "cieszyn": {
+    "city": "Cieszyn",
+    "municipal": {
+      "base": "https://www.cieszyn.pl",
+      "status": "ok",
+      "listing": "https://www.cieszyn.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://cieszyn.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://cieszyn.policja.gov.pl/ka6/zosta/wiadomosci",
+      "rss": "https://cieszyn.policja.gov.pl/dokumenty/rss/41-rss-o-250.rss"
+    }
+  },
+  "jaslo": {
+    "city": "Jasło",
+    "municipal": {
+      "base": "https://um.jaslo.pl/pl/",
+      "status": "ok",
+      "listing": "https://um.jaslo.pl/pl/dotacje-aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://jaslo.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://jaslo.policja.gov.pl/rjs/aktualnosci",
+      "rss": "https://jaslo.policja.gov.pl/dokumenty/rss/450-rss-o-3013.rss"
+    }
+  },
+  "grodzisk-mazowiecki": {
+    "city": "Grodzisk Mazowiecki",
+    "municipal": {
+      "base": "http://www.grodzisk.pl",
+      "status": "ok",
+      "listing": "https://grodzisk.pl/category/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://grodzisk.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://grodzisk.policja.gov.pl/pgm/aktualnosci",
+      "rss": null
+    }
+  },
+  "olkusz": {
+    "city": "Olkusz",
+    "municipal": {
+      "base": "http://www.umig.olkusz.pl/",
+      "status": "ok",
+      "listing": "https://umig.olkusz.pl/index.php/category/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://olkusz.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://olkusz.policja.gov.pl/kol/aktualnosci",
+      "rss": null
+    }
+  },
+  "nowy-targ": {
+    "city": "Nowy Targ",
+    "municipal": {
+      "base": "https://www.nowytarg.pl/",
+      "status": "ok",
+      "listing": "https://www.nowytarg.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://nowy-targ.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://nowy-targ.policja.gov.pl/knt/aktualnosci",
+      "rss": null
+    }
+  },
+  "zywiec": {
+    "city": "Żywiec",
+    "municipal": {
+      "base": "http://www.zywiec.pl",
+      "status": "ok",
+      "listing": "https://zywiec.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://zywiec.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://zywiec.policja.gov.pl/k32/informacje/wiadomosci",
+      "rss": "https://zywiec.policja.gov.pl/dokumenty/rss/67-rss-o-354.rss"
+    }
+  },
+  "augustow": {
+    "city": "Augustów",
+    "municipal": {
+      "base": "http://urzad.augustow.pl",
+      "status": "ok",
+      "listing": "https://urzad.augustow.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://augustow.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://augustow.policja.gov.pl/po5/aktualnosci",
+      "rss": "https://augustow.policja.gov.pl/dokumenty/rss/120-rss-692.rss"
+    }
+  },
+  "nowy-dwor-mazowiecki": {
+    "city": "Nowy Dwór Mazowiecki",
+    "municipal": {
+      "base": "http://www.nowydwormaz.pl/",
+      "status": "ok",
+      "listing": "https://www.nowydwormaz.pl/15,wszystkie-aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://mazowiecka.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://mazowiecka.policja.gov.pl/ra/aktualnosci",
+      "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
+    }
+  },
+  "gizycko": {
+    "city": "Giżycko",
+    "municipal": {
+      "base": "https://www.gizycko.pl/",
+      "status": "ok",
+      "listing": "https://www.gizycko.pl/aktualnosci-glowna",
+      "rss": null
+    },
+    "police": {
+      "base": "https://gizycko.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://gizycko.policja.gov.pl/o06/aktualnosci",
+      "rss": "https://gizycko.policja.gov.pl/dokumenty/rss/91-rss-1470.rss"
+    }
+  },
+  "wieliczka": {
+    "city": "Wieliczka",
+    "municipal": {
+      "base": "http://www.wieliczka.eu/",
+      "status": "ok",
+      "listing": "https://www.wieliczka.eu/pl/201129/0/wiadomosci.html",
+      "rss": null
+    },
+    "police": {
+      "base": "https://wieliczka.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://wieliczka.policja.gov.pl/kwi/aktualnosci",
+      "rss": null
+    }
+  },
+  "zakopane": {
+    "city": "Zakopane",
+    "municipal": {
+      "base": "http://www.zakopane.pl/",
+      "status": "ok",
+      "listing": "https://www.zakopane.pl/strefa-miejska/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://zakopane.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://zakopane.policja.gov.pl/ktt/aktualnosci",
+      "rss": null
+    }
+  },
+  "skawina": {
+    "city": "Skawina",
+    "municipal": {
+      "base": "https://gminaskawina.pl",
+      "status": "ok",
+      "listing": "https://gminaskawina.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://malopolska.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://malopolska.policja.gov.pl/krk/aktualnosci",
+      "rss": "https://malopolska.policja.gov.pl/dokumenty/rss/386-rss-157.rss"
+    }
+  },
+  "lubliniec": {
+    "city": "Lubliniec",
+    "municipal": {
+      "base": "http://www.lubliniec.pl",
+      "status": "ok",
+      "listing": "http://www.lubliniec.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://lubliniec.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://lubliniec.policja.gov.pl/k13/informacje/wiadomosci",
+      "rss": "https://lubliniec.policja.gov.pl/dokumenty/rss/48-rss-3104.rss"
+    }
+  },
+  "sandomierz": {
+    "city": "Sandomierz",
+    "municipal": {
+      "base": "https://sandomierz.eu/",
+      "status": "ok",
+      "listing": "https://sandomierz.eu/1193/357/wydarzenia.html",
+      "rss": null
+    },
+    "police": {
+      "base": "https://sandomierz.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://sandomierz.policja.gov.pl/tsa/dzialania-policji/aktualnosci",
+      "rss": null
+    }
+  },
+  "wadowice": {
+    "city": "Wadowice",
+    "municipal": {
+      "base": "http://www.wadowice.pl/",
+      "status": "ok",
+      "listing": "https://wadowice.pl/aktualnosci",
+      "rss": null
+    },
+    "police": {
+      "base": "https://wadowice.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://wadowice.policja.gov.pl/kwa/aktualnosci",
+      "rss": null
+    }
+  },
+  "niepolomice": {
+    "city": "Niepołomice",
+    "municipal": {
+      "base": "https://niepolomice.eu",
+      "status": "ok",
+      "listing": "https://niepolomice.eu/wydarzenia",
+      "rss": null
+    },
+    "police": {
+      "base": "https://wieliczka.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://wieliczka.policja.gov.pl/kwi/aktualnosci",
+      "rss": null
+    }
+  },
+  "limanowa": {
+    "city": "Limanowa",
+    "municipal": {
+      "base": "https://miasto.limanowa.pl",
+      "status": "ok",
+      "listing": "http://miasto.limanowa.pl/aktualnosci-z-miasta",
+      "rss": null
+    },
+    "police": {
+      "base": "https://limanowa.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://limanowa.policja.gov.pl/kli/aktualnosci",
+      "rss": null
+    }
+  },
+  "krzeszowice": {
+    "city": "Krzeszowice",
+    "municipal": {
+      "base": "http://www.krzeszowice.pl",
+      "status": "ok",
+      "listing": "http://www.krzeszowice.pl/aktualnosci",
+      "rss": "http://www.krzeszowice.pl/mod/aktualnosci/rss"
+    },
+    "police": {
+      "base": "https://malopolska.policja.gov.pl",
+      "status": "ok",
+      "listing": "https://malopolska.policja.gov.pl/krk/aktualnosci",
+      "rss": "https://malopolska.policja.gov.pl/dokumenty/rss/386-rss-157.rss"
+    }
+  }
+}

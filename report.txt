@@ -1,0 +1,80 @@
+======================================================================
+ANALIZA ŹRÓDEŁ ARTYKUŁÓW — sieć serwisylokalne.pl
+======================================================================
+Portali w sieci (cities.json): 113
+Pobranych artykułów (ok): 678 / 678
+
+WYSTĘPOWANIE ELEMENTÓW STOPKI:
+  Autor:                          678  (100.0%)
+  Materiał źródłowy (z linkiem):  194  (28.6%)
+  Materiał źródłowy (tekst):        0  (0.0%)
+  'na podstawie:'                  40  (5.9%)
+  Ilustracja z zewn. źródła:        1  (0.1%)
+
+DOMENY 'MATERIAŁ ŹRÓDŁOWY' (skąd republikowane treści):
+  Łącznie z linkiem źródłowym: 194
+  Wskazują portal z TEJ SAMEJ sieci: 194
+  Wskazują domenę spoza sieci:       0
+  TOP domeny źródłowe:
+      86  24piaseczno.pl  [w sieci]
+      66  faktybytom.pl  [w sieci]
+      20  gliwiceonline.pl  [w sieci]
+      12  faktykrakowa.pl  [w sieci]
+       5  reporter.jaslo.pl  [w sieci]
+       3  chrzanowski24.pl  [w sieci]
+       1  faktyrzeszow.pl  [w sieci]
+       1  kielceinfo.pl  [w sieci]
+
+  Źródło = ten sam portal: 1
+  Źródło = inny portal:    193
+
+'NA PODSTAWIE:' — wartości (TOP 20):
+      14  umowy o pracę. Warunek jest jeden - pracownik musi uzyskać z **Zakładu Ubezpiecz
+      12  badań przeprowadzonych na reprezentatywnej grupie 1502 uczniów w wieku 10-16 lat
+       1  badań naukowych, które jasno pokazują, że długotrwałe narażenie na zanieczyszcze
+       1  **Muzeum Miejskie Ruda Śląska**.
+       1  **Muzeum Ruda Śląska**.
+       1  **KPP w Limanowej**.
+       1  dwóch różnych harmonogramów w zależności od pory roku.
+       1  pomiaru kątów alfa i beta. To właśnie dzięki ultrasonografii możliwe jest wykryc
+       1  waszej lokalizacji.
+       1  danych z **LinkedIn** i jest wartościowym elementem strategii dla firm chcących 
+       1  oświadczenia o miejscu zamieszkania, jednak teraz wystarczy mieć przy sobie kart
+       1  przeciętnego wynagrodzenia i mogą znacząco wspierać rozwój nowo powstałych przed
+       1  **MCK Tomaszów Mazowiecki**.
+       1  własnych harmonogramów, które muszą jedynie zgłaszać do gminy do końca września 
+       1  badania dobierane są techniki mające poprawić warunki pracy nerwu pośrodkowego. 
+       1  linków prowadzących z innych serwisów. Dlatego skuteczna strategia SEO powinna u
+
+ILUSTRACJA — źródło (TOP 20):
+       1  KPP w Limanowej
+
+AUTORZY (TOP 25) — powtarzalność kont redakcyjnych w sieci:
+     172  Wioletta Siudek
+     157  piotr
+      55  Rafał Sarmata
+      45  krystian
+      41  Paweł Piątkowski
+      32  wiola
+      23  Komunikat prasowy
+      17  Karolina Bochenek
+      14  Artykuł sponsorowany
+      10  Zewnętrzny materiał partnerski
+       6  Miłosz Jamro
+       5  redakcja sportowa chrzanowski24.pl
+       5  Michał Dębiec
+       4  redakcja sportowa informacjekoszalin.pl
+       4  redakcja sportowa oswieciminfo.pl
+       4  redakcja sportowa reporter.krosno.pl
+       4  Paweł Dąbek
+       4  redakcja sportowa tuzamosc.pl
+       3  redakcja sportowa jastrzebienews.pl
+       3  redakcja sportowa portalwalbrzych.pl
+       3  Artykuł partnera
+       3  redakcja sportowa reporter.debica.pl
+       3  redakcja sportowa reporter.niepolomice.pl
+       3  redakcja sportowa twojelegionowo.pl
+       3  Szymon Stawowski
+  Unikalnych nazw autorów: 60
+
+Portali z co najmniej 1 pobranym artykułem: 113

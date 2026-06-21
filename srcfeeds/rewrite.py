@@ -65,12 +65,15 @@ def generate(model: str, prompt: str, timeout: int = 300) -> str:
 
 
 def main():
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    argv = sys.argv[1:]
+    model = None
+    if "--model" in argv:
+        i = argv.index("--model")
+        model = argv[i + 1] if i + 1 < len(argv) else None
+        del argv[i:i + 2]              # drop the flag AND its value
+    args = [a for a in argv if not a.startswith("--")]
     city = args[0] if args else "slupsk"
     limit = int(args[1]) if len(args) > 1 else 1000
-    model = None
-    if "--model" in sys.argv:
-        model = sys.argv[sys.argv.index("--model") + 1]
     models = list_models()
     if not models:
         print("No Ollama models / server. Aborting."); return

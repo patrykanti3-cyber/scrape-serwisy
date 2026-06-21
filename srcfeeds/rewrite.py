@@ -95,20 +95,21 @@ def main():
             except Exception as e:
                 print("   ! rewrite failed:", repr(e)[:200])
                 continue
-            attribution = (f"na podstawie: {r['source_credit']}.\n"
+            credit = r.get("source_credit") or r.get("source_name") or "źródło"
+            attribution = (f"na podstawie: {credit}.\n"
                            f"Ilustracja wykorzystana w artykule została pobrana z zewnętrznego "
-                           f"źródła ({r['source_credit']}). W przypadku zastrzeżeń dotyczących "
+                           f"źródła ({credit}). W przypadku zastrzeżeń dotyczących "
                            f"praw do zdjęcia prosimy o kontakt.")
             rec = {
-                "id": r["id"], "city": r["city"],
+                "id": r.get("id", ""), "city": r.get("city", ""),
                 "title": art.get("title", "").strip(),
                 "lead": art.get("lead", "").strip(),
                 "body": art.get("body", "").strip(),
-                "image_url": r["image_url"],
-                "published": r["published"],
-                "source_type": r["source_type"],
-                "source_name": r["source_name"],
-                "source_url": r["source_url"],
+                "image_url": r.get("image_url", ""),
+                "published": r.get("published", ""),
+                "source_type": r.get("source_type", "municipal"),
+                "source_name": r.get("source_name", ""),
+                "source_url": r.get("source_url", ""),
                 "attribution": attribution,
                 "model": model,
             }

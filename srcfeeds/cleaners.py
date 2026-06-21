@@ -64,7 +64,7 @@ _DEFAULT_NOISE = re.compile(
     re.IGNORECASE,
 )
 _DEFAULT_END_MARKERS = re.compile(
-    r"^(Podziel się|Słupsk & Uniwersytet|Ćwiczenia ewakuacyjne|"
+    r"^(Podziel się|"
     r"Filtruj|Wydarzenia:|Więcej$|today$|"
     r"\| pn\. \| wt\. \| śr\. \| czw\. \| pt\. \| sob\. \| nd\. \|)",
     re.IGNORECASE,

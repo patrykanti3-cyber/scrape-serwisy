@@ -123,6 +123,18 @@ def og_image(html: str) -> str:
     return m.group(1).strip() if m else ""
 
 
+def meta_date(html: str) -> str:
+    """Publish date from <meta article:published_time> — more reliable than
+    scanning body text. Returns ISO yyyy-mm-dd or ''."""
+    m = re.search(
+        r'<meta[^>]+(?:property|name)="(?:article:published_time|datePublished|date)"[^>]+content="([^"]+)"',
+        html or "", re.IGNORECASE)
+    if not m:
+        return ""
+    iso = re.match(r"(\d{4}-\d{2}-\d{2})", m.group(1).strip())
+    return iso.group(1) if iso else ""
+
+
 # --------------------------------------------------------------------------- adapters
 async def scrape_police(crawler, run, city: str, src: dict, limit: int) -> list[NewsItem]:
     base = src["base"]
@@ -191,6 +203,9 @@ async def scrape_municipal(crawler, run, city: str, src: dict, limit: int) -> li
     if not art_urls:
         return out
     results = await crawler.arun_many(art_urls, config=run.clone(target_elements=[sel]))
+    # police sites are scraped as HTML too, but must map to the na-sygnale
+    # category — tag by source, not by adapter.
+    stype = "police" if ("policja.gov.pl" in base or src["name"].lower().startswith("policja")) else "municipal"
     for r in results:
         if not r.success:
             continue
@@ -206,10 +221,10 @@ async def scrape_municipal(crawler, run, city: str, src: dict, limit: int) -> li
             except Exception:
                 pass
         out.append(NewsItem(
-            id=mk_id(r.url), city=city, source_type="municipal",
+            id=mk_id(r.url), city=city, source_type=stype,
             source_name=src["name"], source_credit=src.get("credit", src["name"]),
             source_url=r.url, title=title, lead=lead, body=body,
-            image_url=image, published=find_date_iso(body)))
+            image_url=image, published=meta_date(r.html) or find_date_iso(body)))
     return out
 
 
@@ -236,8 +251,8 @@ async def scrape_city(city_slug: str, cfg: dict, limit: int) -> list[NewsItem]:
     for it in items:
         if not it.title:
             print(f"  (drop no-title: {it.source_url})")
-        elif len(it.body) < 250:
-            print(f"  (drop short body={len(it.body)}: {it.source_url})")
+        elif len(it.body) < (120 if it.source_type == "police" else 250):
+            print(f"  (drop short body={len(it.body)} type={it.source_type}: {it.source_url})")
         else:
             kept.append(it)
     items = kept

@@ -86,9 +86,9 @@ def main():
     n_ok = 0
     with open(out_path, "w", encoding="utf-8") as f:
         for i, r in enumerate(rows, 1):
-            prompt = PROMPT.format(source=r["source_credit"], title=r["title"],
-                                   body=(r["body"] or r["lead"])[:6000])
-            print(f"[{i}/{len(rows)}] {r['source_type']:9} {r['title'][:60]!r} ...", flush=True)
+            prompt = PROMPT.format(source=r.get("source_credit", ""), title=r.get("title", ""),
+                                   body=(r.get("body") or r.get("lead") or "")[:6000])
+            print(f"[{i}/{len(rows)}] {r.get('source_type', '?'):9} {r.get('title', '')[:60]!r} ...", flush=True)
             try:
                 resp = generate(model, prompt)
                 art = json.loads(resp)

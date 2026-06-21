@@ -9,7 +9,7 @@ Pipeline:  sources.json --> [police_rss | municipal_html] --> NewsItem --> data/
 Next stage: rewrite.py feeds NewsItem.body into Ollama to produce a fresh article.
 """
 from __future__ import annotations
-import asyncio, json, re, sys, hashlib, urllib.request
+import asyncio, json, re, sys, hashlib, time, urllib.request, urllib.error
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, asdict, field
 from datetime import datetime, timezone
@@ -55,10 +55,22 @@ def mk_id(url: str) -> str:
 
 
 # --------------------------------------------------------------------------- RSS
-def http_get(url: str, timeout: int = 25) -> bytes:
+def http_get(url: str, timeout: int = 25, attempts: int = 3) -> bytes:
     req = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read()
+    last = None
+    for i in range(attempts):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.read()
+        except urllib.error.HTTPError as e:
+            last = e
+            if e.code < 500:           # 4xx won't change on retry
+                raise
+        except (urllib.error.URLError, TimeoutError, OSError) as e:
+            last = e
+        if i < attempts - 1:
+            time.sleep(2 ** i)          # 1s, 2s backoff
+    raise last
 
 
 def discover_police_feed(base: str) -> str | None:
@@ -183,7 +195,8 @@ async def scrape_municipal(crawler, run, city: str, src: dict, limit: int) -> li
         if not r.success:
             continue
         md = md_of(r)
-        title, lead, body = clean_municipal_body(md)
+        title, lead, body = clean_municipal_body(
+            md, end_markers=src.get("end_markers"), noise_patterns=src.get("noise_patterns"))
         if not title:
             title = clean((r.metadata or {}).get("title", ""))
         image = og_image(r.html)
@@ -218,11 +231,16 @@ async def scrape_city(city_slug: str, cfg: dict, limit: int) -> list[NewsItem]:
                     print(f"  ! unknown source type {src['type']}")
             except Exception as e:
                 print(f"  ! error in {src['name']}: {e!r}")
-    # drop category/empty stubs
-    before = len(items)
-    items = [it for it in items if len(it.body) >= 250 and it.title]
-    if before != len(items):
-        print(f"  (filtered {before - len(items)} stub items)")
+    # drop category/empty stubs — log each drop with its reason
+    kept: list[NewsItem] = []
+    for it in items:
+        if not it.title:
+            print(f"  (drop no-title: {it.source_url})")
+        elif len(it.body) < 250:
+            print(f"  (drop short body={len(it.body)}: {it.source_url})")
+        else:
+            kept.append(it)
+    items = kept
     return items
 
 
@@ -235,6 +253,9 @@ async def main():
             print(f"skip unknown city {slug}"); continue
         items = await scrape_city(slug, registry[slug], limit)
         path = DATA_RAW / f"{slug}.jsonl"
+        if not items:
+            print(f"==> {slug}: 0 items — keeping existing {path} (not overwriting)")
+            continue
         with open(path, "w", encoding="utf-8") as f:
             for it in items:
                 f.write(json.dumps(asdict(it), ensure_ascii=False) + "\n")

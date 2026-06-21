@@ -19,6 +19,8 @@ from urllib.parse import urljoin, urlparse
 
 from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, BrowserConfig, CacheMode
 
+from cleaners import clean, find_date_iso, clean_police_body, clean_municipal_body
+
 sys.stdout.reconfigure(encoding="utf-8")
 ROOT = Path(__file__).resolve().parent
 DATA_RAW = ROOT.parent / "data" / "raw"
@@ -50,12 +52,6 @@ class NewsItem:
 
 def mk_id(url: str) -> str:
     return hashlib.sha1(url.encode("utf-8")).hexdigest()[:16]
-
-
-def clean(text: str) -> str:
-    text = re.sub(r"[ \t]+", " ", text or "")
-    text = re.sub(r"\n{3,}", "\n\n", text)
-    return text.strip()
 
 
 # --------------------------------------------------------------------------- RSS
@@ -113,72 +109,6 @@ def md_of(res) -> str:
 def og_image(html: str) -> str:
     m = re.search(r'<meta[^>]+property="og:image"[^>]+content="([^"]+)"', html or "", re.IGNORECASE)
     return m.group(1).strip() if m else ""
-
-
-def _strip_md_chrome(md: str) -> str:
-    md = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", md)              # images
-    md = re.sub(r"\[([^\]]*)\]\((?:javascript:|#)[^)]*\)", r"\1", md)  # js/anchor links -> text
-    md = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", md)          # remaining links -> text
-    md = re.sub(r"javascript:[^\s)]*", "", md)
-    md = re.sub(r'"\s*"?\)', " ", md)              # leftover ( "" ) title tokens
-    md = md.replace('"")', " ").replace("()", " ")
-    md = re.sub(r"\bDrukuj\b|\bPowrót\b|\bUdostępnij\b|Link skopiowany[^\n]*", "", md, flags=re.IGNORECASE)
-    return md
-
-
-# strip police chrome from the article.txt markdown -> (lead, body)
-def clean_police_body(md: str) -> tuple[str, str]:
-    md = _strip_md_chrome(md)
-    md = re.sub(r"Data publikacji\s*[\d.\s]+", "", md)
-    lines = []
-    for l in md.splitlines():
-        s = l.strip()
-        if not s or s.startswith("#"):      # drop headings (duplicate title)
-            continue
-        lines.append(s)
-    text = clean("\n".join(lines))
-    mlead = re.search(r"\*\*(.+?)\*\*", text, re.DOTALL)      # p.intro is bold
-    lead = clean(re.sub(r"\*+", "", mlead.group(1))) if mlead else (text.split("\n")[0] if text else "")
-    body = clean(re.sub(r"\*+", "", text))
-    body = re.sub(r'^[\s"”“).\-]+', "", body)                 # trim leading punctuation junk
-    return lead, body
-
-
-PL_DATE = re.compile(r"\b(\d{1,2})\s*[.\-]\s*(\d{1,2})\s*[.\-]\s*(20\d{2})\b")
-
-def find_date_iso(text: str) -> str:
-    m = PL_DATE.search(text or "")
-    if not m:
-        return ""
-    d, mo, y = m.groups()
-    try:
-        return datetime(int(y), int(mo), int(d), tzinfo=timezone.utc).date().isoformat()
-    except ValueError:
-        return ""
-
-
-def clean_municipal_body(md: str) -> tuple[str, str, str]:
-    """Return (title, lead, body) from a municipal article markdown."""
-    md = _strip_md_chrome(md)
-    raw_lines = [l.strip() for l in md.splitlines() if l.strip()]
-    # breadcrumb / nav noise to drop
-    NOISE = re.compile(r"^(\*|\d+\.)\s|^Aktualności$|^Strona główna$|^Poprzedni|^Następny|^__", re.IGNORECASE)
-    title = ""
-    body_lines = []
-    for l in raw_lines:
-        h = re.match(r"^#{1,4}\s+(.+)$", l)
-        if h:
-            t = h.group(1).strip()
-            if t.lower() not in ("aktualności", "menu") and not title:
-                title = t
-            continue
-        if NOISE.match(l):
-            continue
-        body_lines.append(l)
-    body = clean("\n".join(body_lines))
-    paras = [p for p in body.split("\n") if len(p) > 50]
-    lead = paras[0] if paras else (body[:200] if body else "")
-    return title, clean(lead), body
 
 
 # --------------------------------------------------------------------------- adapters

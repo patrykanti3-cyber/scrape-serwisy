@@ -8,7 +8,7 @@ Reads : data/raw/<city>.jsonl
 Writes: data/rewritten/<city>.jsonl
 """
 from __future__ import annotations
-import json, sys, urllib.request
+import json, os, sys, urllib.request
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -27,10 +27,19 @@ Zasady:
 - Nie dodawaj informacji, których nie ma w źródle. Nie zmyślaj.
 - Nie pisz o sobie ani o procesie redakcji.
 
+Struktura treści (pole "body", Markdown):
+- Akapity oddzielaj podwójnym znakiem nowej linii.
+- Jeśli artykuł ma 4+ akapitów, podziel go na 2-3 sekcje tematyczne, każda
+  z nagłówkiem w formacie "## Krótki nagłówek sekcji". Krótkie artykuły zostaw
+  bez nagłówków.
+- Jeśli w MATERIALE ŹRÓDŁOWYM jest dosłowna wypowiedź (cytat osoby, organizatora,
+  urzędnika), zacytuj ją jako "> treść cytatu". Cytuj WYŁĄCZNIE słowa obecne
+  w źródle — NIE twórz cytatów, których tam nie ma.
+
 Zwróć WYŁĄCZNIE obiekt JSON o polach:
   "title" – rzeczowy tytuł (max 120 znaków),
   "lead"  – 1–2 zdania wprowadzenia,
-  "body"  – treść artykułu, akapity oddzielone podwójnym znakiem nowej linii.
+  "body"  – treść artykułu wg struktury powyżej.
 
 MATERIAŁ ŹRÓDŁOWY (źródło: {source}):
 Tytuł: {title}
@@ -47,7 +56,7 @@ def list_models() -> list[str]:
         print("! cannot reach Ollama:", e); return []
 
 
-def generate(model: str, prompt: str, timeout: int = 300) -> str:
+def generate(model: str, prompt: str, timeout: int = int(os.environ.get("OLLAMA_TIMEOUT", "600"))) -> str:
     payload = {
         "model": model,
         "prompt": prompt,

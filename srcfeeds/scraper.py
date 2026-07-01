@@ -218,7 +218,7 @@ async def scrape_municipal(crawler, run, city: str, src: dict, limit: int) -> li
             if p.netloc.replace("www.", "") != urlparse(base).netloc.replace("www.", ""):
                 continue
             path = p.path
-            if marker in path and path.rstrip("/").split("/")[-1].count("-") >= 2 and full not in seen:
+            if marker.lower() in path.lower() and path.rstrip("/").split("/")[-1].count("-") >= 2 and full not in seen:
                 seen.add(full)
                 art_urls.append(full)
     art_urls = art_urls[:limit]
@@ -280,7 +280,7 @@ async def scrape_events(crawler, run, city: str, src: dict, limit: int) -> list[
             if p.netloc.replace("www.", "") != urlparse(base).netloc.replace("www.", ""):
                 continue
             path = p.path
-            if marker in path and path.rstrip("/").split("/")[-1].count("-") >= 2 and full not in seen:
+            if marker.lower() in path.lower() and path.rstrip("/").split("/")[-1].count("-") >= 2 and full not in seen:
                 seen.add(full)
                 art_urls.append(full)
     art_urls = art_urls[:limit]

@@ -1,3119 +1,3119 @@
 {
-  "warszawa": {
-    "city": "Warszawa",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Warszawa",
-        "credit": "UM Warszawa",
-        "base": "https://um.warszawa.pl",
-        "listing": [
-          "https://um.warszawa.pl/aktualnosci-warszawa"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Warszawa",
-        "credit": "Policja Warszawa",
-        "base": "https://ksp.policja.gov.pl",
-        "listing": [
-          "https://ksp.policja.gov.pl/pl/dzialania/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "krakow": {
-    "city": "Kraków",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Kraków",
-        "credit": "UM Kraków",
-        "base": "http://www.krakow.pl/",
-        "listing": [
-          "https://www.krakow.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Kraków",
-        "credit": "Policja Kraków",
-        "base": "https://krakow.policja.gov.pl",
-        "listing": [
-          "https://krakow.policja.gov.pl/kr1/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "wroclaw": {
-    "city": "Wrocław",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Wrocław",
-        "credit": "UM Wrocław",
-        "base": "http://www.wroclaw.pl/",
-        "listing": [
-          "https://www.wroclaw.pl/kultura/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://www.wroclaw.pl/dla-mieszkanca/rss/"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Wrocław",
-        "credit": "Policja Wrocław",
-        "base": "https://wroclaw.policja.gov.pl",
-        "listing": [
-          "https://wroclaw.policja.gov.pl/dwr/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://wroclaw.policja.gov.pl/dokumenty/rss/412-rss-o-2567.rss"
-      }
-    ]
-  },
-  "lodz": {
-    "city": "Łódź",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Łódź",
-        "credit": "UM Łódź",
-        "base": "https://lodz.pl",
-        "listing": [
-          "https://lodz.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Łódź",
-        "credit": "Policja Łódź",
-        "base": "https://lodz.policja.gov.pl",
-        "listing": [
-          "https://lodz.policja.gov.pl/eld/komunikaty-1"
-        ],
-        "article_marker": "/komunikaty/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "poznan": {
-    "city": "Poznań",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Poznań",
-        "credit": "UM Poznań",
-        "base": "https://www.poznan.pl/",
-        "listing": [
-          "https://www.poznan.pl/infoteka"
-        ],
-        "article_marker": "/infoteka/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Poznań",
-        "credit": "Policja Poznań",
-        "base": "https://poznan.policja.gov.pl",
-        "listing": [
-          "https://poznan.policja.gov.pl/w21/dzialania-policji/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "gdansk": {
-    "city": "Gdańsk",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Gdańsk",
-        "credit": "UM Gdańsk",
-        "base": "https://www.gdansk.pl/",
-        "listing": [
-          "https://www.gdansk.pl/akcja/link/194956/Wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Gdańsk",
-        "credit": "Policja Gdańsk",
-        "base": "https://gdansk.policja.gov.pl",
-        "listing": [
-          "https://gdansk.policja.gov.pl/pm1/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "szczecin": {
-    "city": "Szczecin",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Szczecin",
-        "credit": "UM Szczecin",
-        "base": "https://www.szczecin.eu/pl",
-        "listing": [
-          "https://sbo.szczecin.eu/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Szczecin",
-        "credit": "Policja Szczecin",
-        "base": "https://szczecin.policja.gov.pl",
-        "listing": [
-          "https://szczecin.policja.gov.pl/szm/dzialania-policji"
-        ],
-        "article_marker": "/dzialania-policji/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "lublin": {
-    "city": "Lublin",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Lublin",
-        "credit": "UM Lublin",
-        "base": "https://lublin.eu",
-        "listing": [
-          "https://lublin.eu/sport/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Lublin",
-        "credit": "Policja Lublin",
-        "base": "https://lublin.policja.gov.pl",
-        "listing": [
-          "https://lublin.policja.gov.pl/llu/informacje/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "bydgoszcz": {
-    "city": "Bydgoszcz",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Bydgoszcz",
-        "credit": "UM Bydgoszcz",
-        "base": "https://www.bydgoszcz.pl",
-        "listing": [
-          "https://www.bydgoszcz.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Bydgoszcz",
-        "credit": "Policja Bydgoszcz",
-        "base": "https://bydgoszcz.policja.gov.pl",
-        "listing": [
-          "https://bydgoszcz.policja.gov.pl/kb1/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://bydgoszcz.policja.gov.pl/dokumenty/rss/137-rss-928.rss"
-      }
-    ]
-  },
-  "bialystok": {
-    "city": "Białystok",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Białystok",
-        "credit": "UM Białystok",
-        "base": "http://www.bialystok.pl",
-        "listing": [
-          "https://www.bialystok.pl/pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Białystok",
-        "credit": "Policja Białystok",
-        "base": "https://bialystok.policja.gov.pl",
-        "listing": [
-          "https://bialystok.policja.gov.pl/po2/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://bialystok.policja.gov.pl/dokumenty/rss/117-rss-1394.rss"
-      }
-    ]
-  },
-  "katowice": {
-    "city": "Katowice",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Katowice",
-        "credit": "UM Katowice",
-        "base": "https://www.katowice.eu/",
-        "listing": [
-          "https://www.katowice.eu/czas-wolny/kultura/aktualności"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Katowice",
-        "credit": "Policja Katowice",
-        "base": "https://katowice.policja.gov.pl",
-        "listing": [
-          "https://katowice.policja.gov.pl/k14/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://katowice.policja.gov.pl/dokumenty/rss/49-rss-o-282.rss"
-      }
-    ]
-  },
-  "gdynia": {
-    "city": "Gdynia",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Gdynia",
-        "credit": "UM Gdynia",
-        "base": "https://www.gdynia.pl/",
-        "listing": [
-          "https://www.gdynia.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Gdynia",
-        "credit": "Policja Gdynia",
-        "base": "https://gdynia.policja.gov.pl",
-        "listing": [
-          "https://gdynia.policja.gov.pl/m17/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "czestochowa": {
-    "city": "Częstochowa",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Częstochowa",
-        "credit": "UM Częstochowa",
-        "base": "https://www.czestochowa.pl/",
-        "listing": [
-          "https://www.czestochowa.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Częstochowa",
-        "credit": "Policja Częstochowa",
-        "base": "https://czestochowa.policja.gov.pl",
-        "listing": [
-          "https://czestochowa.policja.gov.pl/ka7/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://czestochowa.policja.gov.pl/dokumenty/rss/42-rss-2341.rss"
-      }
-    ]
-  },
-  "radom": {
-    "city": "Radom",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Radom",
-        "credit": "UM Radom",
-        "base": "https://www.radom.pl/",
-        "listing": [
-          "https://www.radom.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Radom",
-        "credit": "Policja Radom",
-        "base": "https://mazowiecka.policja.gov.pl",
-        "listing": [
-          "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
-      }
-    ]
-  },
-  "torun": {
-    "city": "Toruń",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Toruń",
-        "credit": "UM Toruń",
-        "base": "https://torun.pl/",
-        "listing": [
-          "https://torun.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Toruń",
-        "credit": "Policja Toruń",
-        "base": "https://torun.policja.gov.pl",
-        "listing": [
-          "https://torun.policja.gov.pl/kb3/prewencja/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://torun.policja.gov.pl/dokumenty/rss/139-rss-1149.rss"
-      }
-    ]
-  },
-  "rzeszow": {
-    "city": "Rzeszów",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Rzeszów",
-        "credit": "UM Rzeszów",
-        "base": "https://www.erzeszow.pl/",
-        "listing": [
-          "https://www.erzeszow.pl/41-miasto-rzeszow/1713-aktualnosci.html"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Rzeszów",
-        "credit": "Policja Rzeszów",
-        "base": "https://rzeszow.policja.gov.pl",
-        "listing": [
-          "https://rzeszow.policja.gov.pl/rz/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://rzeszow.policja.gov.pl/dokumenty/rss/443-rss-o-2956.rss"
-      }
-    ]
-  },
-  "kielce": {
-    "city": "Kielce",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Kielce",
-        "credit": "UM Kielce",
-        "base": "http://www.um.kielce.pl/",
-        "listing": [
-          "http://www.um.kielce.pl/pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Kielce",
-        "credit": "Policja Kielce",
-        "base": "https://kielce.policja.gov.pl",
-        "listing": [
-          "https://kielce.policja.gov.pl/kmp/dzialania-policji/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "sosnowiec": {
-    "city": "Sosnowiec",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Sosnowiec",
-        "credit": "UM Sosnowiec",
-        "base": "http://www.sosnowiec.pl",
-        "listing": [
-          "https://www.sosnowiec.pl/samorzad/samorzad-aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Sosnowiec",
-        "credit": "Policja Sosnowiec",
-        "base": "https://sosnowiec.policja.gov.pl",
-        "listing": [
-          "https://sosnowiec.policja.gov.pl/k24/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://sosnowiec.policja.gov.pl/dokumenty/rss/59-rss-o-322.rss"
-      }
-    ]
-  },
-  "gliwice": {
-    "city": "Gliwice",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Gliwice",
-        "credit": "UM Gliwice",
-        "base": "https://www.gliwice.eu/",
-        "listing": [
-          "https://www.gliwice.eu/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Gliwice",
-        "credit": "Policja Gliwice",
-        "base": "https://gliwice.policja.gov.pl",
-        "listing": [
-          "https://gliwice.policja.gov.pl/ka9/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://gliwice.policja.gov.pl/dokumenty/rss/44-rss-o-262.rss"
-      }
-    ]
-  },
-  "olsztyn": {
-    "city": "Olsztyn",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Olsztyn",
-        "credit": "UM Olsztyn",
-        "base": "https://www.olsztyn.eu/o-olsztynie.html",
-        "listing": [
-          "https://www.olsztyn.eu/o-olsztynie/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Olsztyn",
-        "credit": "Policja Olsztyn",
-        "base": "https://olsztyn.policja.gov.pl",
-        "listing": [
-          "https://olsztyn.policja.gov.pl/o02/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://olsztyn.policja.gov.pl/dokumenty/rss/87-rss-1396.rss"
-      }
-    ]
-  },
-  "bielsko-biala": {
-    "city": "Bielsko-Biała",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Bielsko-Biała",
-        "credit": "UM Bielsko-Biała",
-        "base": "https://bielsko-biala.pl/",
-        "listing": [
-          "https://bielsko-biala.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Bielsko-Biała",
-        "credit": "Policja Bielsko-Biała",
-        "base": "https://bielsko-biala.policja.gov.pl",
-        "listing": [
-          "https://bielsko-biala.policja.gov.pl/ka2/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://bielsko-biala.policja.gov.pl/dokumenty/rss/37-rss-o-234.rss"
-      }
-    ]
-  },
-  "zabrze": {
-    "city": "Zabrze",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Zabrze",
-        "credit": "UM Zabrze",
-        "base": "https://miastozabrze.pl/",
-        "listing": [
-          "https://miastozabrze.pl/2026/06/17/bezpieczne-wakacje-zabrze-2026/"
-        ],
-        "article_marker": "/bezpieczne-wakacje-zabrze-2026/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Zabrze",
-        "credit": "Policja Zabrze",
-        "base": "https://zabrze.policja.gov.pl",
-        "listing": [
-          "https://zabrze.policja.gov.pl/k29/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://zabrze.policja.gov.pl/dokumenty/rss/64-rss-o-342.rss"
-      }
-    ]
-  },
-  "bytom": {
-    "city": "Bytom",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Bytom",
-        "credit": "UM Bytom",
-        "base": "http://www.bytom.pl",
-        "listing": [
-          "https://www.bytom.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Bytom",
-        "credit": "Policja Bytom",
-        "base": "https://bytom.policja.gov.pl",
-        "listing": [
-          "https://bytom.policja.gov.pl/ka4/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://bytom.policja.gov.pl/dokumenty/rss/39-rss-o-242.rss"
-      }
-    ]
-  },
-  "zielona-gora": {
-    "city": "Zielona Góra",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Zielona Góra",
-        "credit": "UM Zielona Góra",
-        "base": "http://www.zielona-gora.pl/",
-        "listing": [
-          "https://www.zielona-gora.pl/wydarzenia"
-        ],
-        "article_marker": "/wydarzenia/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Zielona Góra",
-        "credit": "Policja Zielona Góra",
-        "base": "https://zielona-gora.policja.gov.pl",
-        "listing": [
-          "https://zielona-gora.policja.gov.pl/go2/serwis-informacyjny/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://zielona-gora.policja.gov.pl/dokumenty/rss/157-rss-1285.rss"
-      }
-    ]
-  },
-  "ruda-slaska": {
-    "city": "Ruda Śląska",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Ruda Śląska",
-        "credit": "UM Ruda Śląska",
-        "base": "http://www.rudaslaska.pl/",
-        "listing": [
-          "https://www.rudaslaska.pl/ruda-slaska/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Ruda Śląska",
-        "credit": "Policja Ruda Śląska",
-        "base": "https://ruda-slaska.policja.gov.pl",
-        "listing": [
-          "https://ruda-slaska.policja.gov.pl/k21/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://ruda-slaska.policja.gov.pl/dokumenty/rss/56-rss-o-310.rss"
-      }
-    ]
-  },
-  "rybnik": {
-    "city": "Rybnik",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Rybnik",
-        "credit": "UM Rybnik",
-        "base": "http://www.rybnik.pl/",
-        "listing": [
-          "http://www.rybnik.pl/rewitalizacja/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Rybnik",
-        "credit": "Policja Rybnik",
-        "base": "https://rybnik.policja.gov.pl",
-        "listing": [
-          "https://rybnik.policja.gov.pl/k22/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://rybnik.policja.gov.pl/dokumenty/rss/57-rss-o-314.rss"
-      }
-    ]
-  },
-  "opole": {
-    "city": "Opole",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Opole",
-        "credit": "UM Opole",
-        "base": "http://www.opole.pl",
-        "listing": [
-          "http://www.opole.pl/dla-mieszkanca"
-        ],
-        "article_marker": "/dla-mieszkanca/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Opole",
-        "credit": "Policja Opole",
-        "base": "https://opole.policja.gov.pl",
-        "listing": [
-          "https://opole.policja.gov.pl/opo/kmp-opole/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "gorzow-wielkopolski": {
-    "city": "Gorzów Wielkopolski",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Gorzów Wielkopolski",
-        "credit": "UM Gorzów Wielkopolski",
-        "base": "https://um.gorzow.pl",
-        "listing": [
-          "https://um.gorzow.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Gorzów Wielkopolski",
-        "credit": "Policja Gorzów Wielkopolski",
-        "base": "https://gorzow-wielkopolski.policja.gov.pl",
-        "listing": [
-          "https://gorzow-wielkopolski.policja.gov.pl/go1/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "elblag": {
-    "city": "Elbląg",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Elbląg",
-        "credit": "UM Elbląg",
-        "base": "http://www.umelblag.pl/",
-        "listing": [
-          "http://www.umelblag.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Elbląg",
-        "credit": "Policja Elbląg",
-        "base": "https://elblag.policja.gov.pl",
-        "listing": [
-          "https://elblag.policja.gov.pl/o01/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://elblag.policja.gov.pl/dokumenty/rss/86-rss-1374.rss"
-      }
-    ]
-  },
-  "plock": {
-    "city": "Płock",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Płock",
-        "credit": "UM Płock",
-        "base": "https://nowy.plock.eu",
-        "listing": [
-          "https://nowy.plock.eu/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Płock",
-        "credit": "Policja Płock",
-        "base": "https://mazowiecka.policja.gov.pl",
-        "listing": [
-          "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
-      }
-    ]
-  },
-  "dabrowa-gornicza": {
-    "city": "Dąbrowa Górnicza",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Dąbrowa Górnicza",
-        "credit": "UM Dąbrowa Górnicza",
-        "base": "http://www.dabrowa-gornicza.pl/",
-        "listing": [
-          "https://www.dabrowa-gornicza.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Dąbrowa Górnicza",
-        "credit": "Policja Dąbrowa Górnicza",
-        "base": "https://dabrowa-gornicza.policja.gov.pl",
-        "listing": [
-          "https://dabrowa-gornicza.policja.gov.pl/ka8/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://dabrowa-gornicza.policja.gov.pl/dokumenty/rss/43-rss-o-258.rss"
-      }
-    ]
-  },
-  "koszalin": {
-    "city": "Koszalin",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Koszalin",
-        "credit": "UM Koszalin",
-        "base": "https://www.koszalin.pl/",
-        "listing": [
-          "https://www.koszalin.pl/pl/odpady"
-        ],
-        "article_marker": "/odpady/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Koszalin",
-        "credit": "Policja Koszalin",
-        "base": "https://koszalin.policja.gov.pl",
-        "listing": [
-          "https://koszalin.policja.gov.pl/zk/aktual"
-        ],
-        "article_marker": "/aktual/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "wloclawek": {
-    "city": "Włocławek",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Włocławek",
-        "credit": "UM Włocławek",
-        "base": "http://www.wloclawek.pl",
-        "listing": [
-          "https://www.wloclawek.pl/aktualnosci.xml"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Włocławek",
-        "credit": "Policja Włocławek",
-        "base": "https://wloclawek.policja.gov.pl",
-        "listing": [
-          "https://wloclawek.policja.gov.pl/kb4/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://wloclawek.policja.gov.pl/dokumenty/rss/140-rss-1561.rss"
-      }
-    ]
-  },
-  "walbrzych": {
-    "city": "Wałbrzych",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Wałbrzych",
-        "credit": "UM Wałbrzych",
-        "base": "http://www.um.walbrzych.pl/",
-        "listing": [
-          "http://www.um.walbrzych.pl/pl/aktualnosci-geodezja"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Wałbrzych",
-        "credit": "Policja Wałbrzych",
-        "base": "https://walbrzych.policja.gov.pl",
-        "listing": [
-          "https://walbrzych.policja.gov.pl/dba/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://walbrzych.policja.gov.pl/dokumenty/rss/415-rss-o-2584.rss"
-      }
-    ]
-  },
-  "chorzow": {
-    "city": "Chorzów",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Chorzów",
-        "credit": "UM Chorzów",
-        "base": "https://mieszkancy.chorzow.eu",
-        "listing": [
-          "https://mieszkancy.chorzow.eu/category/komunikaty-urzedowe"
-        ],
-        "article_marker": "/article/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Chorzów",
-        "credit": "Policja Chorzów",
-        "base": "https://chorzow.policja.gov.pl",
-        "listing": [
-          "https://chorzow.policja.gov.pl/ka5/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://chorzow.policja.gov.pl/dokumenty/rss/40-rss-o-246.rss"
-      }
-    ]
-  },
-  "tarnow": {
-    "city": "Tarnów",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Tarnów",
-        "credit": "UM Tarnów",
-        "base": "http://www.tarnow.pl",
-        "listing": [
-          "https://www.tarnow.pl/Dla-mieszkancow/Aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Tarnów",
-        "credit": "Policja Tarnów",
-        "base": "https://tarnow.policja.gov.pl",
-        "listing": [
-          "https://tarnow.policja.gov.pl/kt/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "kalisz": {
-    "city": "Kalisz",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Kalisz",
-        "credit": "UM Kalisz",
-        "base": "http://www.kalisz.pl",
-        "listing": [
-          "http://www.kalisz.pl/dla-mieszkanca/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Kalisz",
-        "credit": "Policja Kalisz",
-        "base": "https://kalisz.policja.gov.pl",
-        "listing": [
-          "https://kalisz.policja.gov.pl/wl7/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "legnica": {
-    "city": "Legnica",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Legnica",
-        "credit": "UM Legnica",
-        "base": "http://www.portal.legnica.eu/",
-        "listing": [
-          "https://portal.legnica.eu/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Legnica",
-        "credit": "Policja Legnica",
-        "base": "https://legnica.policja.gov.pl",
-        "listing": [
-          "https://legnica.policja.gov.pl/dle/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://legnica.policja.gov.pl/dokumenty/rss/414-rss-o-2577.rss"
-      }
-    ]
-  },
-  "grudziadz": {
-    "city": "Grudziądz",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Grudziądz",
-        "credit": "UM Grudziądz",
-        "base": "http://www.grudziadz.pl/",
-        "listing": [
-          "https://grudziadz.pl/artykuly/621/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Grudziądz",
-        "credit": "Policja Grudziądz",
-        "base": "https://grudziadz.policja.gov.pl",
-        "listing": [
-          "https://grudziadz.policja.gov.pl/kb2/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://grudziadz.policja.gov.pl/dokumenty/rss/138-rss-1479.rss"
-      }
-    ]
-  },
-  "jaworzno": {
-    "city": "Jaworzno",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Jaworzno",
-        "credit": "UM Jaworzno",
-        "base": "https://www.jaworzno.pl",
-        "listing": [
-          "https://www.jaworzno.pl/category/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Jaworzno",
-        "credit": "Policja Jaworzno",
-        "base": "https://jaworzno.policja.gov.pl",
-        "listing": [
-          "https://jaworzno.policja.gov.pl/k11/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://jaworzno.policja.gov.pl/dokumenty/rss/46-rss-o-270.rss"
-      }
-    ]
-  },
-  "slupsk": {
-    "city": "Słupsk",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Słupsk",
-        "credit": "UM Słupsk",
-        "base": "http://www.slupsk.pl",
-        "listing": [
-          "https://www.slupsk.pl/ratusz/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Słupsk",
-        "credit": "Policja Słupsk",
-        "base": "https://slupsk.policja.gov.pl",
-        "listing": [
-          "https://slupsk.policja.gov.pl/m19/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://slupsk.policja.gov.pl/dokumenty/rss/385-rss-2772.rss"
-      }
-    ]
-  },
-  "jastrzebie-zdroj": {
-    "city": "Jastrzębie-Zdrój",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Jastrzębie-Zdrój",
-        "credit": "UM Jastrzębie-Zdrój",
-        "base": "https://www.jastrzebie.pl",
-        "listing": [
-          "https://www.jastrzebie.pl/dla-mieszkanca/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Jastrzębie-Zdrój",
-        "credit": "Policja Jastrzębie-Zdrój",
-        "base": "https://jastrzebie-zdroj.policja.gov.pl",
-        "listing": [
-          "https://jastrzebie-zdroj.policja.gov.pl/k10/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://jastrzebie-zdroj.policja.gov.pl/dokumenty/rss/45-rss-o-266.rss"
-      }
-    ]
-  },
-  "nowy-sacz": {
-    "city": "Nowy Sącz",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Nowy Sącz",
-        "credit": "UM Nowy Sącz",
-        "base": "http://www.nowysacz.pl",
-        "listing": [
-          "https://nowysacz.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Nowy Sącz",
-        "credit": "Policja Nowy Sącz",
-        "base": "https://nowy-sacz.policja.gov.pl",
-        "listing": [
-          "https://nowy-sacz.policja.gov.pl/kn/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "jelenia-gora": {
-    "city": "Jelenia Góra",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Jelenia Góra",
-        "credit": "UM Jelenia Góra",
-        "base": "http://www.jeleniagora.pl",
-        "listing": [
-          "https://www.jeleniagora.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Jelenia Góra",
-        "credit": "Policja Jelenia Góra",
-        "base": "https://jelenia-gora.policja.gov.pl",
-        "listing": [
-          "https://jelenia-gora.policja.gov.pl/dje/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://jelenia-gora.policja.gov.pl/dokumenty/rss/416-rss-o-2591.rss"
-      }
-    ]
-  },
-  "siedlce": {
-    "city": "Siedlce",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Siedlce",
-        "credit": "UM Siedlce",
-        "base": "http://www.siedlce.pl/",
-        "listing": [
-          "https://www.siedlce.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Siedlce",
-        "credit": "Policja Siedlce",
-        "base": "https://mazowiecka.policja.gov.pl",
-        "listing": [
-          "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
-      }
-    ]
-  },
-  "myslowice": {
-    "city": "Mysłowice",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Mysłowice",
-        "credit": "UM Mysłowice",
-        "base": "http://www.myslowice.pl",
-        "listing": [
-          "https://www.myslowice.pl/strefa-mieszkanca/gospodarka-odpadami/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Mysłowice",
-        "credit": "Policja Mysłowice",
-        "base": "https://myslowice.policja.gov.pl",
-        "listing": [
-          "https://myslowice.policja.gov.pl/k16/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://myslowice.policja.gov.pl/dokumenty/rss/51-rss-o-290.rss"
-      }
-    ]
-  },
-  "pila": {
-    "city": "Piła",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Piła",
-        "credit": "UM Piła",
-        "base": "https://www.pila.pl/",
-        "listing": [
-          "https://www.pila.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Piła",
-        "credit": "Policja Piła",
-        "base": "https://pila.policja.gov.pl",
-        "listing": [
-          "https://pila.policja.gov.pl/w19/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "ostrow-wielkopolski": {
-    "city": "Ostrów Wielkopolski",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Ostrów Wielkopolski",
-        "credit": "UM Ostrów Wielkopolski",
-        "base": "https://umostrow.pl",
-        "listing": [
-          "https://umostrow.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Ostrów Wielkopolski",
-        "credit": "Policja Ostrów Wielkopolski",
-        "base": "https://ostrow-wielkopolski.policja.gov.pl",
-        "listing": [
-          "https://ostrow-wielkopolski.policja.gov.pl/w17/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "lubin": {
-    "city": "Lubin",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Lubin",
-        "credit": "UM Lubin",
-        "base": "http://www.lubin.pl",
-        "listing": [
-          "http://www.lubin.pl/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Lubin",
-        "credit": "Policja Lubin",
-        "base": "https://lubin.policja.gov.pl",
-        "listing": [
-          "https://lubin.policja.gov.pl/dlu/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://lubin.policja.gov.pl/dokumenty/rss/425-rss-o-2654.rss"
-      }
-    ]
-  },
-  "konin": {
-    "city": "Konin",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Konin",
-        "credit": "UM Konin",
-        "base": "http://www.konin.pl",
-        "listing": [
-          "http://www.konin.pl/archiwum/"
-        ],
-        "article_marker": "/archiwum/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Konin",
-        "credit": "Policja Konin",
-        "base": "https://konin.policja.gov.pl",
-        "listing": [
-          "https://konin.policja.gov.pl/w10/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "inowroclaw": {
-    "city": "Inowrocław",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Inowrocław",
-        "credit": "UM Inowrocław",
-        "base": "http://www.inowroclaw.pl",
-        "listing": [
-          "https://www.inowroclaw.pl/aktualnosc-lista.html"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Inowrocław",
-        "credit": "Policja Inowrocław",
-        "base": "https://inowroclaw.policja.gov.pl",
-        "listing": [
-          "https://inowroclaw.policja.gov.pl/kb9/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://inowroclaw.policja.gov.pl/dokumenty/rss/145-rss-1749.rss"
-      }
-    ]
-  },
-  "suwalki": {
-    "city": "Suwałki",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Suwałki",
-        "credit": "UM Suwałki",
-        "base": "http://www.um.suwalki.pl/",
-        "listing": [
-          "https://um.suwalki.pl/aktualnosci,2577292"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Suwałki",
-        "credit": "Policja Suwałki",
-        "base": "https://suwalki.policja.gov.pl",
-        "listing": [
-          "https://suwalki.policja.gov.pl/po3/informacje/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "piotrkow-trybunalski": {
-    "city": "Piotrków Trybunalski",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Piotrków Trybunalski",
-        "credit": "UM Piotrków Trybunalski",
-        "base": "http://www.piotrkow.pl",
-        "listing": [
-          "https://www.piotrkow.pl/nasze-miasto-t70/aktualnosci-a75"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Piotrków Trybunalski",
-        "credit": "Policja Piotrków Trybunalski",
-        "base": "https://piotrkow-trybunalski.policja.gov.pl",
-        "listing": [
-          "https://piotrkow-trybunalski.policja.gov.pl/ep/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "stargard": {
-    "city": "Stargard",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Stargard",
-        "credit": "UM Stargard",
-        "base": "http://www.stargard.pl",
-        "listing": [
-          "http://www.stargard.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Stargard",
-        "credit": "Policja Stargard",
-        "base": "https://stargard.policja.gov.pl",
-        "listing": [
-          "https://stargard.policja.gov.pl/zst/dzialania-policji"
-        ],
-        "article_marker": "/dzialania-policji/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "gniezno": {
-    "city": "Gniezno",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Gniezno",
-        "credit": "UM Gniezno",
-        "base": "https://gniezno.eu",
-        "listing": [
-          "https://gniezno.eu/aktualnosci-z-miasta"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Gniezno",
-        "credit": "Policja Gniezno",
-        "base": "https://gniezno.policja.gov.pl",
-        "listing": [
-          "https://gniezno.policja.gov.pl/wl3/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "pruszkow": {
-    "city": "Pruszków",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Pruszków",
-        "credit": "UM Pruszków",
-        "base": "http://www.pruszkow.pl/",
-        "listing": [
-          "https://www.pruszkow.pl/aktualnosci-sport"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Pruszków",
-        "credit": "Policja Pruszków",
-        "base": "https://pruszkow.policja.gov.pl",
-        "listing": [
-          "https://pruszkow.policja.gov.pl/ppr/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://pruszkow.policja.gov.pl/dokumenty/rss/176-rss-414.rss"
-      }
-    ]
-  },
-  "ostrowiec-swietokrzyski": {
-    "city": "Ostrowiec Świętokrzyski",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Ostrowiec Świętokrzyski",
-        "credit": "UM Ostrowiec Świętokrzyski",
-        "base": "http://www.um.ostrowiec.pl",
-        "listing": [
-          "https://um.ostrowiec.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Ostrowiec Świętokrzyski",
-        "credit": "Policja Ostrowiec Świętokrzyski",
-        "base": "https://ostrowiec-swietokrzyski.policja.gov.pl",
-        "listing": [
-          "https://ostrowiec-swietokrzyski.policja.gov.pl/tos/dzialania-policji/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "glogow": {
-    "city": "Głogów",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Głogów",
-        "credit": "UM Głogów",
-        "base": "http://www.glogow.pl/",
-        "listing": [
-          "https://www.glogow.pl/miasto"
-        ],
-        "article_marker": "/miasto/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Głogów",
-        "credit": "Policja Głogów",
-        "base": "https://glogow.policja.gov.pl",
-        "listing": [
-          "https://glogow.policja.gov.pl/dgl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://glogow.policja.gov.pl/dokumenty/rss/420-rss-o-2619.rss"
-      }
-    ]
-  },
-  "siemianowice-slaskie": {
-    "city": "Siemianowice Śląskie",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Siemianowice Śląskie",
-        "credit": "UM Siemianowice Śląskie",
-        "base": "https://siemianowice.pl",
-        "listing": [
-          "https://siemianowice.pl"
-        ],
-        "article_marker": "/20",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Siemianowice Śląskie",
-        "credit": "Policja Siemianowice Śląskie",
-        "base": "https://siemianowice-slaskie.policja.gov.pl",
-        "listing": [
-          "https://siemianowice-slaskie.policja.gov.pl/k23/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://siemianowice-slaskie.policja.gov.pl/dokumenty/rss/58-rss-o-318.rss"
-      }
-    ]
-  },
-  "pabianice": {
-    "city": "Pabianice",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Pabianice",
-        "credit": "UM Pabianice",
-        "base": "http://www.um.pabianice.pl",
-        "listing": [
-          "https://um.pabianice.pl/artykuly/94/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Pabianice",
-        "credit": "Policja Pabianice",
-        "base": "https://pabianice.policja.gov.pl",
-        "listing": [
-          "https://pabianice.policja.gov.pl/epa/prewencja/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "zory": {
-    "city": "Żory",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Żory",
-        "credit": "UM Żory",
-        "base": "https://www.zory.pl/",
-        "listing": [
-          "https://www.zory.pl/dla-mieszkancow/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Żory",
-        "credit": "Policja Żory",
-        "base": "https://zory.policja.gov.pl",
-        "listing": [
-          "https://zory.policja.gov.pl/k31/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://zory.policja.gov.pl/dokumenty/rss/66-rss-o-350.rss"
-      }
-    ]
-  },
-  "leszno": {
-    "city": "Leszno",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Leszno",
-        "credit": "UM Leszno",
-        "base": "http://www.leszno.pl/",
-        "listing": [
-          "https://www.leszno.pl/Aktualnosci_170.html"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Leszno",
-        "credit": "Policja Leszno",
-        "base": "https://leszno.policja.gov.pl",
-        "listing": [
-          "https://leszno.policja.gov.pl/w13/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "tarnowskie-gory": {
-    "city": "Tarnowskie Góry",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Tarnowskie Góry",
-        "credit": "UM Tarnowskie Góry",
-        "base": "http://www.tarnowskiegory.pl",
-        "listing": [
-          "https://tarnowskiegory.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Tarnowskie Góry",
-        "credit": "Policja Tarnowskie Góry",
-        "base": "https://tarnowskie-gory.policja.gov.pl",
-        "listing": [
-          "https://tarnowskie-gory.policja.gov.pl/k26/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://tarnowskie-gory.policja.gov.pl/dokumenty/rss/61-rss-o-330.rss"
-      }
-    ]
-  },
-  "lomza": {
-    "city": "Łomża",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Łomża",
-        "credit": "UM Łomża",
-        "base": "http://www.lomza.pl/",
-        "listing": [
-          "https://www.lomza.pl/index.php"
-        ],
-        "article_marker": "/index.php/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Łomża",
-        "credit": "Policja Łomża",
-        "base": "https://lomza.policja.gov.pl",
-        "listing": [
-          "https://lomza.policja.gov.pl/po4/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://lomza.policja.gov.pl/dokumenty/rss/119-rss-924.rss"
-      }
-    ]
-  },
-  "elk": {
-    "city": "Ełk",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Ełk",
-        "credit": "UM Ełk",
-        "base": "http://www.elk.pl/",
-        "listing": [
-          "https://www.elk.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Ełk",
-        "credit": "Policja Ełk",
-        "base": "https://elk.policja.gov.pl",
-        "listing": [
-          "https://elk.policja.gov.pl/o05/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://elk.policja.gov.pl/dokumenty/rss/90-rss-1446.rss"
-      }
-    ]
-  },
-  "zamosc": {
-    "city": "Zamość",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Zamość",
-        "credit": "UM Zamość",
-        "base": "http://www.zamosc.pl",
-        "listing": [
-          "https://www.zamosc.pl/news"
-        ],
-        "article_marker": "/news/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Zamość",
-        "credit": "Policja Zamość",
-        "base": "https://zamosc.policja.gov.pl",
-        "listing": [
-          "https://zamosc.policja.gov.pl/lza/informacje/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "chelm": {
-    "city": "Chełm",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Chełm",
-        "credit": "UM Chełm",
-        "base": "https://samorzad.gov.pl/web/miasto-chelm",
-        "listing": [
-          "https://samorzad.gov.pl/web/miasto-chelm/aktualnosci"
-        ],
-        "article_marker": "/miasto-chelm/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Chełm",
-        "credit": "Policja Chełm",
-        "base": "https://chelm.policja.gov.pl",
-        "listing": [
-          "https://chelm.policja.gov.pl/lch/informacje/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "tomaszow-mazowiecki": {
-    "city": "Tomaszów Mazowiecki",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Tomaszów Mazowiecki",
-        "credit": "UM Tomaszów Mazowiecki",
-        "base": "https://tomaszow-maz.pl",
-        "listing": [
-          "https://tomaszow-maz.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Tomaszów Mazowiecki",
-        "credit": "Policja Tomaszów Mazowiecki",
-        "base": "https://tomaszow-mazowiecki.policja.gov.pl",
-        "listing": [
-          "https://tomaszow-mazowiecki.policja.gov.pl/etm/informacje/119982,Policjanci-oraz-Bank-PKO-BP-SA-razem-dla-bezpieczenstwa-finansowego-mieszkancow-.html"
-        ],
-        "article_marker": "/119982,policjanci-oraz-bank-pko-bp-sa-razem-dla-bezpieczenstwa-finansowego-mieszkancow-.html/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "przemysl": {
-    "city": "Przemyśl",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Przemyśl",
-        "credit": "UM Przemyśl",
-        "base": "https://przemysl.pl",
-        "listing": [
-          "https://przemysl.pl/13/aktualnosci.html"
-        ],
-        "article_marker": ".html",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Przemyśl",
-        "credit": "Policja Przemyśl",
-        "base": "https://przemysl.policja.gov.pl",
-        "listing": [
-          "https://przemysl.policja.gov.pl/rpr/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://przemysl.policja.gov.pl/dokumenty/rss/457-rss-o-3050.rss"
-      }
-    ]
-  },
-  "mielec": {
-    "city": "Mielec",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Mielec",
-        "credit": "UM Mielec",
-        "base": "http://www.mielec.pl/",
-        "listing": [
-          "https://www.mielec.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Mielec",
-        "credit": "Policja Mielec",
-        "base": "https://mielec.policja.gov.pl",
-        "listing": [
-          "https://mielec.policja.gov.pl/rmi/informacje/wydarzenia"
-        ],
-        "article_marker": "/wydarzenia/",
-        "content_selector": "main",
-        "rss": "https://mielec.policja.gov.pl/dokumenty/rss/455-rss-o-3040.rss"
-      }
-    ]
-  },
-  "tczew": {
-    "city": "Tczew",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Tczew",
-        "credit": "UM Tczew",
-        "base": "https://wrotatczewa.pl/",
-        "listing": [
-          "https://wrotatczewa.pl/k/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Tczew",
-        "credit": "Policja Tczew",
-        "base": "https://tczew.policja.gov.pl",
-        "listing": [
-          "https://tczew.policja.gov.pl/m15/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "stalowa-wola": {
-    "city": "Stalowa Wola",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Stalowa Wola",
-        "credit": "UM Stalowa Wola",
-        "base": "http://www.stalowawola.pl",
-        "listing": [
-          "https://www.stalowawola.pl/pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Stalowa Wola",
-        "credit": "Policja Stalowa Wola",
-        "base": "https://stalowa-wola.policja.gov.pl",
-        "listing": [
-          "https://stalowa-wola.policja.gov.pl/rst/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://stalowa-wola.policja.gov.pl/dokumenty/rss/460-rss-o-3065.rss"
-      }
-    ]
-  },
-  "kedzierzyn-kozle": {
-    "city": "Kędzierzyn-Koźle",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Kędzierzyn-Koźle",
-        "credit": "UM Kędzierzyn-Koźle",
-        "base": "http://www.kedzierzynkozle.pl",
-        "listing": [
-          "https://kedzierzynkozle.pl/pl/strona/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Kędzierzyn-Koźle",
-        "credit": "Policja Kędzierzyn-Koźle",
-        "base": "https://kedzierzyn-kozle.policja.gov.pl",
-        "listing": [
-          "https://kedzierzyn-kozle.policja.gov.pl/ok/kpp-kedzierzyn-kozle/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "bedzin": {
-    "city": "Będzin",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Będzin",
-        "credit": "UM Będzin",
-        "base": "http://www.bedzin.pl",
-        "listing": [
-          "https://www.bedzin.pl/aktualnosci.xml"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Będzin",
-        "credit": "Policja Będzin",
-        "base": "https://bedzin.policja.gov.pl",
-        "listing": [
-          "https://bedzin.policja.gov.pl/ka1/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://bedzin.policja.gov.pl/dokumenty/rss/36-rss-o-230.rss"
-      }
-    ]
-  },
-  "zgierz": {
-    "city": "Zgierz",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Zgierz",
-        "credit": "UM Zgierz",
-        "base": "https://www.miasto.zgierz.pl/",
-        "listing": [
-          "https://www.miasto.zgierz.pl/pl/vbanner/click/32"
-        ],
-        "article_marker": "/32/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Zgierz",
-        "credit": "Policja Zgierz",
-        "base": "https://zgierz.policja.gov.pl",
-        "listing": [
-          "https://zgierz.policja.gov.pl/ezg/twoj-dzielnicowy/dzielnicowi-aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "swidnica": {
-    "city": "Świdnica",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Świdnica",
-        "credit": "UM Świdnica",
-        "base": "http://www.um.swidnica.pl",
-        "listing": [
-          "https://um.swidnica.pl/pages/pl/aktualnosci.php"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Świdnica",
-        "credit": "Policja Świdnica",
-        "base": "https://swidnica.policja.gov.pl",
-        "listing": [
-          "https://swidnica.policja.gov.pl/dsw/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://swidnica.policja.gov.pl/dokumenty/rss/433-rss-o-2710.rss"
-      }
-    ]
-  },
-  "belchatow": {
-    "city": "Bełchatów",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Bełchatów",
-        "credit": "UM Bełchatów",
-        "base": "http://www.belchatow.pl",
-        "listing": [
-          "https://belchatow.pl/category/news"
-        ],
-        "article_marker": "/news/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Bełchatów",
-        "credit": "Policja Bełchatów",
-        "base": "https://belchatow.policja.gov.pl",
-        "listing": [
-          "https://belchatow.policja.gov.pl/ebe/informacje"
-        ],
-        "article_marker": "/informacje/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "legionowo": {
-    "city": "Legionowo",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Legionowo",
-        "credit": "UM Legionowo",
-        "base": "http://www.legionowo.pl",
-        "listing": [
-          "https://legionowo.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Legionowo",
-        "credit": "Policja Legionowo",
-        "base": "https://legionowo.policja.gov.pl",
-        "listing": [
-          "https://legionowo.policja.gov.pl/ple/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "piekary-slaskie": {
-    "city": "Piekary Śląskie",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Piekary Śląskie",
-        "credit": "UM Piekary Śląskie",
-        "base": "http://www.piekary.pl/",
-        "listing": [
-          "https://piekary.pl/sport/"
-        ],
-        "article_marker": "/sport/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Piekary Śląskie",
-        "credit": "Policja Piekary Śląskie",
-        "base": "https://piekary-slaskie.policja.gov.pl",
-        "listing": [
-          "https://piekary-slaskie.policja.gov.pl/k18/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://piekary-slaskie.policja.gov.pl/dokumenty/rss/53-rss-o-298.rss"
-      }
-    ]
-  },
-  "piaseczno": {
-    "city": "Piaseczno",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Piaseczno",
-        "credit": "UM Piaseczno",
-        "base": "https://www.piaseczno.eu",
-        "listing": [
-          "https://piaseczno.eu/category/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Piaseczno",
-        "credit": "Policja Piaseczno",
-        "base": "https://piaseczno.policja.gov.pl",
-        "listing": [
-          "https://piaseczno.policja.gov.pl/pp1/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "raciborz": {
-    "city": "Racibórz",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Racibórz",
-        "credit": "UM Racibórz",
-        "base": "http://www.raciborz.pl/main/index.html",
-        "listing": [
-          "https://www.raciborz.pl/urban-lab/PorozmawiajMy__spotkania_z_mieszkancami"
-        ],
-        "article_marker": "/porozmawiajmy__spotkania_z_mieszkancami/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Racibórz",
-        "credit": "Policja Racibórz",
-        "base": "https://raciborz.policja.gov.pl",
-        "listing": [
-          "https://raciborz.policja.gov.pl/k20/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://raciborz.policja.gov.pl/dokumenty/rss/55-rss-o-306.rss"
-      }
-    ]
-  },
-  "ostroleka": {
-    "city": "Ostrołęka",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Ostrołęka",
-        "credit": "UM Ostrołęka",
-        "base": "https://www.ostroleka.pl/",
-        "listing": [
-          "https://www.ostroleka.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Ostrołęka",
-        "credit": "Policja Ostrołęka",
-        "base": "https://mazowiecka.policja.gov.pl",
-        "listing": [
-          "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
-      }
-    ]
-  },
-  "zawiercie": {
-    "city": "Zawiercie",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Zawiercie",
-        "credit": "UM Zawiercie",
-        "base": "https://zawiercie.eu",
-        "listing": [
-          "https://zawiercie.eu/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Zawiercie",
-        "credit": "Policja Zawiercie",
-        "base": "https://zawiercie.policja.gov.pl",
-        "listing": [
-          "https://zawiercie.policja.gov.pl/k30/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://zawiercie.policja.gov.pl/dokumenty/rss/65-rss-o-346.rss"
-      }
-    ]
-  },
-  "swietochlowice": {
-    "city": "Świętochłowice",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Świętochłowice",
-        "credit": "UM Świętochłowice",
-        "base": "https://www.swietochlowice.pl/",
-        "listing": [
-          "https://swietochlowice.pl/kategoria/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Świętochłowice",
-        "credit": "Policja Świętochłowice",
-        "base": "https://swietochlowice.policja.gov.pl",
-        "listing": [
-          "https://swietochlowice.policja.gov.pl/k25/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://swietochlowice.policja.gov.pl/dokumenty/rss/60-rss-o-326.rss"
-      }
-    ]
-  },
-  "wejherowo": {
-    "city": "Wejherowo",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Wejherowo",
-        "credit": "UM Wejherowo",
-        "base": "http://www.wejherowo.pl",
-        "listing": [
-          "https://www.wejherowo.pl/artykuly/aktualnosci.html"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Wejherowo",
-        "credit": "Policja Wejherowo",
-        "base": "https://wejherowo.policja.gov.pl",
-        "listing": [
-          "https://wejherowo.policja.gov.pl/m16/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "starachowice": {
-    "city": "Starachowice",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Starachowice",
-        "credit": "UM Starachowice",
-        "base": "https://starachowice.eu/",
-        "listing": [
-          "https://starachowice.eu/pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Starachowice",
-        "credit": "Policja Starachowice",
-        "base": "https://starachowice.policja.gov.pl",
-        "listing": [
-          "https://starachowice.policja.gov.pl/tst/dzialania-policji/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "krosno": {
-    "city": "Krosno",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Krosno",
-        "credit": "UM Krosno",
-        "base": "https://www.krosno.pl/",
-        "listing": [
-          "https://www.krosno.pl/dla-mieszkancow/rozwoj-lokalny/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Krosno",
-        "credit": "Policja Krosno",
-        "base": "https://krosno.policja.gov.pl",
-        "listing": [
-          "https://krosno.policja.gov.pl/rkr/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://krosno.policja.gov.pl/dokumenty/rss/445-rss-o-2987.rss"
-      }
-    ]
-  },
-  "otwock": {
-    "city": "Otwock",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Otwock",
-        "credit": "UM Otwock",
-        "base": "http://www.otwock.pl",
-        "listing": [
-          "https://otwock.pl//category/all/"
-        ],
-        "article_marker": "/all/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Otwock",
-        "credit": "Policja Otwock",
-        "base": "https://otwock.policja.gov.pl",
-        "listing": [
-          "https://otwock.policja.gov.pl/po/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "debica": {
-    "city": "Dębica",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Dębica",
-        "credit": "UM Dębica",
-        "base": "https://debica.pl/",
-        "listing": [
-          "https://debica.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Dębica",
-        "credit": "Policja Dębica",
-        "base": "https://debica.policja.gov.pl",
-        "listing": [
-          "https://debica.policja.gov.pl/de/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://debica.policja.gov.pl/dokumenty/rss/446-rss-o-2993.rss"
-      }
-    ]
-  },
-  "ciechanow": {
-    "city": "Ciechanów",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Ciechanów",
-        "credit": "UM Ciechanów",
-        "base": "https://umciechanow.pl",
-        "listing": [
-          "https://umciechanow.pl/samorzad/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Ciechanów",
-        "credit": "Policja Ciechanów",
-        "base": "https://mazowiecka.policja.gov.pl",
-        "listing": [
-          "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
-      }
-    ]
-  },
-  "minsk-mazowiecki": {
-    "city": "Mińsk Mazowiecki",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Mińsk Mazowiecki",
-        "credit": "UM Mińsk Mazowiecki",
-        "base": "http://www.minsk-maz.pl",
-        "listing": [
-          "https://www.minsk-maz.pl/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Mińsk Mazowiecki",
-        "credit": "Policja Mińsk Mazowiecki",
-        "base": "https://minsk.policja.gov.pl",
-        "listing": [
-          "https://minsk.policja.gov.pl/pmm/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "zyrardow": {
-    "city": "Żyrardów",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Żyrardów",
-        "credit": "UM Żyrardów",
-        "base": "http://www.zyrardow.pl",
-        "listing": [
-          "https://www.zyrardow.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Żyrardów",
-        "credit": "Policja Żyrardów",
-        "base": "https://mazowiecka.policja.gov.pl",
-        "listing": [
-          "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
-      }
-    ]
-  },
-  "boleslawiec": {
-    "city": "Bolesławiec",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Bolesławiec",
-        "credit": "UM Bolesławiec",
-        "base": "https://bolesławiec.pl/miasto/",
-        "listing": [
-          "https://bolesławiec.pl/index.php/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Bolesławiec",
-        "credit": "Policja Bolesławiec",
-        "base": "https://boleslawiec.policja.gov.pl",
-        "listing": [
-          "https://boleslawiec.policja.gov.pl/dbl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://boleslawiec.policja.gov.pl/dokumenty/rss/417-rss-o-2598.rss"
-      }
-    ]
-  },
-  "oswiecim": {
-    "city": "Oświęcim",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Oświęcim",
-        "credit": "UM Oświęcim",
-        "base": "https://oswiecim.pl/",
-        "listing": [
-          "https://oswiecim.pl/dla-turysty/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Oświęcim",
-        "credit": "Policja Oświęcim",
-        "base": "https://oswiecim.policja.gov.pl",
-        "listing": [
-          "https://oswiecim.policja.gov.pl/kos/o-nas/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "chrzanow": {
-    "city": "Chrzanów",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Chrzanów",
-        "credit": "UM Chrzanów",
-        "base": "http://www.chrzanow.pl",
-        "listing": [
-          "https://www.chrzanow.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Chrzanów",
-        "credit": "Policja Chrzanów",
-        "base": "https://chrzanow.policja.gov.pl",
-        "listing": [
-          "https://chrzanow.policja.gov.pl/kch/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "cieszyn": {
-    "city": "Cieszyn",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Cieszyn",
-        "credit": "UM Cieszyn",
-        "base": "https://www.cieszyn.pl",
-        "listing": [
-          "https://www.cieszyn.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Cieszyn",
-        "credit": "Policja Cieszyn",
-        "base": "https://cieszyn.policja.gov.pl",
-        "listing": [
-          "https://cieszyn.policja.gov.pl/ka6/zosta/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://cieszyn.policja.gov.pl/dokumenty/rss/41-rss-o-250.rss"
-      }
-    ]
-  },
-  "jaslo": {
-    "city": "Jasło",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Jasło",
-        "credit": "UM Jasło",
-        "base": "https://um.jaslo.pl/pl/",
-        "listing": [
-          "https://um.jaslo.pl/pl/dotacje-aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Jasło",
-        "credit": "Policja Jasło",
-        "base": "https://jaslo.policja.gov.pl",
-        "listing": [
-          "https://jaslo.policja.gov.pl/rjs/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://jaslo.policja.gov.pl/dokumenty/rss/450-rss-o-3013.rss"
-      }
-    ]
-  },
-  "grodzisk-mazowiecki": {
-    "city": "Grodzisk Mazowiecki",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Grodzisk Mazowiecki",
-        "credit": "UM Grodzisk Mazowiecki",
-        "base": "http://www.grodzisk.pl",
-        "listing": [
-          "https://grodzisk.pl/category/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Grodzisk Mazowiecki",
-        "credit": "Policja Grodzisk Mazowiecki",
-        "base": "https://grodzisk.policja.gov.pl",
-        "listing": [
-          "https://grodzisk.policja.gov.pl/pgm/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "olkusz": {
-    "city": "Olkusz",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Olkusz",
-        "credit": "UM Olkusz",
-        "base": "http://www.umig.olkusz.pl/",
-        "listing": [
-          "https://umig.olkusz.pl/index.php/category/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Olkusz",
-        "credit": "Policja Olkusz",
-        "base": "https://olkusz.policja.gov.pl",
-        "listing": [
-          "https://olkusz.policja.gov.pl/kol/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "nowy-targ": {
-    "city": "Nowy Targ",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Nowy Targ",
-        "credit": "UM Nowy Targ",
-        "base": "https://www.nowytarg.pl/",
-        "listing": [
-          "https://www.nowytarg.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Nowy Targ",
-        "credit": "Policja Nowy Targ",
-        "base": "https://nowy-targ.policja.gov.pl",
-        "listing": [
-          "https://nowy-targ.policja.gov.pl/knt/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "zywiec": {
-    "city": "Żywiec",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Żywiec",
-        "credit": "UM Żywiec",
-        "base": "http://www.zywiec.pl",
-        "listing": [
-          "https://zywiec.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Żywiec",
-        "credit": "Policja Żywiec",
-        "base": "https://zywiec.policja.gov.pl",
-        "listing": [
-          "https://zywiec.policja.gov.pl/k32/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://zywiec.policja.gov.pl/dokumenty/rss/67-rss-o-354.rss"
-      }
-    ]
-  },
-  "augustow": {
-    "city": "Augustów",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Augustów",
-        "credit": "UM Augustów",
-        "base": "http://urzad.augustow.pl",
-        "listing": [
-          "https://urzad.augustow.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Augustów",
-        "credit": "Policja Augustów",
-        "base": "https://augustow.policja.gov.pl",
-        "listing": [
-          "https://augustow.policja.gov.pl/po5/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://augustow.policja.gov.pl/dokumenty/rss/120-rss-692.rss"
-      }
-    ]
-  },
-  "nowy-dwor-mazowiecki": {
-    "city": "Nowy Dwór Mazowiecki",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Nowy Dwór Mazowiecki",
-        "credit": "UM Nowy Dwór Mazowiecki",
-        "base": "http://www.nowydwormaz.pl/",
-        "listing": [
-          "https://www.nowydwormaz.pl/15,wszystkie-aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Nowy Dwór Mazowiecki",
-        "credit": "Policja Nowy Dwór Mazowiecki",
-        "base": "https://mazowiecka.policja.gov.pl",
-        "listing": [
-          "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
-      }
-    ]
-  },
-  "gizycko": {
-    "city": "Giżycko",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Giżycko",
-        "credit": "UM Giżycko",
-        "base": "https://www.gizycko.pl/",
-        "listing": [
-          "https://www.gizycko.pl/aktualnosci-glowna"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Giżycko",
-        "credit": "Policja Giżycko",
-        "base": "https://gizycko.policja.gov.pl",
-        "listing": [
-          "https://gizycko.policja.gov.pl/o06/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://gizycko.policja.gov.pl/dokumenty/rss/91-rss-1470.rss"
-      }
-    ]
-  },
-  "wieliczka": {
-    "city": "Wieliczka",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Wieliczka",
-        "credit": "UM Wieliczka",
-        "base": "http://www.wieliczka.eu/",
-        "listing": [
-          "https://www.wieliczka.eu/pl/201129/0/wiadomosci.html"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Wieliczka",
-        "credit": "Policja Wieliczka",
-        "base": "https://wieliczka.policja.gov.pl",
-        "listing": [
-          "https://wieliczka.policja.gov.pl/kwi/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "zakopane": {
-    "city": "Zakopane",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Zakopane",
-        "credit": "UM Zakopane",
-        "base": "http://www.zakopane.pl/",
-        "listing": [
-          "https://www.zakopane.pl/strefa-miejska/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Zakopane",
-        "credit": "Policja Zakopane",
-        "base": "https://zakopane.policja.gov.pl",
-        "listing": [
-          "https://zakopane.policja.gov.pl/ktt/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "skawina": {
-    "city": "Skawina",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Skawina",
-        "credit": "UM Skawina",
-        "base": "https://gminaskawina.pl",
-        "listing": [
-          "https://gminaskawina.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Skawina",
-        "credit": "Policja Skawina",
-        "base": "https://malopolska.policja.gov.pl",
-        "listing": [
-          "https://malopolska.policja.gov.pl/krk/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://malopolska.policja.gov.pl/dokumenty/rss/386-rss-157.rss"
-      }
-    ]
-  },
-  "lubliniec": {
-    "city": "Lubliniec",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Lubliniec",
-        "credit": "UM Lubliniec",
-        "base": "http://www.lubliniec.pl",
-        "listing": [
-          "http://www.lubliniec.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Lubliniec",
-        "credit": "Policja Lubliniec",
-        "base": "https://lubliniec.policja.gov.pl",
-        "listing": [
-          "https://lubliniec.policja.gov.pl/k13/informacje/wiadomosci"
-        ],
-        "article_marker": "/wiadomosci/",
-        "content_selector": "main",
-        "rss": "https://lubliniec.policja.gov.pl/dokumenty/rss/48-rss-3104.rss"
-      }
-    ]
-  },
-  "sandomierz": {
-    "city": "Sandomierz",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Sandomierz",
-        "credit": "UM Sandomierz",
-        "base": "https://sandomierz.eu/",
-        "listing": [
-          "https://sandomierz.eu/1193/357/wydarzenia.html"
-        ],
-        "article_marker": "/357/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Sandomierz",
-        "credit": "Policja Sandomierz",
-        "base": "https://sandomierz.policja.gov.pl",
-        "listing": [
-          "https://sandomierz.policja.gov.pl/tsa/dzialania-policji/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "wadowice": {
-    "city": "Wadowice",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Wadowice",
-        "credit": "UM Wadowice",
-        "base": "http://www.wadowice.pl/",
-        "listing": [
-          "https://wadowice.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Wadowice",
-        "credit": "Policja Wadowice",
-        "base": "https://wadowice.policja.gov.pl",
-        "listing": [
-          "https://wadowice.policja.gov.pl/kwa/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "niepolomice": {
-    "city": "Niepołomice",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Niepołomice",
-        "credit": "UM Niepołomice",
-        "base": "https://niepolomice.eu",
-        "listing": [
-          "https://niepolomice.eu/wydarzenia"
-        ],
-        "article_marker": "/wydarzenia/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Niepołomice",
-        "credit": "Policja Niepołomice",
-        "base": "https://wieliczka.policja.gov.pl",
-        "listing": [
-          "https://wieliczka.policja.gov.pl/kwi/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "limanowa": {
-    "city": "Limanowa",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Limanowa",
-        "credit": "UM Limanowa",
-        "base": "https://miasto.limanowa.pl",
-        "listing": [
-          "http://miasto.limanowa.pl/aktualnosci-z-miasta"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Limanowa",
-        "credit": "Policja Limanowa",
-        "base": "https://limanowa.policja.gov.pl",
-        "listing": [
-          "https://limanowa.policja.gov.pl/kli/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main"
-      }
-    ]
-  },
-  "krzeszowice": {
-    "city": "Krzeszowice",
-    "sources": [
-      {
-        "type": "municipal_html",
-        "name": "Urząd — Krzeszowice",
-        "credit": "UM Krzeszowice",
-        "base": "http://www.krzeszowice.pl",
-        "listing": [
-          "http://www.krzeszowice.pl/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "http://www.krzeszowice.pl/mod/aktualnosci/rss"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Krzeszowice",
-        "credit": "Policja Krzeszowice",
-        "base": "https://malopolska.policja.gov.pl",
-        "listing": [
-          "https://malopolska.policja.gov.pl/krk/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "main",
-        "rss": "https://malopolska.policja.gov.pl/dokumenty/rss/386-rss-157.rss"
-      }
-    ]
-  }
+ "warszawa": {
+  "city": "Warszawa",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Warszawa",
+    "credit": "UM Warszawa",
+    "base": "https://um.warszawa.pl",
+    "listing": [
+     "https://um.warszawa.pl/aktualnosci-warszawa"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Warszawa",
+    "credit": "Policja Warszawa",
+    "base": "https://ksp.policja.gov.pl",
+    "listing": [
+     "https://ksp.policja.gov.pl/pl/dzialania/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "krakow": {
+  "city": "Kraków",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Kraków",
+    "credit": "UM Kraków",
+    "base": "http://www.krakow.pl/",
+    "listing": [
+     "https://www.krakow.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Kraków",
+    "credit": "Policja Kraków",
+    "base": "https://krakow.policja.gov.pl",
+    "listing": [
+     "https://krakow.policja.gov.pl/kr1/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "wroclaw": {
+  "city": "Wrocław",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Wrocław",
+    "credit": "UM Wrocław",
+    "base": "http://www.wroclaw.pl/",
+    "listing": [
+     "https://www.wroclaw.pl/kultura/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main",
+    "rss": "https://www.wroclaw.pl/dla-mieszkanca/rss/"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Wrocław",
+    "credit": "Policja Wrocław",
+    "base": "https://wroclaw.policja.gov.pl",
+    "listing": [
+     "https://wroclaw.policja.gov.pl/dwr/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://wroclaw.policja.gov.pl/dokumenty/rss/412-rss-o-2567.rss"
+   }
+  ]
+ },
+ "lodz": {
+  "city": "Łódź",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Łódź",
+    "credit": "UM Łódź",
+    "base": "https://lodz.pl",
+    "listing": [
+     "https://lodz.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Łódź",
+    "credit": "Policja Łódź",
+    "base": "https://lodz.policja.gov.pl",
+    "listing": [
+     "https://lodz.policja.gov.pl/eld/komunikaty-1"
+    ],
+    "article_marker": "/komunikaty/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "poznan": {
+  "city": "Poznań",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Poznań",
+    "credit": "UM Poznań",
+    "base": "https://www.poznan.pl/",
+    "listing": [
+     "https://www.poznan.pl/infoteka"
+    ],
+    "article_marker": "/infoteka/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Poznań",
+    "credit": "Policja Poznań",
+    "base": "https://poznan.policja.gov.pl",
+    "listing": [
+     "https://poznan.policja.gov.pl/w21/dzialania-policji/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "gdansk": {
+  "city": "Gdańsk",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Gdańsk",
+    "credit": "UM Gdańsk",
+    "base": "https://www.gdansk.pl/",
+    "listing": [
+     "https://www.gdansk.pl/akcja/link/194956/Wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Gdańsk",
+    "credit": "Policja Gdańsk",
+    "base": "https://gdansk.policja.gov.pl",
+    "listing": [
+     "https://gdansk.policja.gov.pl/pm1/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "szczecin": {
+  "city": "Szczecin",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Szczecin",
+    "credit": "UM Szczecin",
+    "base": "https://www.szczecin.eu/pl",
+    "listing": [
+     "https://sbo.szczecin.eu/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Szczecin",
+    "credit": "Policja Szczecin",
+    "base": "https://szczecin.policja.gov.pl",
+    "listing": [
+     "https://szczecin.policja.gov.pl/szm/dzialania-policji"
+    ],
+    "article_marker": "/dzialania-policji/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "lublin": {
+  "city": "Lublin",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Lublin",
+    "credit": "UM Lublin",
+    "base": "https://lublin.eu",
+    "listing": [
+     "https://lublin.eu/sport/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Lublin",
+    "credit": "Policja Lublin",
+    "base": "https://lublin.policja.gov.pl",
+    "listing": [
+     "https://lublin.policja.gov.pl/llu/informacje/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "bydgoszcz": {
+  "city": "Bydgoszcz",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Bydgoszcz",
+    "credit": "UM Bydgoszcz",
+    "base": "https://www.bydgoszcz.pl",
+    "listing": [
+     "https://www.bydgoszcz.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Bydgoszcz",
+    "credit": "Policja Bydgoszcz",
+    "base": "https://bydgoszcz.policja.gov.pl",
+    "listing": [
+     "https://bydgoszcz.policja.gov.pl/kb1/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://bydgoszcz.policja.gov.pl/dokumenty/rss/137-rss-928.rss"
+   }
+  ]
+ },
+ "bialystok": {
+  "city": "Białystok",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Białystok",
+    "credit": "UM Białystok",
+    "base": "http://www.bialystok.pl",
+    "listing": [
+     "https://www.bialystok.pl/pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Białystok",
+    "credit": "Policja Białystok",
+    "base": "https://bialystok.policja.gov.pl",
+    "listing": [
+     "https://bialystok.policja.gov.pl/po2/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://bialystok.policja.gov.pl/dokumenty/rss/117-rss-1394.rss"
+   }
+  ]
+ },
+ "katowice": {
+  "city": "Katowice",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Katowice",
+    "credit": "UM Katowice",
+    "base": "https://www.katowice.eu/",
+    "listing": [
+     "https://www.katowice.eu/czas-wolny/kultura/aktualności"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Katowice",
+    "credit": "Policja Katowice",
+    "base": "https://katowice.policja.gov.pl",
+    "listing": [
+     "https://katowice.policja.gov.pl/k14/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://katowice.policja.gov.pl/dokumenty/rss/49-rss-o-282.rss"
+   }
+  ]
+ },
+ "gdynia": {
+  "city": "Gdynia",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Gdynia",
+    "credit": "UM Gdynia",
+    "base": "https://www.gdynia.pl/",
+    "listing": [
+     "https://www.gdynia.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Gdynia",
+    "credit": "Policja Gdynia",
+    "base": "https://gdynia.policja.gov.pl",
+    "listing": [
+     "https://gdynia.policja.gov.pl/m17/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "czestochowa": {
+  "city": "Częstochowa",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Częstochowa",
+    "credit": "UM Częstochowa",
+    "base": "https://www.czestochowa.pl/",
+    "listing": [
+     "https://www.czestochowa.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Częstochowa",
+    "credit": "Policja Częstochowa",
+    "base": "https://czestochowa.policja.gov.pl",
+    "listing": [
+     "https://czestochowa.policja.gov.pl/ka7/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://czestochowa.policja.gov.pl/dokumenty/rss/42-rss-2341.rss"
+   }
+  ]
+ },
+ "radom": {
+  "city": "Radom",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Radom",
+    "credit": "UM Radom",
+    "base": "https://www.radom.pl/",
+    "listing": [
+     "https://www.radom.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Radom",
+    "credit": "Policja Radom",
+    "base": "https://mazowiecka.policja.gov.pl",
+    "listing": [
+     "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
+   }
+  ]
+ },
+ "torun": {
+  "city": "Toruń",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Toruń",
+    "credit": "UM Toruń",
+    "base": "https://torun.pl/",
+    "listing": [
+     "https://torun.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Toruń",
+    "credit": "Policja Toruń",
+    "base": "https://torun.policja.gov.pl",
+    "listing": [
+     "https://torun.policja.gov.pl/kb3/prewencja/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://torun.policja.gov.pl/dokumenty/rss/139-rss-1149.rss"
+   }
+  ]
+ },
+ "rzeszow": {
+  "city": "Rzeszów",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Rzeszów",
+    "credit": "UM Rzeszów",
+    "base": "https://www.erzeszow.pl/",
+    "listing": [
+     "https://www.erzeszow.pl/41-miasto-rzeszow/1713-aktualnosci.html"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Rzeszów",
+    "credit": "Policja Rzeszów",
+    "base": "https://rzeszow.policja.gov.pl",
+    "listing": [
+     "https://rzeszow.policja.gov.pl/rz/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://rzeszow.policja.gov.pl/dokumenty/rss/443-rss-o-2956.rss"
+   }
+  ]
+ },
+ "kielce": {
+  "city": "Kielce",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Kielce",
+    "credit": "UM Kielce",
+    "base": "http://www.um.kielce.pl/",
+    "listing": [
+     "http://www.um.kielce.pl/pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Kielce",
+    "credit": "Policja Kielce",
+    "base": "https://kielce.policja.gov.pl",
+    "listing": [
+     "https://kielce.policja.gov.pl/kmp/dzialania-policji/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "sosnowiec": {
+  "city": "Sosnowiec",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Sosnowiec",
+    "credit": "UM Sosnowiec",
+    "base": "http://www.sosnowiec.pl",
+    "listing": [
+     "https://www.sosnowiec.pl/samorzad/samorzad-aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Sosnowiec",
+    "credit": "Policja Sosnowiec",
+    "base": "https://sosnowiec.policja.gov.pl",
+    "listing": [
+     "https://sosnowiec.policja.gov.pl/k24/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://sosnowiec.policja.gov.pl/dokumenty/rss/59-rss-o-322.rss"
+   }
+  ]
+ },
+ "gliwice": {
+  "city": "Gliwice",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Gliwice",
+    "credit": "UM Gliwice",
+    "base": "https://www.gliwice.eu/",
+    "listing": [
+     "https://www.gliwice.eu/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Gliwice",
+    "credit": "Policja Gliwice",
+    "base": "https://gliwice.policja.gov.pl",
+    "listing": [
+     "https://gliwice.policja.gov.pl/ka9/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://gliwice.policja.gov.pl/dokumenty/rss/44-rss-o-262.rss"
+   }
+  ]
+ },
+ "olsztyn": {
+  "city": "Olsztyn",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Olsztyn",
+    "credit": "UM Olsztyn",
+    "base": "https://www.olsztyn.eu/o-olsztynie.html",
+    "listing": [
+     "https://www.olsztyn.eu/o-olsztynie/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Olsztyn",
+    "credit": "Policja Olsztyn",
+    "base": "https://olsztyn.policja.gov.pl",
+    "listing": [
+     "https://olsztyn.policja.gov.pl/o02/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://olsztyn.policja.gov.pl/dokumenty/rss/87-rss-1396.rss"
+   }
+  ]
+ },
+ "bielsko-biala": {
+  "city": "Bielsko-Biała",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Bielsko-Biała",
+    "credit": "UM Bielsko-Biała",
+    "base": "https://bielsko-biala.pl/",
+    "listing": [
+     "https://bielsko-biala.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Bielsko-Biała",
+    "credit": "Policja Bielsko-Biała",
+    "base": "https://bielsko-biala.policja.gov.pl",
+    "listing": [
+     "https://bielsko-biala.policja.gov.pl/ka2/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://bielsko-biala.policja.gov.pl/dokumenty/rss/37-rss-o-234.rss"
+   }
+  ]
+ },
+ "zabrze": {
+  "city": "Zabrze",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Zabrze",
+    "credit": "UM Zabrze",
+    "base": "https://miastozabrze.pl/",
+    "listing": [
+     "https://miastozabrze.pl/2026/06/17/bezpieczne-wakacje-zabrze-2026/"
+    ],
+    "article_marker": "/bezpieczne-wakacje-zabrze-2026/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Zabrze",
+    "credit": "Policja Zabrze",
+    "base": "https://zabrze.policja.gov.pl",
+    "listing": [
+     "https://zabrze.policja.gov.pl/k29/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://zabrze.policja.gov.pl/dokumenty/rss/64-rss-o-342.rss"
+   }
+  ]
+ },
+ "bytom": {
+  "city": "Bytom",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Bytom",
+    "credit": "UM Bytom",
+    "base": "http://www.bytom.pl",
+    "listing": [
+     "https://www.bytom.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Bytom",
+    "credit": "Policja Bytom",
+    "base": "https://bytom.policja.gov.pl",
+    "listing": [
+     "https://bytom.policja.gov.pl/ka4/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://bytom.policja.gov.pl/dokumenty/rss/39-rss-o-242.rss"
+   }
+  ]
+ },
+ "zielona-gora": {
+  "city": "Zielona Góra",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Zielona Góra",
+    "credit": "UM Zielona Góra",
+    "base": "http://www.zielona-gora.pl/",
+    "listing": [
+     "https://www.zielona-gora.pl/wydarzenia"
+    ],
+    "article_marker": "/wydarzenia/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Zielona Góra",
+    "credit": "Policja Zielona Góra",
+    "base": "https://zielona-gora.policja.gov.pl",
+    "listing": [
+     "https://zielona-gora.policja.gov.pl/go2/serwis-informacyjny/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://zielona-gora.policja.gov.pl/dokumenty/rss/157-rss-1285.rss"
+   }
+  ]
+ },
+ "ruda-slaska": {
+  "city": "Ruda Śląska",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Ruda Śląska",
+    "credit": "UM Ruda Śląska",
+    "base": "http://www.rudaslaska.pl/",
+    "listing": [
+     "https://www.rudaslaska.pl/ruda-slaska/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Ruda Śląska",
+    "credit": "Policja Ruda Śląska",
+    "base": "https://ruda-slaska.policja.gov.pl",
+    "listing": [
+     "https://ruda-slaska.policja.gov.pl/k21/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://ruda-slaska.policja.gov.pl/dokumenty/rss/56-rss-o-310.rss"
+   }
+  ]
+ },
+ "rybnik": {
+  "city": "Rybnik",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Rybnik",
+    "credit": "UM Rybnik",
+    "base": "http://www.rybnik.pl/",
+    "listing": [
+     "http://www.rybnik.pl/rewitalizacja/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Rybnik",
+    "credit": "Policja Rybnik",
+    "base": "https://rybnik.policja.gov.pl",
+    "listing": [
+     "https://rybnik.policja.gov.pl/k22/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://rybnik.policja.gov.pl/dokumenty/rss/57-rss-o-314.rss"
+   }
+  ]
+ },
+ "opole": {
+  "city": "Opole",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Opole",
+    "credit": "UM Opole",
+    "base": "http://www.opole.pl",
+    "listing": [
+     "http://www.opole.pl/dla-mieszkanca"
+    ],
+    "article_marker": "/dla-mieszkanca/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Opole",
+    "credit": "Policja Opole",
+    "base": "https://opole.policja.gov.pl",
+    "listing": [
+     "https://opole.policja.gov.pl/opo/kmp-opole/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "gorzow-wielkopolski": {
+  "city": "Gorzów Wielkopolski",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Gorzów Wielkopolski",
+    "credit": "UM Gorzów Wielkopolski",
+    "base": "https://um.gorzow.pl",
+    "listing": [
+     "https://um.gorzow.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Gorzów Wielkopolski",
+    "credit": "Policja Gorzów Wielkopolski",
+    "base": "https://gorzow-wielkopolski.policja.gov.pl",
+    "listing": [
+     "https://gorzow-wielkopolski.policja.gov.pl/go1/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "elblag": {
+  "city": "Elbląg",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Elbląg",
+    "credit": "UM Elbląg",
+    "base": "http://www.umelblag.pl/",
+    "listing": [
+     "http://www.umelblag.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Elbląg",
+    "credit": "Policja Elbląg",
+    "base": "https://elblag.policja.gov.pl",
+    "listing": [
+     "https://elblag.policja.gov.pl/o01/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://elblag.policja.gov.pl/dokumenty/rss/86-rss-1374.rss"
+   }
+  ]
+ },
+ "plock": {
+  "city": "Płock",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Płock",
+    "credit": "UM Płock",
+    "base": "https://nowy.plock.eu",
+    "listing": [
+     "https://nowy.plock.eu/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Płock",
+    "credit": "Policja Płock",
+    "base": "https://mazowiecka.policja.gov.pl",
+    "listing": [
+     "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
+   }
+  ]
+ },
+ "dabrowa-gornicza": {
+  "city": "Dąbrowa Górnicza",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Dąbrowa Górnicza",
+    "credit": "UM Dąbrowa Górnicza",
+    "base": "http://www.dabrowa-gornicza.pl/",
+    "listing": [
+     "https://www.dabrowa-gornicza.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Dąbrowa Górnicza",
+    "credit": "Policja Dąbrowa Górnicza",
+    "base": "https://dabrowa-gornicza.policja.gov.pl",
+    "listing": [
+     "https://dabrowa-gornicza.policja.gov.pl/ka8/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://dabrowa-gornicza.policja.gov.pl/dokumenty/rss/43-rss-o-258.rss"
+   }
+  ]
+ },
+ "koszalin": {
+  "city": "Koszalin",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Koszalin",
+    "credit": "UM Koszalin",
+    "base": "https://www.koszalin.pl/",
+    "listing": [
+     "https://www.koszalin.pl/pl/odpady"
+    ],
+    "article_marker": "/odpady/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Koszalin",
+    "credit": "Policja Koszalin",
+    "base": "https://koszalin.policja.gov.pl",
+    "listing": [
+     "https://koszalin.policja.gov.pl/zk/aktual"
+    ],
+    "article_marker": "/aktual/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "wloclawek": {
+  "city": "Włocławek",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Włocławek",
+    "credit": "UM Włocławek",
+    "base": "http://www.wloclawek.pl",
+    "listing": [
+     "https://www.wloclawek.pl/aktualnosci.xml"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Włocławek",
+    "credit": "Policja Włocławek",
+    "base": "https://wloclawek.policja.gov.pl",
+    "listing": [
+     "https://wloclawek.policja.gov.pl/kb4/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://wloclawek.policja.gov.pl/dokumenty/rss/140-rss-1561.rss"
+   }
+  ]
+ },
+ "walbrzych": {
+  "city": "Wałbrzych",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Wałbrzych",
+    "credit": "UM Wałbrzych",
+    "base": "http://www.um.walbrzych.pl/",
+    "listing": [
+     "http://www.um.walbrzych.pl/pl/aktualnosci-geodezja"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Wałbrzych",
+    "credit": "Policja Wałbrzych",
+    "base": "https://walbrzych.policja.gov.pl",
+    "listing": [
+     "https://walbrzych.policja.gov.pl/dba/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://walbrzych.policja.gov.pl/dokumenty/rss/415-rss-o-2584.rss"
+   }
+  ]
+ },
+ "chorzow": {
+  "city": "Chorzów",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Chorzów",
+    "credit": "UM Chorzów",
+    "base": "https://mieszkancy.chorzow.eu",
+    "listing": [
+     "https://mieszkancy.chorzow.eu/category/komunikaty-urzedowe"
+    ],
+    "article_marker": "/article/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Chorzów",
+    "credit": "Policja Chorzów",
+    "base": "https://chorzow.policja.gov.pl",
+    "listing": [
+     "https://chorzow.policja.gov.pl/ka5/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://chorzow.policja.gov.pl/dokumenty/rss/40-rss-o-246.rss"
+   }
+  ]
+ },
+ "tarnow": {
+  "city": "Tarnów",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Tarnów",
+    "credit": "UM Tarnów",
+    "base": "http://www.tarnow.pl",
+    "listing": [
+     "https://www.tarnow.pl/Dla-mieszkancow/Aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Tarnów",
+    "credit": "Policja Tarnów",
+    "base": "https://tarnow.policja.gov.pl",
+    "listing": [
+     "https://tarnow.policja.gov.pl/kt/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "kalisz": {
+  "city": "Kalisz",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Kalisz",
+    "credit": "UM Kalisz",
+    "base": "http://www.kalisz.pl",
+    "listing": [
+     "http://www.kalisz.pl/dla-mieszkanca/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Kalisz",
+    "credit": "Policja Kalisz",
+    "base": "https://kalisz.policja.gov.pl",
+    "listing": [
+     "https://kalisz.policja.gov.pl/wl7/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "legnica": {
+  "city": "Legnica",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Legnica",
+    "credit": "UM Legnica",
+    "base": "http://www.portal.legnica.eu/",
+    "listing": [
+     "https://portal.legnica.eu/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Legnica",
+    "credit": "Policja Legnica",
+    "base": "https://legnica.policja.gov.pl",
+    "listing": [
+     "https://legnica.policja.gov.pl/dle/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://legnica.policja.gov.pl/dokumenty/rss/414-rss-o-2577.rss"
+   }
+  ]
+ },
+ "grudziadz": {
+  "city": "Grudziądz",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Grudziądz",
+    "credit": "UM Grudziądz",
+    "base": "http://www.grudziadz.pl/",
+    "listing": [
+     "https://grudziadz.pl/artykuly/621/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Grudziądz",
+    "credit": "Policja Grudziądz",
+    "base": "https://grudziadz.policja.gov.pl",
+    "listing": [
+     "https://grudziadz.policja.gov.pl/kb2/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://grudziadz.policja.gov.pl/dokumenty/rss/138-rss-1479.rss"
+   }
+  ]
+ },
+ "jaworzno": {
+  "city": "Jaworzno",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Jaworzno",
+    "credit": "UM Jaworzno",
+    "base": "https://www.jaworzno.pl",
+    "listing": [
+     "https://www.jaworzno.pl/category/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Jaworzno",
+    "credit": "Policja Jaworzno",
+    "base": "https://jaworzno.policja.gov.pl",
+    "listing": [
+     "https://jaworzno.policja.gov.pl/k11/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://jaworzno.policja.gov.pl/dokumenty/rss/46-rss-o-270.rss"
+   }
+  ]
+ },
+ "slupsk": {
+  "city": "Słupsk",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Słupsk",
+    "credit": "UM Słupsk",
+    "base": "http://www.slupsk.pl",
+    "listing": [
+     "https://www.slupsk.pl/ratusz/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Słupsk",
+    "credit": "Policja Słupsk",
+    "base": "https://slupsk.policja.gov.pl",
+    "listing": [
+     "https://slupsk.policja.gov.pl/m19/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://slupsk.policja.gov.pl/dokumenty/rss/385-rss-2772.rss"
+   }
+  ]
+ },
+ "jastrzebie-zdroj": {
+  "city": "Jastrzębie-Zdrój",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Jastrzębie-Zdrój",
+    "credit": "UM Jastrzębie-Zdrój",
+    "base": "https://www.jastrzebie.pl",
+    "listing": [
+     "https://www.jastrzebie.pl/dla-mieszkanca/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Jastrzębie-Zdrój",
+    "credit": "Policja Jastrzębie-Zdrój",
+    "base": "https://jastrzebie-zdroj.policja.gov.pl",
+    "listing": [
+     "https://jastrzebie-zdroj.policja.gov.pl/k10/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://jastrzebie-zdroj.policja.gov.pl/dokumenty/rss/45-rss-o-266.rss"
+   }
+  ]
+ },
+ "nowy-sacz": {
+  "city": "Nowy Sącz",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Nowy Sącz",
+    "credit": "UM Nowy Sącz",
+    "base": "http://www.nowysacz.pl",
+    "listing": [
+     "https://nowysacz.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Nowy Sącz",
+    "credit": "Policja Nowy Sącz",
+    "base": "https://nowy-sacz.policja.gov.pl",
+    "listing": [
+     "https://nowy-sacz.policja.gov.pl/kn/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "jelenia-gora": {
+  "city": "Jelenia Góra",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Jelenia Góra",
+    "credit": "UM Jelenia Góra",
+    "base": "http://www.jeleniagora.pl",
+    "listing": [
+     "https://www.jeleniagora.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Jelenia Góra",
+    "credit": "Policja Jelenia Góra",
+    "base": "https://jelenia-gora.policja.gov.pl",
+    "listing": [
+     "https://jelenia-gora.policja.gov.pl/dje/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://jelenia-gora.policja.gov.pl/dokumenty/rss/416-rss-o-2591.rss"
+   }
+  ]
+ },
+ "siedlce": {
+  "city": "Siedlce",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Siedlce",
+    "credit": "UM Siedlce",
+    "base": "http://www.siedlce.pl/",
+    "listing": [
+     "https://www.siedlce.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Siedlce",
+    "credit": "Policja Siedlce",
+    "base": "https://mazowiecka.policja.gov.pl",
+    "listing": [
+     "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
+   }
+  ]
+ },
+ "myslowice": {
+  "city": "Mysłowice",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Mysłowice",
+    "credit": "UM Mysłowice",
+    "base": "http://www.myslowice.pl",
+    "listing": [
+     "https://www.myslowice.pl/strefa-mieszkanca/gospodarka-odpadami/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Mysłowice",
+    "credit": "Policja Mysłowice",
+    "base": "https://myslowice.policja.gov.pl",
+    "listing": [
+     "https://myslowice.policja.gov.pl/k16/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://myslowice.policja.gov.pl/dokumenty/rss/51-rss-o-290.rss"
+   }
+  ]
+ },
+ "pila": {
+  "city": "Piła",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Piła",
+    "credit": "UM Piła",
+    "base": "https://www.pila.pl/",
+    "listing": [
+     "https://www.pila.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Piła",
+    "credit": "Policja Piła",
+    "base": "https://pila.policja.gov.pl",
+    "listing": [
+     "https://pila.policja.gov.pl/w19/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "ostrow-wielkopolski": {
+  "city": "Ostrów Wielkopolski",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Ostrów Wielkopolski",
+    "credit": "UM Ostrów Wielkopolski",
+    "base": "https://umostrow.pl",
+    "listing": [
+     "https://umostrow.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Ostrów Wielkopolski",
+    "credit": "Policja Ostrów Wielkopolski",
+    "base": "https://ostrow-wielkopolski.policja.gov.pl",
+    "listing": [
+     "https://ostrow-wielkopolski.policja.gov.pl/w17/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "lubin": {
+  "city": "Lubin",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Lubin",
+    "credit": "UM Lubin",
+    "base": "http://www.lubin.pl",
+    "listing": [
+     "http://www.lubin.pl/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Lubin",
+    "credit": "Policja Lubin",
+    "base": "https://lubin.policja.gov.pl",
+    "listing": [
+     "https://lubin.policja.gov.pl/dlu/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://lubin.policja.gov.pl/dokumenty/rss/425-rss-o-2654.rss"
+   }
+  ]
+ },
+ "konin": {
+  "city": "Konin",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Konin",
+    "credit": "UM Konin",
+    "base": "http://www.konin.pl",
+    "listing": [
+     "http://www.konin.pl/archiwum/"
+    ],
+    "article_marker": "/archiwum/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Konin",
+    "credit": "Policja Konin",
+    "base": "https://konin.policja.gov.pl",
+    "listing": [
+     "https://konin.policja.gov.pl/w10/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "inowroclaw": {
+  "city": "Inowrocław",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Inowrocław",
+    "credit": "UM Inowrocław",
+    "base": "http://www.inowroclaw.pl",
+    "listing": [
+     "https://www.inowroclaw.pl/aktualnosc-lista.html"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Inowrocław",
+    "credit": "Policja Inowrocław",
+    "base": "https://inowroclaw.policja.gov.pl",
+    "listing": [
+     "https://inowroclaw.policja.gov.pl/kb9/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://inowroclaw.policja.gov.pl/dokumenty/rss/145-rss-1749.rss"
+   }
+  ]
+ },
+ "suwalki": {
+  "city": "Suwałki",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Suwałki",
+    "credit": "UM Suwałki",
+    "base": "http://www.um.suwalki.pl/",
+    "listing": [
+     "https://um.suwalki.pl/aktualnosci,2577292"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Suwałki",
+    "credit": "Policja Suwałki",
+    "base": "https://suwalki.policja.gov.pl",
+    "listing": [
+     "https://suwalki.policja.gov.pl/po3/informacje/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "piotrkow-trybunalski": {
+  "city": "Piotrków Trybunalski",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Piotrków Trybunalski",
+    "credit": "UM Piotrków Trybunalski",
+    "base": "http://www.piotrkow.pl",
+    "listing": [
+     "https://www.piotrkow.pl/nasze-miasto-t70/aktualnosci-a75"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Piotrków Trybunalski",
+    "credit": "Policja Piotrków Trybunalski",
+    "base": "https://piotrkow-trybunalski.policja.gov.pl",
+    "listing": [
+     "https://piotrkow-trybunalski.policja.gov.pl/ep/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "stargard": {
+  "city": "Stargard",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Stargard",
+    "credit": "UM Stargard",
+    "base": "http://www.stargard.pl",
+    "listing": [
+     "http://www.stargard.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Stargard",
+    "credit": "Policja Stargard",
+    "base": "https://stargard.policja.gov.pl",
+    "listing": [
+     "https://stargard.policja.gov.pl/zst/dzialania-policji"
+    ],
+    "article_marker": "/dzialania-policji/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "gniezno": {
+  "city": "Gniezno",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Gniezno",
+    "credit": "UM Gniezno",
+    "base": "https://gniezno.eu",
+    "listing": [
+     "https://gniezno.eu/aktualnosci-z-miasta"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Gniezno",
+    "credit": "Policja Gniezno",
+    "base": "https://gniezno.policja.gov.pl",
+    "listing": [
+     "https://gniezno.policja.gov.pl/wl3/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "pruszkow": {
+  "city": "Pruszków",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Pruszków",
+    "credit": "UM Pruszków",
+    "base": "http://www.pruszkow.pl/",
+    "listing": [
+     "https://www.pruszkow.pl/aktualnosci-sport"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Pruszków",
+    "credit": "Policja Pruszków",
+    "base": "https://pruszkow.policja.gov.pl",
+    "listing": [
+     "https://pruszkow.policja.gov.pl/ppr/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://pruszkow.policja.gov.pl/dokumenty/rss/176-rss-414.rss"
+   }
+  ]
+ },
+ "ostrowiec-swietokrzyski": {
+  "city": "Ostrowiec Świętokrzyski",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Ostrowiec Świętokrzyski",
+    "credit": "UM Ostrowiec Świętokrzyski",
+    "base": "http://www.um.ostrowiec.pl",
+    "listing": [
+     "https://um.ostrowiec.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Ostrowiec Świętokrzyski",
+    "credit": "Policja Ostrowiec Świętokrzyski",
+    "base": "https://ostrowiec-swietokrzyski.policja.gov.pl",
+    "listing": [
+     "https://ostrowiec-swietokrzyski.policja.gov.pl/tos/dzialania-policji/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "glogow": {
+  "city": "Głogów",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Głogów",
+    "credit": "UM Głogów",
+    "base": "http://www.glogow.pl/",
+    "listing": [
+     "https://www.glogow.pl/miasto"
+    ],
+    "article_marker": "/miasto/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Głogów",
+    "credit": "Policja Głogów",
+    "base": "https://glogow.policja.gov.pl",
+    "listing": [
+     "https://glogow.policja.gov.pl/dgl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://glogow.policja.gov.pl/dokumenty/rss/420-rss-o-2619.rss"
+   }
+  ]
+ },
+ "siemianowice-slaskie": {
+  "city": "Siemianowice Śląskie",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Siemianowice Śląskie",
+    "credit": "UM Siemianowice Śląskie",
+    "base": "https://siemianowice.pl",
+    "listing": [
+     "https://siemianowice.pl"
+    ],
+    "article_marker": "/20",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Siemianowice Śląskie",
+    "credit": "Policja Siemianowice Śląskie",
+    "base": "https://siemianowice-slaskie.policja.gov.pl",
+    "listing": [
+     "https://siemianowice-slaskie.policja.gov.pl/k23/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://siemianowice-slaskie.policja.gov.pl/dokumenty/rss/58-rss-o-318.rss"
+   }
+  ]
+ },
+ "pabianice": {
+  "city": "Pabianice",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Pabianice",
+    "credit": "UM Pabianice",
+    "base": "http://www.um.pabianice.pl",
+    "listing": [
+     "https://um.pabianice.pl/artykuly/94/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Pabianice",
+    "credit": "Policja Pabianice",
+    "base": "https://pabianice.policja.gov.pl",
+    "listing": [
+     "https://pabianice.policja.gov.pl/epa/prewencja/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "zory": {
+  "city": "Żory",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Żory",
+    "credit": "UM Żory",
+    "base": "https://www.zory.pl/",
+    "listing": [
+     "https://www.zory.pl/dla-mieszkancow/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Żory",
+    "credit": "Policja Żory",
+    "base": "https://zory.policja.gov.pl",
+    "listing": [
+     "https://zory.policja.gov.pl/k31/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://zory.policja.gov.pl/dokumenty/rss/66-rss-o-350.rss"
+   }
+  ]
+ },
+ "leszno": {
+  "city": "Leszno",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Leszno",
+    "credit": "UM Leszno",
+    "base": "http://www.leszno.pl/",
+    "listing": [
+     "https://www.leszno.pl/Aktualnosci_170.html"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Leszno",
+    "credit": "Policja Leszno",
+    "base": "https://leszno.policja.gov.pl",
+    "listing": [
+     "https://leszno.policja.gov.pl/w13/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "tarnowskie-gory": {
+  "city": "Tarnowskie Góry",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Tarnowskie Góry",
+    "credit": "UM Tarnowskie Góry",
+    "base": "http://www.tarnowskiegory.pl",
+    "listing": [
+     "https://tarnowskiegory.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Tarnowskie Góry",
+    "credit": "Policja Tarnowskie Góry",
+    "base": "https://tarnowskie-gory.policja.gov.pl",
+    "listing": [
+     "https://tarnowskie-gory.policja.gov.pl/k26/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://tarnowskie-gory.policja.gov.pl/dokumenty/rss/61-rss-o-330.rss"
+   }
+  ]
+ },
+ "lomza": {
+  "city": "Łomża",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Łomża",
+    "credit": "UM Łomża",
+    "base": "http://www.lomza.pl/",
+    "listing": [
+     "https://www.lomza.pl/index.php"
+    ],
+    "article_marker": "/index.php/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Łomża",
+    "credit": "Policja Łomża",
+    "base": "https://lomza.policja.gov.pl",
+    "listing": [
+     "https://lomza.policja.gov.pl/po4/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://lomza.policja.gov.pl/dokumenty/rss/119-rss-924.rss"
+   }
+  ]
+ },
+ "elk": {
+  "city": "Ełk",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Ełk",
+    "credit": "UM Ełk",
+    "base": "http://www.elk.pl/",
+    "listing": [
+     "https://www.elk.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Ełk",
+    "credit": "Policja Ełk",
+    "base": "https://elk.policja.gov.pl",
+    "listing": [
+     "https://elk.policja.gov.pl/o05/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://elk.policja.gov.pl/dokumenty/rss/90-rss-1446.rss"
+   }
+  ]
+ },
+ "zamosc": {
+  "city": "Zamość",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Zamość",
+    "credit": "UM Zamość",
+    "base": "http://www.zamosc.pl",
+    "listing": [
+     "https://www.zamosc.pl/news"
+    ],
+    "article_marker": "/news/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Zamość",
+    "credit": "Policja Zamość",
+    "base": "https://zamosc.policja.gov.pl",
+    "listing": [
+     "https://zamosc.policja.gov.pl/lza/informacje/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "chelm": {
+  "city": "Chełm",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Chełm",
+    "credit": "UM Chełm",
+    "base": "https://samorzad.gov.pl/web/miasto-chelm",
+    "listing": [
+     "https://samorzad.gov.pl/web/miasto-chelm/aktualnosci"
+    ],
+    "article_marker": "/miasto-chelm/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Chełm",
+    "credit": "Policja Chełm",
+    "base": "https://chelm.policja.gov.pl",
+    "listing": [
+     "https://chelm.policja.gov.pl/lch/informacje/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "tomaszow-mazowiecki": {
+  "city": "Tomaszów Mazowiecki",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Tomaszów Mazowiecki",
+    "credit": "UM Tomaszów Mazowiecki",
+    "base": "https://tomaszow-maz.pl",
+    "listing": [
+     "https://tomaszow-maz.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Tomaszów Mazowiecki",
+    "credit": "Policja Tomaszów Mazowiecki",
+    "base": "https://tomaszow-mazowiecki.policja.gov.pl",
+    "listing": [
+     "https://tomaszow-mazowiecki.policja.gov.pl/etm/informacje/119982,Policjanci-oraz-Bank-PKO-BP-SA-razem-dla-bezpieczenstwa-finansowego-mieszkancow-.html"
+    ],
+    "article_marker": "/119982,policjanci-oraz-bank-pko-bp-sa-razem-dla-bezpieczenstwa-finansowego-mieszkancow-.html/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "przemysl": {
+  "city": "Przemyśl",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Przemyśl",
+    "credit": "UM Przemyśl",
+    "base": "https://przemysl.pl",
+    "listing": [
+     "https://przemysl.pl/13/aktualnosci.html"
+    ],
+    "article_marker": ".html",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Przemyśl",
+    "credit": "Policja Przemyśl",
+    "base": "https://przemysl.policja.gov.pl",
+    "listing": [
+     "https://przemysl.policja.gov.pl/rpr/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://przemysl.policja.gov.pl/dokumenty/rss/457-rss-o-3050.rss"
+   }
+  ]
+ },
+ "mielec": {
+  "city": "Mielec",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Mielec",
+    "credit": "UM Mielec",
+    "base": "http://www.mielec.pl/",
+    "listing": [
+     "https://www.mielec.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Mielec",
+    "credit": "Policja Mielec",
+    "base": "https://mielec.policja.gov.pl",
+    "listing": [
+     "https://mielec.policja.gov.pl/rmi/informacje/wydarzenia"
+    ],
+    "article_marker": "/wydarzenia/",
+    "content_selector": "article",
+    "rss": "https://mielec.policja.gov.pl/dokumenty/rss/455-rss-o-3040.rss"
+   }
+  ]
+ },
+ "tczew": {
+  "city": "Tczew",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Tczew",
+    "credit": "UM Tczew",
+    "base": "https://wrotatczewa.pl/",
+    "listing": [
+     "https://wrotatczewa.pl/k/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Tczew",
+    "credit": "Policja Tczew",
+    "base": "https://tczew.policja.gov.pl",
+    "listing": [
+     "https://tczew.policja.gov.pl/m15/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "stalowa-wola": {
+  "city": "Stalowa Wola",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Stalowa Wola",
+    "credit": "UM Stalowa Wola",
+    "base": "http://www.stalowawola.pl",
+    "listing": [
+     "https://www.stalowawola.pl/pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Stalowa Wola",
+    "credit": "Policja Stalowa Wola",
+    "base": "https://stalowa-wola.policja.gov.pl",
+    "listing": [
+     "https://stalowa-wola.policja.gov.pl/rst/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://stalowa-wola.policja.gov.pl/dokumenty/rss/460-rss-o-3065.rss"
+   }
+  ]
+ },
+ "kedzierzyn-kozle": {
+  "city": "Kędzierzyn-Koźle",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Kędzierzyn-Koźle",
+    "credit": "UM Kędzierzyn-Koźle",
+    "base": "http://www.kedzierzynkozle.pl",
+    "listing": [
+     "https://kedzierzynkozle.pl/pl/strona/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Kędzierzyn-Koźle",
+    "credit": "Policja Kędzierzyn-Koźle",
+    "base": "https://kedzierzyn-kozle.policja.gov.pl",
+    "listing": [
+     "https://kedzierzyn-kozle.policja.gov.pl/ok/kpp-kedzierzyn-kozle/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "bedzin": {
+  "city": "Będzin",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Będzin",
+    "credit": "UM Będzin",
+    "base": "http://www.bedzin.pl",
+    "listing": [
+     "https://www.bedzin.pl/aktualnosci.xml"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Będzin",
+    "credit": "Policja Będzin",
+    "base": "https://bedzin.policja.gov.pl",
+    "listing": [
+     "https://bedzin.policja.gov.pl/ka1/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://bedzin.policja.gov.pl/dokumenty/rss/36-rss-o-230.rss"
+   }
+  ]
+ },
+ "zgierz": {
+  "city": "Zgierz",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Zgierz",
+    "credit": "UM Zgierz",
+    "base": "https://www.miasto.zgierz.pl/",
+    "listing": [
+     "https://www.miasto.zgierz.pl/pl/vbanner/click/32"
+    ],
+    "article_marker": "/32/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Zgierz",
+    "credit": "Policja Zgierz",
+    "base": "https://zgierz.policja.gov.pl",
+    "listing": [
+     "https://zgierz.policja.gov.pl/ezg/twoj-dzielnicowy/dzielnicowi-aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "swidnica": {
+  "city": "Świdnica",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Świdnica",
+    "credit": "UM Świdnica",
+    "base": "http://www.um.swidnica.pl",
+    "listing": [
+     "https://um.swidnica.pl/pages/pl/aktualnosci.php"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Świdnica",
+    "credit": "Policja Świdnica",
+    "base": "https://swidnica.policja.gov.pl",
+    "listing": [
+     "https://swidnica.policja.gov.pl/dsw/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://swidnica.policja.gov.pl/dokumenty/rss/433-rss-o-2710.rss"
+   }
+  ]
+ },
+ "belchatow": {
+  "city": "Bełchatów",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Bełchatów",
+    "credit": "UM Bełchatów",
+    "base": "http://www.belchatow.pl",
+    "listing": [
+     "https://belchatow.pl/category/news"
+    ],
+    "article_marker": "/news/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Bełchatów",
+    "credit": "Policja Bełchatów",
+    "base": "https://belchatow.policja.gov.pl",
+    "listing": [
+     "https://belchatow.policja.gov.pl/ebe/informacje"
+    ],
+    "article_marker": "/informacje/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "legionowo": {
+  "city": "Legionowo",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Legionowo",
+    "credit": "UM Legionowo",
+    "base": "http://www.legionowo.pl",
+    "listing": [
+     "https://legionowo.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Legionowo",
+    "credit": "Policja Legionowo",
+    "base": "https://legionowo.policja.gov.pl",
+    "listing": [
+     "https://legionowo.policja.gov.pl/ple/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "piekary-slaskie": {
+  "city": "Piekary Śląskie",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Piekary Śląskie",
+    "credit": "UM Piekary Śląskie",
+    "base": "http://www.piekary.pl/",
+    "listing": [
+     "https://piekary.pl/sport/"
+    ],
+    "article_marker": "/sport/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Piekary Śląskie",
+    "credit": "Policja Piekary Śląskie",
+    "base": "https://piekary-slaskie.policja.gov.pl",
+    "listing": [
+     "https://piekary-slaskie.policja.gov.pl/k18/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://piekary-slaskie.policja.gov.pl/dokumenty/rss/53-rss-o-298.rss"
+   }
+  ]
+ },
+ "piaseczno": {
+  "city": "Piaseczno",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Piaseczno",
+    "credit": "UM Piaseczno",
+    "base": "https://www.piaseczno.eu",
+    "listing": [
+     "https://piaseczno.eu/category/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Piaseczno",
+    "credit": "Policja Piaseczno",
+    "base": "https://piaseczno.policja.gov.pl",
+    "listing": [
+     "https://piaseczno.policja.gov.pl/pp1/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "raciborz": {
+  "city": "Racibórz",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Racibórz",
+    "credit": "UM Racibórz",
+    "base": "http://www.raciborz.pl/main/index.html",
+    "listing": [
+     "https://www.raciborz.pl/urban-lab/PorozmawiajMy__spotkania_z_mieszkancami"
+    ],
+    "article_marker": "/porozmawiajmy__spotkania_z_mieszkancami/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Racibórz",
+    "credit": "Policja Racibórz",
+    "base": "https://raciborz.policja.gov.pl",
+    "listing": [
+     "https://raciborz.policja.gov.pl/k20/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://raciborz.policja.gov.pl/dokumenty/rss/55-rss-o-306.rss"
+   }
+  ]
+ },
+ "ostroleka": {
+  "city": "Ostrołęka",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Ostrołęka",
+    "credit": "UM Ostrołęka",
+    "base": "https://www.ostroleka.pl/",
+    "listing": [
+     "https://www.ostroleka.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Ostrołęka",
+    "credit": "Policja Ostrołęka",
+    "base": "https://mazowiecka.policja.gov.pl",
+    "listing": [
+     "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
+   }
+  ]
+ },
+ "zawiercie": {
+  "city": "Zawiercie",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Zawiercie",
+    "credit": "UM Zawiercie",
+    "base": "https://zawiercie.eu",
+    "listing": [
+     "https://zawiercie.eu/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Zawiercie",
+    "credit": "Policja Zawiercie",
+    "base": "https://zawiercie.policja.gov.pl",
+    "listing": [
+     "https://zawiercie.policja.gov.pl/k30/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://zawiercie.policja.gov.pl/dokumenty/rss/65-rss-o-346.rss"
+   }
+  ]
+ },
+ "swietochlowice": {
+  "city": "Świętochłowice",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Świętochłowice",
+    "credit": "UM Świętochłowice",
+    "base": "https://www.swietochlowice.pl/",
+    "listing": [
+     "https://swietochlowice.pl/kategoria/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Świętochłowice",
+    "credit": "Policja Świętochłowice",
+    "base": "https://swietochlowice.policja.gov.pl",
+    "listing": [
+     "https://swietochlowice.policja.gov.pl/k25/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://swietochlowice.policja.gov.pl/dokumenty/rss/60-rss-o-326.rss"
+   }
+  ]
+ },
+ "wejherowo": {
+  "city": "Wejherowo",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Wejherowo",
+    "credit": "UM Wejherowo",
+    "base": "http://www.wejherowo.pl",
+    "listing": [
+     "https://www.wejherowo.pl/artykuly/aktualnosci.html"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Wejherowo",
+    "credit": "Policja Wejherowo",
+    "base": "https://wejherowo.policja.gov.pl",
+    "listing": [
+     "https://wejherowo.policja.gov.pl/m16/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "starachowice": {
+  "city": "Starachowice",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Starachowice",
+    "credit": "UM Starachowice",
+    "base": "https://starachowice.eu/",
+    "listing": [
+     "https://starachowice.eu/pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Starachowice",
+    "credit": "Policja Starachowice",
+    "base": "https://starachowice.policja.gov.pl",
+    "listing": [
+     "https://starachowice.policja.gov.pl/tst/dzialania-policji/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "krosno": {
+  "city": "Krosno",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Krosno",
+    "credit": "UM Krosno",
+    "base": "https://www.krosno.pl/",
+    "listing": [
+     "https://www.krosno.pl/dla-mieszkancow/rozwoj-lokalny/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Krosno",
+    "credit": "Policja Krosno",
+    "base": "https://krosno.policja.gov.pl",
+    "listing": [
+     "https://krosno.policja.gov.pl/rkr/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://krosno.policja.gov.pl/dokumenty/rss/445-rss-o-2987.rss"
+   }
+  ]
+ },
+ "otwock": {
+  "city": "Otwock",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Otwock",
+    "credit": "UM Otwock",
+    "base": "http://www.otwock.pl",
+    "listing": [
+     "https://otwock.pl//category/all/"
+    ],
+    "article_marker": "/all/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Otwock",
+    "credit": "Policja Otwock",
+    "base": "https://otwock.policja.gov.pl",
+    "listing": [
+     "https://otwock.policja.gov.pl/po/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "debica": {
+  "city": "Dębica",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Dębica",
+    "credit": "UM Dębica",
+    "base": "https://debica.pl/",
+    "listing": [
+     "https://debica.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Dębica",
+    "credit": "Policja Dębica",
+    "base": "https://debica.policja.gov.pl",
+    "listing": [
+     "https://debica.policja.gov.pl/de/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://debica.policja.gov.pl/dokumenty/rss/446-rss-o-2993.rss"
+   }
+  ]
+ },
+ "ciechanow": {
+  "city": "Ciechanów",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Ciechanów",
+    "credit": "UM Ciechanów",
+    "base": "https://umciechanow.pl",
+    "listing": [
+     "https://umciechanow.pl/samorzad/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Ciechanów",
+    "credit": "Policja Ciechanów",
+    "base": "https://mazowiecka.policja.gov.pl",
+    "listing": [
+     "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
+   }
+  ]
+ },
+ "minsk-mazowiecki": {
+  "city": "Mińsk Mazowiecki",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Mińsk Mazowiecki",
+    "credit": "UM Mińsk Mazowiecki",
+    "base": "http://www.minsk-maz.pl",
+    "listing": [
+     "https://www.minsk-maz.pl/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Mińsk Mazowiecki",
+    "credit": "Policja Mińsk Mazowiecki",
+    "base": "https://minsk.policja.gov.pl",
+    "listing": [
+     "https://minsk.policja.gov.pl/pmm/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "zyrardow": {
+  "city": "Żyrardów",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Żyrardów",
+    "credit": "UM Żyrardów",
+    "base": "http://www.zyrardow.pl",
+    "listing": [
+     "https://www.zyrardow.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Żyrardów",
+    "credit": "Policja Żyrardów",
+    "base": "https://mazowiecka.policja.gov.pl",
+    "listing": [
+     "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
+   }
+  ]
+ },
+ "boleslawiec": {
+  "city": "Bolesławiec",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Bolesławiec",
+    "credit": "UM Bolesławiec",
+    "base": "https://bolesławiec.pl/miasto/",
+    "listing": [
+     "https://bolesławiec.pl/index.php/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Bolesławiec",
+    "credit": "Policja Bolesławiec",
+    "base": "https://boleslawiec.policja.gov.pl",
+    "listing": [
+     "https://boleslawiec.policja.gov.pl/dbl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://boleslawiec.policja.gov.pl/dokumenty/rss/417-rss-o-2598.rss"
+   }
+  ]
+ },
+ "oswiecim": {
+  "city": "Oświęcim",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Oświęcim",
+    "credit": "UM Oświęcim",
+    "base": "https://oswiecim.pl/",
+    "listing": [
+     "https://oswiecim.pl/dla-turysty/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Oświęcim",
+    "credit": "Policja Oświęcim",
+    "base": "https://oswiecim.policja.gov.pl",
+    "listing": [
+     "https://oswiecim.policja.gov.pl/kos/o-nas/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "chrzanow": {
+  "city": "Chrzanów",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Chrzanów",
+    "credit": "UM Chrzanów",
+    "base": "http://www.chrzanow.pl",
+    "listing": [
+     "https://www.chrzanow.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Chrzanów",
+    "credit": "Policja Chrzanów",
+    "base": "https://chrzanow.policja.gov.pl",
+    "listing": [
+     "https://chrzanow.policja.gov.pl/kch/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "cieszyn": {
+  "city": "Cieszyn",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Cieszyn",
+    "credit": "UM Cieszyn",
+    "base": "https://www.cieszyn.pl",
+    "listing": [
+     "https://www.cieszyn.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Cieszyn",
+    "credit": "Policja Cieszyn",
+    "base": "https://cieszyn.policja.gov.pl",
+    "listing": [
+     "https://cieszyn.policja.gov.pl/ka6/zosta/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://cieszyn.policja.gov.pl/dokumenty/rss/41-rss-o-250.rss"
+   }
+  ]
+ },
+ "jaslo": {
+  "city": "Jasło",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Jasło",
+    "credit": "UM Jasło",
+    "base": "https://um.jaslo.pl/pl/",
+    "listing": [
+     "https://um.jaslo.pl/pl/dotacje-aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Jasło",
+    "credit": "Policja Jasło",
+    "base": "https://jaslo.policja.gov.pl",
+    "listing": [
+     "https://jaslo.policja.gov.pl/rjs/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://jaslo.policja.gov.pl/dokumenty/rss/450-rss-o-3013.rss"
+   }
+  ]
+ },
+ "grodzisk-mazowiecki": {
+  "city": "Grodzisk Mazowiecki",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Grodzisk Mazowiecki",
+    "credit": "UM Grodzisk Mazowiecki",
+    "base": "http://www.grodzisk.pl",
+    "listing": [
+     "https://grodzisk.pl/category/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Grodzisk Mazowiecki",
+    "credit": "Policja Grodzisk Mazowiecki",
+    "base": "https://grodzisk.policja.gov.pl",
+    "listing": [
+     "https://grodzisk.policja.gov.pl/pgm/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "olkusz": {
+  "city": "Olkusz",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Olkusz",
+    "credit": "UM Olkusz",
+    "base": "http://www.umig.olkusz.pl/",
+    "listing": [
+     "https://umig.olkusz.pl/index.php/category/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Olkusz",
+    "credit": "Policja Olkusz",
+    "base": "https://olkusz.policja.gov.pl",
+    "listing": [
+     "https://olkusz.policja.gov.pl/kol/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "nowy-targ": {
+  "city": "Nowy Targ",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Nowy Targ",
+    "credit": "UM Nowy Targ",
+    "base": "https://www.nowytarg.pl/",
+    "listing": [
+     "https://www.nowytarg.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Nowy Targ",
+    "credit": "Policja Nowy Targ",
+    "base": "https://nowy-targ.policja.gov.pl",
+    "listing": [
+     "https://nowy-targ.policja.gov.pl/knt/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "zywiec": {
+  "city": "Żywiec",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Żywiec",
+    "credit": "UM Żywiec",
+    "base": "http://www.zywiec.pl",
+    "listing": [
+     "https://zywiec.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Żywiec",
+    "credit": "Policja Żywiec",
+    "base": "https://zywiec.policja.gov.pl",
+    "listing": [
+     "https://zywiec.policja.gov.pl/k32/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://zywiec.policja.gov.pl/dokumenty/rss/67-rss-o-354.rss"
+   }
+  ]
+ },
+ "augustow": {
+  "city": "Augustów",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Augustów",
+    "credit": "UM Augustów",
+    "base": "http://urzad.augustow.pl",
+    "listing": [
+     "https://urzad.augustow.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Augustów",
+    "credit": "Policja Augustów",
+    "base": "https://augustow.policja.gov.pl",
+    "listing": [
+     "https://augustow.policja.gov.pl/po5/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://augustow.policja.gov.pl/dokumenty/rss/120-rss-692.rss"
+   }
+  ]
+ },
+ "nowy-dwor-mazowiecki": {
+  "city": "Nowy Dwór Mazowiecki",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Nowy Dwór Mazowiecki",
+    "credit": "UM Nowy Dwór Mazowiecki",
+    "base": "http://www.nowydwormaz.pl/",
+    "listing": [
+     "https://www.nowydwormaz.pl/15,wszystkie-aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Nowy Dwór Mazowiecki",
+    "credit": "Policja Nowy Dwór Mazowiecki",
+    "base": "https://mazowiecka.policja.gov.pl",
+    "listing": [
+     "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
+   }
+  ]
+ },
+ "gizycko": {
+  "city": "Giżycko",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Giżycko",
+    "credit": "UM Giżycko",
+    "base": "https://www.gizycko.pl/",
+    "listing": [
+     "https://www.gizycko.pl/aktualnosci-glowna"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Giżycko",
+    "credit": "Policja Giżycko",
+    "base": "https://gizycko.policja.gov.pl",
+    "listing": [
+     "https://gizycko.policja.gov.pl/o06/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://gizycko.policja.gov.pl/dokumenty/rss/91-rss-1470.rss"
+   }
+  ]
+ },
+ "wieliczka": {
+  "city": "Wieliczka",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Wieliczka",
+    "credit": "UM Wieliczka",
+    "base": "http://www.wieliczka.eu/",
+    "listing": [
+     "https://www.wieliczka.eu/pl/201129/0/wiadomosci.html"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Wieliczka",
+    "credit": "Policja Wieliczka",
+    "base": "https://wieliczka.policja.gov.pl",
+    "listing": [
+     "https://wieliczka.policja.gov.pl/kwi/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "zakopane": {
+  "city": "Zakopane",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Zakopane",
+    "credit": "UM Zakopane",
+    "base": "http://www.zakopane.pl/",
+    "listing": [
+     "https://www.zakopane.pl/strefa-miejska/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Zakopane",
+    "credit": "Policja Zakopane",
+    "base": "https://zakopane.policja.gov.pl",
+    "listing": [
+     "https://zakopane.policja.gov.pl/ktt/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "skawina": {
+  "city": "Skawina",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Skawina",
+    "credit": "UM Skawina",
+    "base": "https://gminaskawina.pl",
+    "listing": [
+     "https://gminaskawina.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Skawina",
+    "credit": "Policja Skawina",
+    "base": "https://malopolska.policja.gov.pl",
+    "listing": [
+     "https://malopolska.policja.gov.pl/krk/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://malopolska.policja.gov.pl/dokumenty/rss/386-rss-157.rss"
+   }
+  ]
+ },
+ "lubliniec": {
+  "city": "Lubliniec",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Lubliniec",
+    "credit": "UM Lubliniec",
+    "base": "http://www.lubliniec.pl",
+    "listing": [
+     "http://www.lubliniec.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Lubliniec",
+    "credit": "Policja Lubliniec",
+    "base": "https://lubliniec.policja.gov.pl",
+    "listing": [
+     "https://lubliniec.policja.gov.pl/k13/informacje/wiadomosci"
+    ],
+    "article_marker": "/wiadomosci/",
+    "content_selector": "article",
+    "rss": "https://lubliniec.policja.gov.pl/dokumenty/rss/48-rss-3104.rss"
+   }
+  ]
+ },
+ "sandomierz": {
+  "city": "Sandomierz",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Sandomierz",
+    "credit": "UM Sandomierz",
+    "base": "https://sandomierz.eu/",
+    "listing": [
+     "https://sandomierz.eu/1193/357/wydarzenia.html"
+    ],
+    "article_marker": "/357/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Sandomierz",
+    "credit": "Policja Sandomierz",
+    "base": "https://sandomierz.policja.gov.pl",
+    "listing": [
+     "https://sandomierz.policja.gov.pl/tsa/dzialania-policji/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "wadowice": {
+  "city": "Wadowice",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Wadowice",
+    "credit": "UM Wadowice",
+    "base": "http://www.wadowice.pl/",
+    "listing": [
+     "https://wadowice.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Wadowice",
+    "credit": "Policja Wadowice",
+    "base": "https://wadowice.policja.gov.pl",
+    "listing": [
+     "https://wadowice.policja.gov.pl/kwa/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "niepolomice": {
+  "city": "Niepołomice",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Niepołomice",
+    "credit": "UM Niepołomice",
+    "base": "https://niepolomice.eu",
+    "listing": [
+     "https://niepolomice.eu/wydarzenia"
+    ],
+    "article_marker": "/wydarzenia/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Niepołomice",
+    "credit": "Policja Niepołomice",
+    "base": "https://wieliczka.policja.gov.pl",
+    "listing": [
+     "https://wieliczka.policja.gov.pl/kwi/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "limanowa": {
+  "city": "Limanowa",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Limanowa",
+    "credit": "UM Limanowa",
+    "base": "https://miasto.limanowa.pl",
+    "listing": [
+     "http://miasto.limanowa.pl/aktualnosci-z-miasta"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Limanowa",
+    "credit": "Policja Limanowa",
+    "base": "https://limanowa.policja.gov.pl",
+    "listing": [
+     "https://limanowa.policja.gov.pl/kli/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article"
+   }
+  ]
+ },
+ "krzeszowice": {
+  "city": "Krzeszowice",
+  "sources": [
+   {
+    "type": "municipal_html",
+    "name": "Urząd — Krzeszowice",
+    "credit": "UM Krzeszowice",
+    "base": "http://www.krzeszowice.pl",
+    "listing": [
+     "http://www.krzeszowice.pl/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "main",
+    "rss": "http://www.krzeszowice.pl/mod/aktualnosci/rss"
+   },
+   {
+    "type": "municipal_html",
+    "name": "Policja — Krzeszowice",
+    "credit": "Policja Krzeszowice",
+    "base": "https://malopolska.policja.gov.pl",
+    "listing": [
+     "https://malopolska.policja.gov.pl/krk/aktualnosci"
+    ],
+    "article_marker": "/aktualnosci/",
+    "content_selector": "article",
+    "rss": "https://malopolska.policja.gov.pl/dokumenty/rss/386-rss-157.rss"
+   }
+  ]
+ }
 }

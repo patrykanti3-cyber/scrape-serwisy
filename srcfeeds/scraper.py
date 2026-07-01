@@ -26,6 +26,12 @@ ROOT = Path(__file__).resolve().parent
 DATA_RAW = ROOT.parent / "data" / "raw"
 DATA_RAW.mkdir(parents=True, exist_ok=True)
 UA = "Mozilla/5.0 (compatible; srcfeeds/1.0; +local research)"
+DATA_EVENTS = ROOT.parent / "data" / "raw" / "events"
+DATA_EVENTS.mkdir(parents=True, exist_ok=True)
+
+# Categories a dedicated section listing may assert deterministically. "wiadomosci"
+# and "na-sygnale" are NOT here: general news is left to the LLM, police is fixed.
+CATEGORY_HINTS = {"sport", "kultura", "biznes", "ogloszenia"}
 
 
 # --------------------------------------------------------------------------- model
@@ -42,12 +48,30 @@ class NewsItem:
     body: str = ""
     image_url: str = ""
     published: str = ""         # ISO 8601 if known
+    category_hint: str = ""     # deterministic category from a dedicated section listing
+                                # (sport|kultura|biznes|ogloszenia); "" => LLM classifies
     scraped_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
     def attribution(self) -> str:
         return (f"na podstawie: {self.source_credit}.\n"
                 f"Ilustracja wykorzystana w artykule została pobrana z zewnętrznego źródła "
                 f"({self.source_credit}).")
+
+
+@dataclass
+class EventItem:
+    """A scraped event listing entry — facts are extracted later (rewrite_events.py)
+    by the LLM into Strapi Event fields (startsAt/endsAt/location)."""
+    id: str
+    city: str
+    source_name: str
+    source_credit: str
+    source_url: str
+    title: str
+    body: str = ""              # raw text the LLM mines for date/time/location
+    image_url: str = ""
+    published: str = ""
+    scraped_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
 
 def mk_id(url: str) -> str:
@@ -206,6 +230,11 @@ async def scrape_municipal(crawler, run, city: str, src: dict, limit: int) -> li
     # police sites are scraped as HTML too, but must map to the na-sygnale
     # category — tag by source, not by adapter.
     stype = "police" if ("policja.gov.pl" in base or src["name"].lower().startswith("policja")) else "municipal"
+    # A dedicated section listing (e.g. .../sport) carries a deterministic
+    # category; otherwise leave it empty so the LLM classifies by topic.
+    cat_hint = (src.get("category") or "").strip().lower()
+    if cat_hint not in CATEGORY_HINTS:
+        cat_hint = ""
     for r in results:
         if not r.success:
             continue
@@ -224,22 +253,79 @@ async def scrape_municipal(crawler, run, city: str, src: dict, limit: int) -> li
             id=mk_id(r.url), city=city, source_type=stype,
             source_name=src["name"], source_credit=src.get("credit", src["name"]),
             source_url=r.url, title=title, lead=lead, body=body,
-            image_url=image, published=meta_date(r.html) or find_date_iso(body)))
+            image_url=image, published=meta_date(r.html) or find_date_iso(body),
+            category_hint="" if stype == "police" else cat_hint))
+    return out
+
+
+async def scrape_events(crawler, run, city: str, src: dict, limit: int) -> list[EventItem]:
+    """Harvest event listing entries. Same link-gathering as municipal, but the
+    body is kept raw — rewrite_events.py mines date/time/location via the LLM."""
+    base = src["base"]
+    marker = src.get("article_marker", "/wydarzenia/")
+    sel = src.get("content_selector", "main")
+    art_urls: list[str] = []
+    seen = set()
+    listres = await crawler.arun_many(src["listing"], config=run)
+    for r in listres:
+        if not r.success:
+            print(f"  ! events listing fail {r.url}: {r.error_message}")
+            continue
+        for l in (r.links.get("internal", []) if r.links else []):
+            h = l.get("href") if isinstance(l, dict) else l
+            if not h:
+                continue
+            full = urljoin(r.url, h)
+            p = urlparse(full)
+            if p.netloc.replace("www.", "") != urlparse(base).netloc.replace("www.", ""):
+                continue
+            path = p.path
+            if marker in path and path.rstrip("/").split("/")[-1].count("-") >= 2 and full not in seen:
+                seen.add(full)
+                art_urls.append(full)
+    art_urls = art_urls[:limit]
+    print(f"  [events] {src['name']}: {len(art_urls)} event links")
+    out: list[EventItem] = []
+    if not art_urls:
+        return out
+    results = await crawler.arun_many(art_urls, config=run.clone(target_elements=[sel]))
+    for r in results:
+        if not r.success:
+            continue
+        md = md_of(r)
+        title, _lead, body = clean_municipal_body(
+            md, end_markers=src.get("end_markers"), noise_patterns=src.get("noise_patterns"))
+        if not title:
+            title = clean((r.metadata or {}).get("title", ""))
+        image = og_image(r.html)
+        if not image:
+            try:
+                image = og_image(http_get(r.url).decode("utf-8", "replace"))
+            except Exception:
+                pass
+        out.append(EventItem(
+            id=mk_id(r.url), city=city,
+            source_name=src["name"], source_credit=src.get("credit", src["name"]),
+            source_url=r.url, title=title, body=body, image_url=image,
+            published=meta_date(r.html) or find_date_iso(body)))
     return out
 
 
 # --------------------------------------------------------------------------- pipeline
-async def scrape_city(city_slug: str, cfg: dict, limit: int) -> list[NewsItem]:
+async def scrape_city(city_slug: str, cfg: dict, limit: int) -> tuple[list[NewsItem], list[EventItem]]:
     browser = BrowserConfig(headless=True, verbose=False)
     run = CrawlerRunConfig(cache_mode=CacheMode.BYPASS, page_timeout=45000,
                            wait_until="domcontentloaded", verbose=False)
     items: list[NewsItem] = []
+    events: list[EventItem] = []
     async with AsyncWebCrawler(config=browser) as crawler:
         for src in cfg["sources"]:
             print(f"--- {city_slug} :: {src['type']} :: {src['name']}")
             try:
                 if src["type"] == "police_rss":
                     items += await scrape_police(crawler, run, cfg["city"], src, limit)
+                elif src["type"] == "events_html":
+                    events += await scrape_events(crawler, run, cfg["city"], src, limit)
                 elif src["type"] == "municipal_html":
                     items += await scrape_municipal(crawler, run, cfg["city"], src, limit)
                 else:
@@ -256,7 +342,15 @@ async def scrape_city(city_slug: str, cfg: dict, limit: int) -> list[NewsItem]:
         else:
             kept.append(it)
     items = kept
-    return items
+    # events: keep anything with a title; date/location are mined downstream
+    events = [e for e in events if e.title and len(e.body) >= 40]
+    return items, events
+
+
+def _write_jsonl(path: Path, rows: list) -> None:
+    with open(path, "w", encoding="utf-8") as f:
+        for it in rows:
+            f.write(json.dumps(asdict(it), ensure_ascii=False) + "\n")
 
 
 async def main():
@@ -266,15 +360,17 @@ async def main():
     for slug in cities:
         if slug not in registry:
             print(f"skip unknown city {slug}"); continue
-        items = await scrape_city(slug, registry[slug], limit)
+        items, events = await scrape_city(slug, registry[slug], limit)
         path = DATA_RAW / f"{slug}.jsonl"
-        if not items:
+        if items:
+            _write_jsonl(path, items)
+            print(f"==> {slug}: {len(items)} items -> {path}")
+        else:
             print(f"==> {slug}: 0 items — keeping existing {path} (not overwriting)")
-            continue
-        with open(path, "w", encoding="utf-8") as f:
-            for it in items:
-                f.write(json.dumps(asdict(it), ensure_ascii=False) + "\n")
-        print(f"==> {slug}: {len(items)} items -> {path}")
+        epath = DATA_EVENTS / f"{slug}.jsonl"
+        if events:
+            _write_jsonl(epath, events)
+            print(f"==> {slug}: {len(events)} events -> {epath}")
 
 if __name__ == "__main__":
     asyncio.run(main())

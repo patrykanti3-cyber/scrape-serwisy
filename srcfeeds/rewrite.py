@@ -37,9 +37,15 @@ Struktura treści (pole "body", Markdown):
   w źródle — NIE twórz cytatów, których tam nie ma.
 
 Zwróć WYŁĄCZNIE obiekt JSON o polach:
-  "title" – rzeczowy tytuł (max 120 znaków),
-  "lead"  – 1–2 zdania wprowadzenia,
-  "body"  – treść artykułu wg struktury powyżej.
+  "title"    – rzeczowy tytuł (max 120 znaków),
+  "lead"     – 1–2 zdania wprowadzenia,
+  "body"     – treść artykułu wg struktury powyżej,
+  "category" – jedna z: "wiadomosci", "sport", "kultura", "biznes", "ogloszenia".
+               Dobierz wg tematu: sport (zawody, kluby, rozgrywki), kultura
+               (wydarzenia kulturalne, sztuka, biblioteka, muzeum), biznes
+               (gospodarka, firmy, inwestycje, fundusze), ogloszenia (nabory,
+               konsultacje, komunikaty urzędowe, oferty). Gdy nie pasuje
+               jednoznacznie — "wiadomosci".
 
 MATERIAŁ ŹRÓDŁOWY (źródło: {source}):
 Tytuł: {title}
@@ -112,14 +118,28 @@ def main():
                            f"Ilustracja wykorzystana w artykule została pobrana z zewnętrznego "
                            f"źródła ({credit}). W przypadku zastrzeżeń dotyczących "
                            f"praw do zdjęcia prosimy o kontakt.")
+            # Category precedence: police is fixed (na-sygnale); a deterministic
+            # section hint from the scraper wins next; otherwise trust the LLM's
+            # topic classification, validated against the allowed enum.
+            stype = r.get("source_type", "municipal")
+            ALLOWED = ("wiadomosci", "sport", "kultura", "biznes", "ogloszenia")
+            hint = (r.get("category_hint") or "").strip().lower()
+            if stype == "police":
+                category = "na-sygnale"
+            elif hint in ALLOWED:
+                category = hint
+            else:
+                c = (art.get("category") or "").strip()
+                category = c if c in ALLOWED else "wiadomosci"
             rec = {
                 "id": r.get("id", ""), "city": r.get("city", ""),
                 "title": art.get("title", "").strip(),
                 "lead": art.get("lead", "").strip(),
                 "body": art.get("body", "").strip(),
+                "category": category,
                 "image_url": r.get("image_url", ""),
                 "published": r.get("published", ""),
-                "source_type": r.get("source_type", "municipal"),
+                "source_type": stype,
                 "source_name": r.get("source_name", ""),
                 "source_url": r.get("source_url", ""),
                 "attribution": attribution,

@@ -9,7 +9,7 @@ Pipeline:  sources.json --> [police_rss | municipal_html] --> NewsItem --> data/
 Next stage: rewrite.py feeds NewsItem.body into Ollama to produce a fresh article.
 """
 from __future__ import annotations
-import asyncio, json, re, sys, hashlib, time, urllib.request, urllib.error
+import asyncio, json, re, sys, hashlib, ssl, time, urllib.request, urllib.error
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, asdict, field
 from datetime import datetime, timezone
@@ -79,21 +79,26 @@ def mk_id(url: str) -> str:
 
 
 # --------------------------------------------------------------------------- RSS
+_SSL_CTX = ssl.create_default_context()
+_SSL_CTX.check_hostname = False
+_SSL_CTX.verify_mode = ssl.CERT_NONE
+
+
 def http_get(url: str, timeout: int = 25, attempts: int = 3) -> bytes:
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     last = None
     for i in range(attempts):
         try:
-            with urllib.request.urlopen(req, timeout=timeout) as r:
+            with urllib.request.urlopen(req, timeout=timeout, context=_SSL_CTX) as r:
                 return r.read()
         except urllib.error.HTTPError as e:
             last = e
-            if e.code < 500:           # 4xx won't change on retry
+            if e.code < 500:
                 raise
         except (urllib.error.URLError, TimeoutError, OSError) as e:
             last = e
         if i < attempts - 1:
-            time.sleep(2 ** i)          # 1s, 2s backoff
+            time.sleep(2 ** i)
     raise last
 
 
@@ -190,6 +195,47 @@ async def scrape_police(crawler, run, city: str, src: dict, limit: int) -> list[
                 lead = l2
         out.append(NewsItem(
             id=mk_id(it["link"]), city=city, source_type="police",
+            source_name=src["name"], source_credit=src.get("credit", src["name"]),
+            source_url=it["link"], title=clean(it["title"]),
+            lead=clean(lead), body=clean(body), image_url=image,
+            published=it["published"]))
+    return out
+
+
+async def scrape_municipal_rss(crawler, run, city: str, src: dict, limit: int) -> list[NewsItem]:
+    feed = src.get("feed") or discover_police_feed(src["base"])
+    if not feed:
+        print(f"  ! no RSS feed for {src['name']}")
+        return []
+    print(f"  [municipal_rss] feed: {feed}")
+    items = parse_rss(http_get(feed))[:limit]
+    urls = [it["link"] for it in items if it["link"]]
+    sel = src.get("content_selector", "main")
+    out: list[NewsItem] = []
+    results = await crawler.arun_many(
+        urls, config=run.clone(target_elements=[sel]))
+    by_url = {r.url: r for r in results}
+    for it in items:
+        r = by_url.get(it["link"])
+        image, lead, body = "", it["description"], it["description"]
+        if r and r.success:
+            image = og_image(r.html)
+            if not image:
+                try:
+                    image = og_image(http_get(it["link"]).decode("utf-8", "replace"))
+                except Exception:
+                    pass
+            title2, l2, b2 = clean_municipal_body(
+                md_of(r), end_markers=src.get("end_markers"),
+                noise_patterns=src.get("noise_patterns"))
+            if b2 and len(b2) > len(clean(body)):
+                body = b2
+            if l2:
+                lead = l2
+            if not it["title"] and title2:
+                it["title"] = title2
+        out.append(NewsItem(
+            id=mk_id(it["link"]), city=city, source_type="municipal",
             source_name=src["name"], source_credit=src.get("credit", src["name"]),
             source_url=it["link"], title=clean(it["title"]),
             lead=clean(lead), body=clean(body), image_url=image,
@@ -324,6 +370,8 @@ async def scrape_city(city_slug: str, cfg: dict, limit: int) -> tuple[list[NewsI
             try:
                 if src["type"] == "police_rss":
                     items += await scrape_police(crawler, run, cfg["city"], src, limit)
+                elif src["type"] == "municipal_rss":
+                    items += await scrape_municipal_rss(crawler, run, cfg["city"], src, limit)
                 elif src["type"] == "events_html":
                     events += await scrape_events(crawler, run, cfg["city"], src, limit)
                 elif src["type"] == "municipal_html":
@@ -355,22 +403,44 @@ def _write_jsonl(path: Path, rows: list) -> None:
 
 async def main():
     registry = json.load(open(ROOT / "sources.json", encoding="utf-8"))
-    cities = sys.argv[1].split(",") if len(sys.argv) > 1 else list(registry.keys())
-    limit = int(sys.argv[2]) if len(sys.argv) > 2 else 10
+    arg1 = sys.argv[1] if len(sys.argv) > 1 else ""
+    if arg1 == "--all":
+        cities = list(registry.keys())
+    else:
+        cities = arg1.split(",") if arg1 else list(registry.keys())
+    limit = int(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2].isdigit() else 5
+    city_timeout = 120
+
+    ok, failed, total_items = [], [], 0
     for slug in cities:
         if slug not in registry:
             print(f"skip unknown city {slug}"); continue
-        items, events = await scrape_city(slug, registry[slug], limit)
+        try:
+            items, events = await asyncio.wait_for(
+                scrape_city(slug, registry[slug], limit), timeout=city_timeout)
+        except asyncio.TimeoutError:
+            print(f"==> {slug}: TIMEOUT ({city_timeout}s) — skipping")
+            failed.append(slug); continue
+        except Exception as e:
+            print(f"==> {slug}: ERROR: {e!r} — skipping")
+            failed.append(slug); continue
         path = DATA_RAW / f"{slug}.jsonl"
         if items:
             _write_jsonl(path, items)
             print(f"==> {slug}: {len(items)} items -> {path}")
+            ok.append(slug); total_items += len(items)
         else:
             print(f"==> {slug}: 0 items — keeping existing {path} (not overwriting)")
+            failed.append(slug)
         epath = DATA_EVENTS / f"{slug}.jsonl"
         if events:
             _write_jsonl(epath, events)
             print(f"==> {slug}: {len(events)} events -> {epath}")
+
+    print(f"\n{'='*60}")
+    print(f"SUMMARY: OK={len(ok)}  FAILED={len(failed)}  TOTAL={total_items} articles")
+    if failed:
+        print(f"Failed: {', '.join(failed)}")
 
 if __name__ == "__main__":
     asyncio.run(main())

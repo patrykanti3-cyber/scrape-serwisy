@@ -20,6 +20,23 @@ from urllib.parse import urljoin, urlparse
 from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, BrowserConfig, CacheMode
 
 from cleaners import clean, find_date_iso, clean_police_body, clean_municipal_body
+from discovery import (
+    anchor_hrefs,
+    filter_article_urls,
+    preflight_discover,
+    parse_sitemap_urls,
+)
+from extract import (
+    candidate_selectors,
+    extract_body_with_fallbacks,
+    pagination_links,
+)
+from event_facts import extract_event_facts
+
+# Quality Gate minimum body length (chars) by source type — matches the drop
+# thresholds in scrape_city; also the trigger for trying fallback selectors.
+BODY_MIN = {"police": 120, "municipal": 250}
+MAX_PAGINATION_PAGES = 3
 
 sys.stdout.reconfigure(encoding="utf-8")
 ROOT = Path(__file__).resolve().parent
@@ -68,6 +85,7 @@ class EventItem:
     source_credit: str
     source_url: str
     title: str
+    lead: str = ""              # structured "Data: …, Godzina: …, Miejsce: …" anchor
     body: str = ""              # raw text the LLM mines for date/time/location
     image_url: str = ""
     published: str = ""
@@ -164,6 +182,16 @@ def meta_date(html: str) -> str:
     return iso.group(1) if iso else ""
 
 
+def _wait_for(src: dict):
+    """crawl4ai `wait_for` derived from a per-source CSS selector.
+
+    Set `js_wait_selector` in sources.json to make Playwright block until that
+    element appears (SPA content that arrives after initial paint). Returns None
+    when unset (crawl4ai then just honours wait_until)."""
+    sel = src.get("js_wait_selector")
+    return f"css:{sel}" if sel else None
+
+
 # --------------------------------------------------------------------------- adapters
 async def scrape_police(crawler, run, city: str, src: dict, limit: int) -> list[NewsItem]:
     base = src["base"]
@@ -176,7 +204,7 @@ async def scrape_police(crawler, run, city: str, src: dict, limit: int) -> list[
     urls = [it["link"] for it in items if it["link"]]
     out: list[NewsItem] = []
     results = await crawler.arun_many(
-        urls, config=run.clone(target_elements=["article.txt"]))
+        urls, config=run.clone(target_elements=["article.txt"], wait_for=_wait_for(src)))
     by_url = {r.url: r for r in results}
     for it in items:
         r = by_url.get(it["link"])
@@ -213,7 +241,7 @@ async def scrape_municipal_rss(crawler, run, city: str, src: dict, limit: int) -
     sel = src.get("content_selector", "main")
     out: list[NewsItem] = []
     results = await crawler.arun_many(
-        urls, config=run.clone(target_elements=[sel]))
+        urls, config=run.clone(target_elements=[sel], wait_for=_wait_for(src)))
     by_url = {r.url: r for r in results}
     for it in items:
         r = by_url.get(it["link"])
@@ -247,32 +275,101 @@ async def scrape_municipal(crawler, run, city: str, src: dict, limit: int) -> li
     base = src["base"]
     marker = src.get("article_marker", "/aktualnosci/")
     sel = src.get("content_selector", "main")
-    # 1) gather article links from listing pages
+    wait_for = _wait_for(src)
+    list_run = run.clone(wait_for=wait_for)
+
+    # 0) Pre-flight: RSS/sitemap discovery is far more stable than JS-rendered
+    #    HTML. If the site advertises an RSS feed and this source has no explicit
+    #    feed, scrape that instead of pushing Playwright at an SPA.
+    pre = preflight_discover(base, http_get)
+    if pre["rss"] and not src.get("feed") and not src.get("rss"):
+        print(f"  [preflight] discovered RSS {pre['rss']} — using RSS instead of HTML")
+        return await scrape_municipal_rss(crawler, run, city, {**src, "feed": pre["rss"]}, limit)
+
     art_urls: list[str] = []
-    seen = set()
-    listres = await crawler.arun_many(src["listing"], config=run)
-    for r in listres:
-        if not r.success:
-            print(f"  ! listing fail {r.url}: {r.error_message}")
-            continue
-        for l in (r.links.get("internal", []) if r.links else []):
-            h = l.get("href") if isinstance(l, dict) else l
-            if not h:
+    seen: set[str] = set()
+    render_htmls: list[tuple[str, str]] = []
+
+    # 1) crawl4ai link graph from the listing pages (JS rendered via networkidle),
+    #    following pagination when `pagination_selector` is configured (urzędy
+    #    paginate their announcement listings).
+    pagination_selector = src.get("pagination_selector")
+    pages_to_crawl = list(src["listing"])
+    visited_pages: set[str] = set()
+    for _round in range(MAX_PAGINATION_PAGES + 1):
+        batch = [u for u in pages_to_crawl if u not in visited_pages]
+        if not batch:
+            break
+        visited_pages.update(batch)
+        pages_to_crawl = []
+        listres = await crawler.arun_many(batch, config=list_run)
+        for r in listres:
+            if not r.success:
+                print(f"  ! listing fail {r.url}: {r.error_message}")
                 continue
-            full = urljoin(r.url, h)
-            p = urlparse(full)
-            if p.netloc.replace("www.", "") != urlparse(base).netloc.replace("www.", ""):
-                continue
-            path = p.path
-            if marker.lower() in path.lower() and path.rstrip("/").split("/")[-1].count("-") >= 2 and full not in seen:
+            if r.html:
+                render_htmls.append((r.url, r.html))
+            internal = [
+                (l.get("href") if isinstance(l, dict) else l)
+                for l in (r.links.get("internal", []) if r.links else [])
+            ]
+            for full in filter_article_urls(internal, r.url, base, marker):
+                if full not in seen:
+                    seen.add(full)
+                    art_urls.append(full)
+            if pagination_selector and len(art_urls) < limit and r.html:
+                for nxt in pagination_links(r.html, r.url, base, pagination_selector):
+                    if nxt not in visited_pages:
+                        pages_to_crawl.append(nxt)
+        if len(art_urls) >= limit:
+            break
+
+    def _add(urls) -> int:
+        n = 0
+        for full in urls:
+            if full not in seen:
                 seen.add(full)
                 art_urls.append(full)
+                n += 1
+        return n
+
+    # 2) SPA fallback — the link graph came back empty (common on JS portals):
+    #    parse <a href> straight from the *rendered* DOM HTML. Try the configured
+    #    marker first, then a marker-agnostic pass (same-host + article-like slug)
+    #    so a stale `article_marker` no longer blocks recovery.
+    if not art_urls:
+        for m in (marker, ""):
+            for page_url, html in render_htmls:
+                _add(filter_article_urls(anchor_hrefs(html), page_url, base, m))
+            if art_urls:
+                tag = "" if m else " (marker-agnostic)"
+                print(f"  [spa-fallback] recovered {len(art_urls)} links from rendered DOM{tag}")
+                break
+
+    # 3) Sitemap fallback (no browser at all) — pull article URLs from the
+    #    sitemaps discovered in pre-flight. Same marker-then-relaxed strategy.
+    if not art_urls:
+        sm_locs: list[tuple[str, str]] = []
+        for sm in pre["sitemaps"][:3]:
+            try:
+                sm_locs += [(sm, u) for u in parse_sitemap_urls(http_get(sm))]
+            except Exception as e:
+                print(f"  ! sitemap {sm}: {e}")
+        for m in (marker, ""):
+            for sm, u in sm_locs:
+                _add(filter_article_urls([u], sm, base, m))
+            if art_urls:
+                tag = "" if m else " (marker-agnostic)"
+                print(f"  [sitemap] recovered {len(art_urls)} links from sitemap{tag}")
+                break
+
     art_urls = art_urls[:limit]
     print(f"  [municipal] {src['name']}: {len(art_urls)} article links")
     out: list[NewsItem] = []
     if not art_urls:
         return out
-    results = await crawler.arun_many(art_urls, config=run.clone(target_elements=[sel]))
+    results = await crawler.arun_many(
+        art_urls, config=run.clone(target_elements=[sel], wait_for=wait_for))
     # police sites are scraped as HTML too, but must map to the na-sygnale
     # category — tag by source, not by adapter.
     stype = "police" if ("policja.gov.pl" in base or src["name"].lower().startswith("policja")) else "municipal"
@@ -281,12 +378,27 @@ async def scrape_municipal(crawler, run, city: str, src: dict, limit: int) -> li
     cat_hint = (src.get("category") or "").strip().lower()
     if cat_hint not in CATEGORY_HINTS:
         cat_hint = ""
+    min_len = BODY_MIN.get(stype, 250)
+    fallbacks = src.get("fallback_selectors", [])
     for r in results:
         if not r.success:
             continue
         md = md_of(r)
         title, lead, body = clean_municipal_body(
             md, end_markers=src.get("end_markers"), noise_patterns=src.get("noise_patterns"))
+        # Resilience: primary content_selector produced too little (a CSS class
+        # likely changed) -> try fallback_selectors on the rendered HTML until
+        # the body clears the Quality Gate.
+        if len(body) < min_len and getattr(r, "html", None):
+            alt = extract_body_with_fallbacks(
+                r.html, candidate_selectors(sel, fallbacks), min_len,
+                end_markers=src.get("end_markers"), noise_patterns=src.get("noise_patterns"))
+            if len(alt["body"]) > len(body):
+                title = title or alt["title"]
+                lead = alt["lead"] or lead
+                body = alt["body"]
+                if alt["selector"] and alt["selector"] != sel:
+                    print(f"  [fallback-selector] {r.url} -> '{alt['selector']}' body={len(body)}")
         if not title:
             title = clean((r.metadata or {}).get("title", ""))
         image = og_image(r.html)
@@ -349,11 +461,16 @@ async def scrape_events(crawler, run, city: str, src: dict, limit: int) -> list[
                 image = og_image(http_get(r.url).decode("utf-8", "replace"))
             except Exception:
                 pass
+        # Deterministic date/time/location anchor BEFORE the LLM stage, so the
+        # model can't hallucinate the event's date/time.
+        facts = extract_event_facts(f"{title}\n{body}")
+        if facts["lead"]:
+            print(f"  [event-facts] {facts['lead']}")
         out.append(EventItem(
             id=mk_id(r.url), city=city,
             source_name=src["name"], source_credit=src.get("credit", src["name"]),
-            source_url=r.url, title=title, body=body, image_url=image,
-            published=meta_date(r.html) or find_date_iso(body)))
+            source_url=r.url, title=title, lead=facts["lead"], body=body, image_url=image,
+            published=meta_date(r.html) or facts["date_iso"] or find_date_iso(body)))
     return out
 
 
@@ -361,7 +478,7 @@ async def scrape_events(crawler, run, city: str, src: dict, limit: int) -> list[
 async def scrape_city(city_slug: str, cfg: dict, limit: int) -> tuple[list[NewsItem], list[EventItem]]:
     browser = BrowserConfig(headless=True, verbose=False)
     run = CrawlerRunConfig(cache_mode=CacheMode.BYPASS, page_timeout=45000,
-                           wait_until="domcontentloaded", verbose=False)
+                           wait_until="networkidle", verbose=False)
     items: list[NewsItem] = []
     events: list[EventItem] = []
     async with AsyncWebCrawler(config=browser) as crawler:

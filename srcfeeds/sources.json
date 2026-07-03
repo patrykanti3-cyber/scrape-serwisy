@@ -11,7 +11,9 @@
           "https://um.warszawa.pl/aktualnosci-warszawa"
         ],
         "article_marker": "/aktualnosci/",
-        "content_selector": "main"
+        "content_selector": "main",
+        "fallback_selectors": [".article-body", ".news-content", "#content-area", "article"],
+        "pagination_selector": ".pagination, nav.pager"
       },
       {
         "type": "municipal_html",
@@ -1056,6 +1058,19 @@
         "article_marker": "/aktualnosci/",
         "content_selector": "article",
         "rss": "https://slupsk.policja.gov.pl/dokumenty/rss/385-rss-2772.rss"
+      },
+      {
+        "type": "events_html",
+        "name": "Wydarzenia — Słupsk",
+        "credit": "UM Słupsk",
+        "base": "http://www.slupsk.pl",
+        "listing": [
+          "https://www.slupsk.pl/pl/wydarzenia"
+        ],
+        "article_marker": "/wydarzenia/",
+        "content_selector": "main",
+        "fallback_selectors": [".event-detail", ".wydarzenie", "article", ".content"],
+        "pagination_selector": ".pagination"
       }
     ]
   },
@@ -1152,18 +1167,6 @@
         ],
         "article_marker": "/aktualnosci/",
         "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Siedlce",
-        "credit": "Policja Siedlce",
-        "base": "https://mazowiecka.policja.gov.pl",
-        "listing": [
-          "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "article",
-        "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
       }
     ]
   },
@@ -1362,12 +1365,12 @@
         "content_selector": "main"
       },
       {
-        "type": "municipal_html",
+        "type": "police_rss",
         "name": "Policja — Piotrków Trybunalski",
-        "credit": "Policja Piotrków Trybunalski",
+        "credit": "Policja Piotrków",
         "base": "https://piotrkow-trybunalski.policja.gov.pl",
         "listing": [
-          "https://piotrkow-trybunalski.policja.gov.pl/ep/aktualnosci"
+          "https://piotrkow-trybunalski.policja.gov.pl/po5/aktualnosci"
         ],
         "article_marker": "/aktualnosci/",
         "content_selector": "article"
@@ -1639,7 +1642,7 @@
         "name": "Urząd — Łomża",
         "credit": "UM Łomża",
         "base": "http://www.lomza.pl/",
-        "content_selector": "main",
+        "content_selector": "body",
         "feed": "http://www.lomza.pl/rss/rss.xml"
       },
       {
@@ -1920,12 +1923,15 @@
     "city": "Zgierz",
     "sources": [
       {
-        "type": "municipal_rss",
+        "type": "municipal_html",
         "name": "Urząd — Zgierz",
         "credit": "UM Zgierz",
         "base": "https://www.miasto.zgierz.pl/",
-        "content_selector": "main",
-        "feed": "https://www.miasto.zgierz.pl/pl/rss.xml"
+        "listing": [
+          "https://www.miasto.zgierz.pl/aktualnosci"
+        ],
+        "article_marker": "/aktualnosci/",
+        "content_selector": "main"
       },
       {
         "type": "municipal_html",
@@ -2103,18 +2109,6 @@
         ],
         "article_marker": "/aktualnosci/",
         "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Ostrołęka",
-        "credit": "Policja Ostrołęka",
-        "base": "https://mazowiecka.policja.gov.pl",
-        "listing": [
-          "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "article",
-        "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
       }
     ]
   },
@@ -2315,18 +2309,6 @@
         ],
         "article_marker": "/aktualnosci/",
         "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Ciechanów",
-        "credit": "Policja Ciechanów",
-        "base": "https://mazowiecka.policja.gov.pl",
-        "listing": [
-          "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "article",
-        "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
       }
     ]
   },
@@ -2655,18 +2637,6 @@
         ],
         "article_marker": "/aktualnosci/",
         "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Nowy Dwór Mazowiecki",
-        "credit": "Policja Nowy Dwór Mazowiecki",
-        "base": "https://mazowiecka.policja.gov.pl",
-        "listing": [
-          "https://mazowiecka.policja.gov.pl/ra/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "article",
-        "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss"
       }
     ]
   },
@@ -2765,18 +2735,6 @@
         ],
         "article_marker": "/aktualnosci/",
         "content_selector": "main"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Skawina",
-        "credit": "Policja Skawina",
-        "base": "https://malopolska.policja.gov.pl",
-        "listing": [
-          "https://malopolska.policja.gov.pl/krk/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "article",
-        "rss": "https://malopolska.policja.gov.pl/dokumenty/rss/386-rss-157.rss"
       }
     ]
   },
@@ -2921,18 +2879,6 @@
         "article_marker": "/aktualnosci/",
         "content_selector": "main",
         "rss": "http://www.krzeszowice.pl/mod/aktualnosci/rss"
-      },
-      {
-        "type": "municipal_html",
-        "name": "Policja — Krzeszowice",
-        "credit": "Policja Krzeszowice",
-        "base": "https://malopolska.policja.gov.pl",
-        "listing": [
-          "https://malopolska.policja.gov.pl/krk/aktualnosci"
-        ],
-        "article_marker": "/aktualnosci/",
-        "content_selector": "article",
-        "rss": "https://malopolska.policja.gov.pl/dokumenty/rss/386-rss-157.rss"
       }
     ]
   }

@@ -35,3 +35,27 @@ The split exists because the cleaning logic is the brittle part (markdown chrome
 - Run: `python3 -m pytest tests/ -q` (use `python3`; `python` is not on PATH on this machine — macOS / Python 3.14).
 - Status: **8 passed, 0 failures**.
 - `tests/` injects `srcfeeds/` onto `sys.path`, so cleaners import as a top-level module (`from cleaners import ...`) in both the tests and `scraper.py`.
+
+
+## SPA/JS hardening (scraper.py) — fix „99 miast = 0 linków"
+
+Trzy zmiany w `srcfeeds/scraper.py` + nowy moduł `srcfeeds/discovery.py` (czysty, testowalny bez crawl4ai):
+
+1. **Wait strategies** — domyślnie `wait_until="networkidle"` (SPA renderuje się przed
+   pobraniem DOM). Per‑źródło opcjonalny `js_wait_selector` w `sources.json` → crawl4ai
+   `wait_for="css:<selektor>"` (helper `_wait_for`).
+2. **SPA link fallback** — gdy graf linków crawl4ai jest pusty, parsujemy `<a href>`
+   wprost z *wyrenderowanego* `result.html` (`anchor_hrefs` + `filter_article_urls`).
+   Pass z konfigurowanym `article_marker`, a potem **marker‑agnostic** (same‑host +
+   slug ≥2 myślniki) — nieaktualny marker nie blokuje już odzysku.
+3. **Pre‑flight RSS/Sitemap** (`preflight_discover`) — przed Playwrightem sprawdzamy
+   `robots.txt` (`Sitemap:`) i `<head>` (`<link rel=alternate type=rss>`). Jeśli jest RSS
+   i źródło nie ma jawnego feedu → scrapujemy RSS zamiast HTML. Inaczej sitemap jako
+   źródło URL‑i (bez przeglądarki). Wszystko best‑effort (błędy/404 logowane, nie wywalają).
+
+Dowody: `pytest tests/` = 20 passed (8 cleaners + 12 discovery). Live smoke: Warszawa urząd
+0 → 3 artykuły (spa‑fallback 24 linki, marker‑agnostic); Kraków — sitemap 404 obsłużony,
+policja → artykuł 1651 zn.
+
+Pozostaje (FR‑1/FR‑3 ze spec): audyt `article_marker`/`content_selector` per miasto dla
+precyzji, batch po 113 miastach, import do Strapi.

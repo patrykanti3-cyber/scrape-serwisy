@@ -95,6 +95,27 @@ def build_event_prompt(r: dict) -> str:
     )
 
 
+# Categories the LLM may assign vs. the (superset) a section category_hint may
+# declare (adds na-sygnale + lifestyle, which the model won't emit itself).
+# "przydatne" is NOT an article category (it maps to the InfoPage directory) and
+# is filtered out before rewrite.
+LLM_ALLOWED = ("wiadomosci", "sport", "kultura", "biznes", "ogloszenia")
+HINT_ARTICLE = ("wiadomosci", "na-sygnale", "sport", "kultura", "biznes", "ogloszenia", "lifestyle")
+
+
+def resolve_category(source_type, category_hint, llm_category):
+    """Category precedence: police source -> na-sygnale; a valid section
+    category_hint (incl. na-sygnale/lifestyle) wins next; otherwise the LLM's own
+    classification, validated against LLM_ALLOWED; fallback 'wiadomosci'."""
+    hint = (category_hint or "").strip().lower()
+    if source_type == "police":
+        return "na-sygnale"
+    if hint in HINT_ARTICLE:
+        return hint
+    c = (llm_category or "").strip().lower()
+    return c if c in LLM_ALLOWED else "wiadomosci"
+
+
 def list_models() -> list[str]:
     try:
         with urllib.request.urlopen(OLLAMA + "/api/tags", timeout=10) as r:
@@ -188,6 +209,9 @@ def main():
     n_ok = 0
     with open(out_path, "w", encoding="utf-8") as f:
         for i, r in enumerate(rows, 1):
+            if (r.get("category_hint") or "").strip().lower() == "przydatne":
+                print(f"[{i}/{len(rows)}] ~ pomijam (przydatne → katalog InfoPage, nie artykuł): {r.get('title', '')[:50]!r}")
+                continue
             prompt = PROMPT.format(source=r.get("source_credit", ""), title=r.get("title", ""),
                                    body=(r.get("body") or r.get("lead") or "")[:6000])
             print(f"[{i}/{len(rows)}] {r.get('source_type', '?'):9} {r.get('title', '')[:60]!r} ...", flush=True)
@@ -202,19 +226,10 @@ def main():
                            f"Ilustracja wykorzystana w artykule została pobrana z zewnętrznego "
                            f"źródła ({credit}). W przypadku zastrzeżeń dotyczących "
                            f"praw do zdjęcia prosimy o kontakt.")
-            # Category precedence: police is fixed (na-sygnale); a deterministic
-            # section hint from the scraper wins next; otherwise trust the LLM's
-            # topic classification, validated against the allowed enum.
+            # Category precedence handled by resolve_category: police -> na-sygnale,
+            # else section category_hint (incl. na-sygnale/lifestyle), else LLM.
             stype = r.get("source_type", "municipal")
-            ALLOWED = ("wiadomosci", "sport", "kultura", "biznes", "ogloszenia")
-            hint = (r.get("category_hint") or "").strip().lower()
-            if stype == "police":
-                category = "na-sygnale"
-            elif hint in ALLOWED:
-                category = hint
-            else:
-                c = (art.get("category") or "").strip()
-                category = c if c in ALLOWED else "wiadomosci"
+            category = resolve_category(stype, r.get("category_hint"), art.get("category"))
             rec = {
                 "id": r.get("id", ""), "city": r.get("city", ""),
                 "title": art.get("title", "").strip(),

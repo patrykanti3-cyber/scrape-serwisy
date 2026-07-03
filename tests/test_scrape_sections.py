@@ -112,3 +112,30 @@ def test_legacy_listing_still_works(monkeypatch):
     assert len(items) == 1
     assert items[0].category_hint == "sport"
     assert len(items[0].body) > 250
+
+
+def test_sections_url_marker_filters_container_noise(monkeypatch):
+    """A broad container ("main a") on a listing page plus a URL article_marker:
+    only article-like links are kept (nav/pagination dropped)."""
+    monkeypatch.setattr(scraper, "http_get",
+                        lambda *a, **k: (_ for _ in ()).throw(RuntimeError("no net")))
+    home = FakeResult(
+        f"{BASE}/aktualnosci",
+        html='<main>'
+             '<a href="/aktualnosci/nowy-most-otwarty-dzis">artykuł</a>'
+             '<a href="/kontakt">Kontakt</a>'
+             '<a href="/aktualnosci?page=2">2</a>'
+             '</main>',
+    )
+    art = FakeResult(f"{BASE}/aktualnosci/nowy-most-otwarty-dzis", html=OG,
+                     markdown=f"# Nowy most otwarty\n\n{BODY}")
+    src = {
+        "type": "municipal_html", "name": "Urząd — X", "credit": "UM X", "base": BASE,
+        "sections": [{"name": "Aktualności", "url": "/aktualnosci",
+                      "container_selector": "main a", "category_hint": "wiadomosci"}],
+        "article_marker": "/aktualnosci/", "content_selector": "main",
+    }
+    crawler = FakeCrawler({home.url: home, art.url: art})
+    items = asyncio.run(scraper.scrape_municipal(crawler, FakeRun(), "x", src, 10))
+    assert [it.source_url for it in items] == [f"{BASE}/aktualnosci/nowy-most-otwarty-dzis"]
+    assert items[0].category_hint == "wiadomosci"

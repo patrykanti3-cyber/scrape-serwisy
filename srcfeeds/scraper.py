@@ -276,12 +276,16 @@ SECTION_HINTS = {"wiadomosci", "na-sygnale", "sport", "kultura", "biznes",
                  "ogloszenia", "lifestyle", "przydatne"}
 
 
-async def _gather_section_links(crawler, list_run, base: str, sections: list, limit: int) -> dict:
+async def _gather_section_links(crawler, list_run, base: str, sections: list, limit: int,
+                                url_marker: str = "") -> dict:
     """Section-based link discovery (new sources.json structure): crawl each
     section's page and extract links from its `container_selector`, tagging each
-    with the section's `category_hint`. Returns an ordered {article_url:
-    category_hint} map (first section to claim a URL wins). Pages shared by
-    several sections are crawled once."""
+    with the section's `category_hint`. When `url_marker` (a "/path" fragment) is
+    set, links are additionally filtered to article-like URLs — this keeps broad
+    container selectors (e.g. "main a" on a listing page) from picking up nav/
+    pagination noise. Returns an ordered {article_url: category_hint} map (first
+    section to claim a URL wins). Pages shared by several sections are crawled
+    once."""
     from urllib.parse import urljoin
     by_url: dict[str, list] = {}
     for s in sections:
@@ -300,7 +304,10 @@ async def _gather_section_links(crawler, list_run, base: str, sections: list, li
         for s in secs:
             hint = (s.get("category_hint") or "").strip().lower()
             hint = hint if hint in SECTION_HINTS else ""
-            for link in links_in_container(r.html, r.url, base, s.get("container_selector", "a")):
+            links = links_in_container(r.html, r.url, base, s.get("container_selector", "a"))
+            if url_marker:
+                links = filter_article_urls(links, r.url, base, url_marker)
+            for link in links:
                 if link not in art_hint:
                     art_hint[link] = hint
     return art_hint
@@ -326,7 +333,7 @@ async def scrape_municipal(crawler, run, city: str, src: dict, limit: int) -> li
     # --- NEW: section-based discovery (homepage/section containers) ---
     sections = src.get("sections")
     if sections:
-        art_hint = await _gather_section_links(crawler, list_run, base, sections, limit)
+        art_hint = await _gather_section_links(crawler, list_run, base, sections, limit, url_marker)
         if art_hint:
             print(f"  [sections] {src['name']}: {len(art_hint)} links across {len(sections)} sekcji")
 

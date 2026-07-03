@@ -470,6 +470,42 @@ def make_event_src(c, listing, base):
     }
 
 
+def build_sections(d: dict) -> list:
+    """Map a discovery result to the new `sections` array. The main "Aktualności"
+    listing becomes the 'wiadomosci' section; each discovered dedicated-category
+    listing (sport/kultura/biznes/ogloszenia) becomes its own section with the
+    matching category_hint. Events are handled by a separate events_html source.
+    `container_selector` defaults to "main a"; the source-level (URL)
+    `article_marker` then filters those to article links in the scraper."""
+    secs = []
+    listing = d.get("listing")
+    if listing:
+        secs.append({"name": "Aktualności", "url": listing,
+                     "container_selector": "main a", "category_hint": "wiadomosci"})
+    for cat, url in (d.get("sections") or {}).items():
+        if cat == "_events" or not url or norm(url) == norm(listing or ""):
+            continue
+        secs.append({"name": cat.capitalize(), "url": url,
+                     "container_selector": "main a", "category_hint": cat})
+    return secs
+
+
+def make_municipal_sections_src(c, d, base):
+    """One municipal_html source carrying a `sections` array (new structure)."""
+    src = {
+        "type": "municipal_html",
+        "name": f"Urząd — {c['name']}",
+        "credit": f"UM {c['name']}",
+        "base": d.get("final_url") or base,
+        "sections": build_sections(d),
+        "article_marker": MARKER_OVERRIDE.get((c["slug"], "municipal")) or marker_from(d.get("listing") or ""),
+        "content_selector": "main",
+    }
+    if d.get("rss"):
+        src["rss"] = d["rss"]
+    return src
+
+
 def assemble_city(c, rendered):
     slug = c["slug"]
     sources, rep = [], {"city": c["name"]}
@@ -484,17 +520,21 @@ def assemble_city(c, rendered):
             "base": mb,
             **{k: d[k] for k in ("status", "listing", "rss")},
         }
-        if d["listing"] or d["rss"]:
-            sources.append(make_src("municipal", c, d, mb))
-        # dedicated category + event sections discovered from the nav
+        # New structure: one municipal source carrying a `sections` array
+        # (main listing + discovered dedicated-category listings). Events stay a
+        # separate events_html source. Falls back to the flat make_src only when
+        # there is nothing to turn into sections (e.g. rss-only).
         base_final = d.get("final_url") or mb
         sections = d.get("sections", {})
         sec_rep = {}
-        for cat in SECTION_KEYWORDS:
-            url = sections.get(cat)
-            if url and norm(url) != norm(d.get("listing") or ""):
-                sources.append(make_section_src(cat, c, url, base_final))
-                sec_rep[cat] = url
+        if d["listing"] or d["rss"]:
+            if build_sections(d):
+                sources.append(make_municipal_sections_src(c, d, mb))
+                for cat in SECTION_KEYWORDS:
+                    if sections.get(cat) and norm(sections[cat]) != norm(d.get("listing") or ""):
+                        sec_rep[cat] = sections[cat]
+            else:
+                sources.append(make_src("municipal", c, d, mb))
         ev_url = sections.get("_events")
         if ev_url and norm(ev_url) != norm(d.get("listing") or ""):
             sources.append(make_event_src(c, ev_url, base_final))

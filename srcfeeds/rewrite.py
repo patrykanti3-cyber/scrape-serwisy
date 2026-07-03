@@ -8,13 +8,15 @@ Reads : data/raw/<city>.jsonl
 Writes: data/rewritten/<city>.jsonl
 """
 from __future__ import annotations
-import json, sys, urllib.request
+import json, os, sys, urllib.request
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
 ROOT = Path(__file__).resolve().parent
 RAW = ROOT.parent / "data" / "raw"
+EVENTS_RAW = ROOT.parent / "data" / "raw" / "events"
 OUT = ROOT.parent / "data" / "rewritten"
+EVENTS_OUT = ROOT.parent / "data" / "rewritten" / "events"
 OUT.mkdir(parents=True, exist_ok=True)
 OLLAMA = "http://localhost:11434"
 
@@ -27,16 +29,91 @@ Zasady:
 - Nie dodawaj informacji, których nie ma w źródle. Nie zmyślaj.
 - Nie pisz o sobie ani o procesie redakcji.
 
+Struktura treści (pole "body", Markdown):
+- Akapity oddzielaj podwójnym znakiem nowej linii.
+- Jeśli artykuł ma 4+ akapitów, podziel go na 2-3 sekcje tematyczne, każda
+  z nagłówkiem w formacie "## Krótki nagłówek sekcji". Krótkie artykuły zostaw
+  bez nagłówków.
+- Jeśli w MATERIALE ŹRÓDŁOWYM jest dosłowna wypowiedź (cytat osoby, organizatora,
+  urzędnika), zacytuj ją jako "> treść cytatu". Cytuj WYŁĄCZNIE słowa obecne
+  w źródle — NIE twórz cytatów, których tam nie ma.
+
 Zwróć WYŁĄCZNIE obiekt JSON o polach:
-  "title" – rzeczowy tytuł (max 120 znaków),
-  "lead"  – 1–2 zdania wprowadzenia,
-  "body"  – treść artykułu, akapity oddzielone podwójnym znakiem nowej linii.
+  "title"    – rzeczowy tytuł (max 120 znaków),
+  "lead"     – 1–2 zdania wprowadzenia,
+  "body"     – treść artykułu wg struktury powyżej,
+  "category" – jedna z: "wiadomosci", "sport", "kultura", "biznes", "ogloszenia".
+               Dobierz wg tematu: sport (zawody, kluby, rozgrywki), kultura
+               (wydarzenia kulturalne, sztuka, biblioteka, muzeum), biznes
+               (gospodarka, firmy, inwestycje, fundusze), ogloszenia (nabory,
+               konsultacje, komunikaty urzędowe, oferty). Gdy nie pasuje
+               jednoznacznie — "wiadomosci".
 
 MATERIAŁ ŹRÓDŁOWY (źródło: {source}):
 Tytuł: {title}
 Treść:
 {body}
 """
+
+
+EVENT_PROMPT = """Jesteś redaktorem lokalnego portalu. Na podstawie materiału o wydarzeniu napisz krótką, rzeczową zapowiedź po polsku.
+
+USTALONE FAKTY WYDARZENIA (źródło deterministyczne, wyodrębnione regexem — traktuj jako PRAWDĘ; NIE zmieniaj i NIE wymyślaj innej daty, godziny ani miejsca):
+{anchor}
+
+Zasady:
+- Datę, godzinę i miejsce bierz WYŁĄCZNIE z sekcji USTALONE FAKTY powyżej.
+  Jeśli któregoś z tych faktów tam nie ma — NIE zgaduj, po prostu go pomiń.
+- Nie dodawaj informacji spoza materiału źródłowego. Nie zmyślaj.
+- Ton: zwięzły, zapraszający, dziennikarski.
+
+Zwróć WYŁĄCZNIE obiekt JSON o polach:
+  "title"   – tytuł wydarzenia (max 120 znaków),
+  "summary" – 1–2 zdania zapowiedzi; jeśli znane, zawrzyj datę/godzinę/miejsce
+              DOKŁADNIE jak w USTALONE FAKTY,
+  "body"    – opis wydarzenia (Markdown).
+
+MATERIAŁ ŹRÓDŁOWY:
+Tytuł: {title}
+Treść:
+{body}
+"""
+
+
+def build_event_prompt(r: dict) -> str:
+    """Compose the event-rewrite prompt, injecting the deterministic
+    date/time/location anchor (EventItem.lead) so the LLM cannot hallucinate the
+    schedule. Falls back to an explicit 'do not guess' instruction when the
+    scraper found no structured facts."""
+    anchor = (r.get("lead") or "").strip() or (
+        "(brak ustrukturyzowanych faktów — NIE podawaj konkretnej daty, godziny "
+        "ani miejsca, jeśli nie wynikają wprost z treści źródła)")
+    return EVENT_PROMPT.format(
+        anchor=anchor,
+        title=r.get("title", ""),
+        body=(r.get("body") or "")[:6000],
+    )
+
+
+# Categories the LLM may assign vs. the (superset) a section category_hint may
+# declare (adds na-sygnale + lifestyle, which the model won't emit itself).
+# "przydatne" is NOT an article category (it maps to the InfoPage directory) and
+# is filtered out before rewrite.
+LLM_ALLOWED = ("wiadomosci", "sport", "kultura", "biznes", "ogloszenia")
+HINT_ARTICLE = ("wiadomosci", "na-sygnale", "sport", "kultura", "biznes", "ogloszenia", "lifestyle")
+
+
+def resolve_category(source_type, category_hint, llm_category):
+    """Category precedence: police source -> na-sygnale; a valid section
+    category_hint (incl. na-sygnale/lifestyle) wins next; otherwise the LLM's own
+    classification, validated against LLM_ALLOWED; fallback 'wiadomosci'."""
+    hint = (category_hint or "").strip().lower()
+    if source_type == "police":
+        return "na-sygnale"
+    if hint in HINT_ARTICLE:
+        return hint
+    c = (llm_category or "").strip().lower()
+    return c if c in LLM_ALLOWED else "wiadomosci"
 
 
 def list_models() -> list[str]:
@@ -47,7 +124,7 @@ def list_models() -> list[str]:
         print("! cannot reach Ollama:", e); return []
 
 
-def generate(model: str, prompt: str, timeout: int = 300) -> str:
+def generate(model: str, prompt: str, timeout: int = int(os.environ.get("OLLAMA_TIMEOUT", "600"))) -> str:
     payload = {
         "model": model,
         "prompt": prompt,
@@ -64,18 +141,64 @@ def generate(model: str, prompt: str, timeout: int = 300) -> str:
         return json.load(r).get("response", "")
 
 
+def rewrite_events(city: str, model: str, limit: int) -> None:
+    """Rewrite scraped events (data/raw/events/<city>.jsonl) with the LLM, using
+    EventItem.lead as a hard, non-negotiable date/time/location anchor. Output:
+    data/rewritten/events/<city>.jsonl (keeps `lead` + the reliable `published`)."""
+    src_path = EVENTS_RAW / f"{city}.jsonl"
+    if not src_path.exists():
+        print(f"No raw events: {src_path}"); return
+    rows = [json.loads(l) for l in open(src_path, encoding="utf-8") if l.strip()][:limit]
+    EVENTS_OUT.mkdir(parents=True, exist_ok=True)
+    out_path = EVENTS_OUT / f"{city}.jsonl"
+    n_ok = 0
+    with open(out_path, "w", encoding="utf-8") as f:
+        for i, r in enumerate(rows, 1):
+            prompt = build_event_prompt(r)
+            print(f"[{i}/{len(rows)}] EVENT {r.get('title','')[:50]!r} | anchor={r.get('lead','')!r}", flush=True)
+            try:
+                art = json.loads(generate(model, prompt))
+            except Exception as e:
+                print("   ! event rewrite failed:", repr(e)[:200]); continue
+            credit = r.get("source_credit") or r.get("source_name") or "źródło"
+            rec = {
+                "id": r.get("id", ""), "city": r.get("city", ""),
+                "title": art.get("title", "").strip(),
+                "summary": art.get("summary", "").strip(),
+                "body": art.get("body", "").strip(),
+                "lead": r.get("lead", ""),           # deterministic anchor preserved
+                "image_url": r.get("image_url", ""),
+                "published": r.get("published", ""),  # reliable date from extractor
+                "source_name": r.get("source_name", ""),
+                "source_url": r.get("source_url", ""),
+                "attribution": f"na podstawie: {credit}.",
+                "model": model,
+            }
+            f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            f.flush()
+            n_ok += 1
+    print(f"==> {n_ok}/{len(rows)} events rewritten -> {out_path}")
+
+
 def main():
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    argv = sys.argv[1:]
+    model = None
+    if "--model" in argv:
+        i = argv.index("--model")
+        model = argv[i + 1] if i + 1 < len(argv) else None
+        del argv[i:i + 2]              # drop the flag AND its value
+    args = [a for a in argv if not a.startswith("--")]
     city = args[0] if args else "slupsk"
     limit = int(args[1]) if len(args) > 1 else 1000
-    model = None
-    if "--model" in sys.argv:
-        model = sys.argv[sys.argv.index("--model") + 1]
     models = list_models()
     if not models:
         print("No Ollama models / server. Aborting."); return
     model = model or ("kimi-k2.6:cloud" if "kimi-k2.6:cloud" in models else models[0])
     print(f"Using model: {model}")
+
+    if "--events" in sys.argv:
+        rewrite_events(city, model, limit)
+        return
 
     src_path = RAW / f"{city}.jsonl"
     if not src_path.exists():
@@ -86,29 +209,38 @@ def main():
     n_ok = 0
     with open(out_path, "w", encoding="utf-8") as f:
         for i, r in enumerate(rows, 1):
-            prompt = PROMPT.format(source=r["source_credit"], title=r["title"],
-                                   body=(r["body"] or r["lead"])[:6000])
-            print(f"[{i}/{len(rows)}] {r['source_type']:9} {r['title'][:60]!r} ...", flush=True)
+            if (r.get("category_hint") or "").strip().lower() == "przydatne":
+                print(f"[{i}/{len(rows)}] ~ pomijam (przydatne → katalog InfoPage, nie artykuł): {r.get('title', '')[:50]!r}")
+                continue
+            prompt = PROMPT.format(source=r.get("source_credit", ""), title=r.get("title", ""),
+                                   body=(r.get("body") or r.get("lead") or "")[:6000])
+            print(f"[{i}/{len(rows)}] {r.get('source_type', '?'):9} {r.get('title', '')[:60]!r} ...", flush=True)
             try:
                 resp = generate(model, prompt)
                 art = json.loads(resp)
             except Exception as e:
                 print("   ! rewrite failed:", repr(e)[:200])
                 continue
-            attribution = (f"na podstawie: {r['source_credit']}.\n"
+            credit = r.get("source_credit") or r.get("source_name") or "źródło"
+            attribution = (f"na podstawie: {credit}.\n"
                            f"Ilustracja wykorzystana w artykule została pobrana z zewnętrznego "
-                           f"źródła ({r['source_credit']}). W przypadku zastrzeżeń dotyczących "
+                           f"źródła ({credit}). W przypadku zastrzeżeń dotyczących "
                            f"praw do zdjęcia prosimy o kontakt.")
+            # Category precedence handled by resolve_category: police -> na-sygnale,
+            # else section category_hint (incl. na-sygnale/lifestyle), else LLM.
+            stype = r.get("source_type", "municipal")
+            category = resolve_category(stype, r.get("category_hint"), art.get("category"))
             rec = {
-                "id": r["id"], "city": r["city"],
+                "id": r.get("id", ""), "city": r.get("city", ""),
                 "title": art.get("title", "").strip(),
                 "lead": art.get("lead", "").strip(),
                 "body": art.get("body", "").strip(),
-                "image_url": r["image_url"],
-                "published": r["published"],
-                "source_type": r["source_type"],
-                "source_name": r["source_name"],
-                "source_url": r["source_url"],
+                "category": category,
+                "image_url": r.get("image_url", ""),
+                "published": r.get("published", ""),
+                "source_type": stype,
+                "source_name": r.get("source_name", ""),
+                "source_url": r.get("source_url", ""),
                 "attribution": attribution,
                 "model": model,
             }

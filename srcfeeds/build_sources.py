@@ -111,6 +111,17 @@ MARKER_OVERRIDE = {
 AKTUAL_RE = re.compile(r"aktualno[śs]ci", re.I)
 FALLBACK_RE = re.compile(r"wiadomo[śs]ci|aktualno[śs][ćc]|/news\b|nowo[śs]ci", re.I)
 
+# Dedicated section nav-labels -> deterministic Article category. Best-effort:
+# a wrong section mislabels many articles, so discovery only accepts strong,
+# short nav labels; the LLM topic-classifier is the universal fallback.
+SECTION_KEYWORDS = {
+    "sport": r"\bsport",
+    "kultura": r"\bkultur",
+    "biznes": r"\b(biznes|gospodark|inwestycj|przedsi[eę]bior)",
+    "ogloszenia": r"\b(og[łl]oszeni|komunikat|konsultacj)",
+}
+EVENT_KEYWORDS = re.compile(r"\b(wydarzeni|kalendarz|imprez|kalendarium)", re.I)
+
 
 def norm(u: str) -> str:
     return (u or "").rstrip("/").lower()
@@ -261,6 +272,58 @@ def pick_listing(base_url, res):
     return trim_to_section(best[3]), best[4]
 
 
+def pick_sections(base_url, res):
+    """Discover dedicated category + event section listings from nav links.
+
+    Returns {"sport": url, ..., "_events": url}. Conservative: only same-host
+    links whose anchor TEXT is a short, strong match for a section keyword
+    (a mislabeled section would miscategorize every article under it; the LLM
+    topic-classifier already covers the general case)."""
+    base_host = urllib.parse.urlparse(base_url).netloc.replace("www.", "")
+    # best candidate per category: (score, -depth, url)
+    best: dict = {}
+    for href, text in links_from(res):
+        if not href:
+            continue
+        full = urllib.parse.urljoin(res.url or base_url, href)
+        p = urlparse_safe(full)
+        if not p or not p.netloc:
+            continue
+        if p.netloc.replace("www.", "") != base_host:
+            continue
+        path = p.path.rstrip("/")
+        if not path or is_article_like(path):
+            continue
+        t = (text or "").strip().lower()
+        last = path.split("/")[-1].lower()
+        # require a short, label-like anchor (nav item, not a sentence)
+        if not (1 <= len(t) <= 30):
+            continue
+        for cat, kw in SECTION_KEYWORDS.items():
+            text_hit = re.search(kw, t, re.I)
+            href_hit = re.search(kw, last, re.I)
+            if not (text_hit or href_hit):
+                continue
+            score = 90 if text_hit else 50
+            if href_hit:
+                score += 10
+            depth = path.count("/")
+            rec = (score, -depth, full)
+            if cat not in best or rec > best[cat]:
+                best[cat] = rec
+        # events section (separate key, drives type=events_html)
+        ev_text = EVENT_KEYWORDS.search(t)
+        ev_href = EVENT_KEYWORDS.search(last)
+        if ev_text or ev_href:
+            score = 90 if ev_text else 50
+            if ev_href:
+                score += 10
+            rec = (score, -path.count("/"), full)
+            if "_events" not in best or rec > best["_events"]:
+                best["_events"] = rec
+    return {k: trim_to_section(v[2]) for k, v in best.items()}
+
+
 def find_rss(base_url, res):
     for m in re.finditer(r"<link[^>]+application/rss\+xml[^>]+>", res.html or "", re.I):
         tag = m.group(0)
@@ -348,15 +411,17 @@ def discover(base_url, rendered):
                 r = v
                 break
     if r is None or not r.success:
-        return {"status": "unreachable", "listing": None, "text": None, "rss": None}
+        return {"status": "unreachable", "listing": None, "text": None, "rss": None, "sections": {}}
     listing, text = pick_listing(base_url, r)
     rss = find_rss(base_url, r)
+    sections = pick_sections(base_url, r)
     status = "ok" if listing else ("rss-only" if rss else "no-listing")
     return {
         "status": status,
         "listing": listing,
         "text": text,
         "rss": rss,
+        "sections": sections,
         "final_url": r.url,
     }
 
@@ -379,6 +444,68 @@ def make_src(kind, c, d, base):
     return src
 
 
+def make_section_src(cat, c, listing, base):
+    """A dedicated-category listing -> municipal_html source carrying `category`."""
+    return {
+        "type": "municipal_html",
+        "name": f"Urząd — {c['name']} ({cat})",
+        "credit": f"UM {c['name']}",
+        "base": base,
+        "listing": [listing],
+        "article_marker": marker_from(listing),
+        "content_selector": "main",
+        "category": cat,
+    }
+
+
+def make_event_src(c, listing, base):
+    return {
+        "type": "events_html",
+        "name": f"Wydarzenia — {c['name']}",
+        "credit": f"UM {c['name']}",
+        "base": base,
+        "listing": [listing],
+        "article_marker": marker_from(listing),
+        "content_selector": "main",
+    }
+
+
+def build_sections(d: dict) -> list:
+    """Map a discovery result to the new `sections` array. The main "Aktualności"
+    listing becomes the 'wiadomosci' section; each discovered dedicated-category
+    listing (sport/kultura/biznes/ogloszenia) becomes its own section with the
+    matching category_hint. Events are handled by a separate events_html source.
+    `container_selector` defaults to "main a"; the source-level (URL)
+    `article_marker` then filters those to article links in the scraper."""
+    secs = []
+    listing = d.get("listing")
+    if listing:
+        secs.append({"name": "Aktualności", "url": listing,
+                     "container_selector": "main a", "category_hint": "wiadomosci"})
+    for cat, url in (d.get("sections") or {}).items():
+        if cat == "_events" or not url or norm(url) == norm(listing or ""):
+            continue
+        secs.append({"name": cat.capitalize(), "url": url,
+                     "container_selector": "main a", "category_hint": cat})
+    return secs
+
+
+def make_municipal_sections_src(c, d, base):
+    """One municipal_html source carrying a `sections` array (new structure)."""
+    src = {
+        "type": "municipal_html",
+        "name": f"Urząd — {c['name']}",
+        "credit": f"UM {c['name']}",
+        "base": d.get("final_url") or base,
+        "sections": build_sections(d),
+        "article_marker": MARKER_OVERRIDE.get((c["slug"], "municipal")) or marker_from(d.get("listing") or ""),
+        "content_selector": "main",
+    }
+    if d.get("rss"):
+        src["rss"] = d["rss"]
+    return src
+
+
 def assemble_city(c, rendered):
     slug = c["slug"]
     sources, rep = [], {"city": c["name"]}
@@ -393,8 +520,27 @@ def assemble_city(c, rendered):
             "base": mb,
             **{k: d[k] for k in ("status", "listing", "rss")},
         }
+        # New structure: one municipal source carrying a `sections` array
+        # (main listing + discovered dedicated-category listings). Events stay a
+        # separate events_html source. Falls back to the flat make_src only when
+        # there is nothing to turn into sections (e.g. rss-only).
+        base_final = d.get("final_url") or mb
+        sections = d.get("sections", {})
+        sec_rep = {}
         if d["listing"] or d["rss"]:
-            sources.append(make_src("municipal", c, d, mb))
+            if build_sections(d):
+                sources.append(make_municipal_sections_src(c, d, mb))
+                for cat in SECTION_KEYWORDS:
+                    if sections.get(cat) and norm(sections[cat]) != norm(d.get("listing") or ""):
+                        sec_rep[cat] = sections[cat]
+            else:
+                sources.append(make_src("municipal", c, d, mb))
+        ev_url = sections.get("_events")
+        if ev_url and norm(ev_url) != norm(d.get("listing") or ""):
+            sources.append(make_event_src(c, ev_url, base_final))
+            sec_rep["events"] = ev_url
+        if sec_rep:
+            rep["municipal"]["sections"] = sec_rep
     else:
         rep["municipal"] = {
             "base": None,

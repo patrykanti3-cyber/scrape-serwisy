@@ -1,0 +1,454 @@
+{
+  "warszawa": {
+    "rss": null,
+    "base": "https://um.warszawa.pl"
+  },
+  "krakow": {
+    "rss": null,
+    "base": "http://www.krakow.pl/"
+  },
+  "wroclaw": {
+    "rss": "https://www.wroclaw.pl/dla-mieszkanca/rss/",
+    "base": "http://www.wroclaw.pl/"
+  },
+  "lodz": {
+    "rss": null,
+    "base": "https://lodz.pl"
+  },
+  "poznan": {
+    "rss": null,
+    "base": "https://www.poznan.pl/"
+  },
+  "gdansk": {
+    "rss": null,
+    "base": "https://www.gdansk.pl/"
+  },
+  "szczecin": {
+    "rss": "https://www.szczecin.eu/rss.xml",
+    "base": "https://www.szczecin.eu/pl"
+  },
+  "lublin": {
+    "rss": "https://lublin.eu/rss/pl/460/2.xml",
+    "base": "https://lublin.eu"
+  },
+  "bydgoszcz": {
+    "rss": "https://www.bydgoszcz.pl/rss",
+    "base": "https://www.bydgoszcz.pl"
+  },
+  "bialystok": {
+    "rss": "https://www.bialystok.pl/rss/index/feed/id.2",
+    "base": "http://www.bialystok.pl"
+  },
+  "katowice": {
+    "rss": "https://katowice.policja.gov.pl/dokumenty/rss/49-rss-o-282.rss",
+    "base": "https://www.katowice.eu/"
+  },
+  "gdynia": {
+    "rss": "https://www.gdynia.pl/rss",
+    "base": "https://www.gdynia.pl/"
+  },
+  "czestochowa": {
+    "rss": "https://czestochowa.policja.gov.pl/dokumenty/rss/42-rss-2341.rss",
+    "base": "https://www.czestochowa.pl/"
+  },
+  "radom": {
+    "rss": "https://www.radom.pl/feed/",
+    "base": "https://www.radom.pl/"
+  },
+  "torun": {
+    "rss": "https://torun.pl/rss.xml",
+    "base": "https://torun.pl/"
+  },
+  "rzeszow": {
+    "rss": "https://rzeszow.policja.gov.pl/dokumenty/rss/443-rss-o-2956.rss",
+    "base": "https://www.erzeszow.pl/"
+  },
+  "kielce": {
+    "rss": null,
+    "base": "http://www.um.kielce.pl/"
+  },
+  "sosnowiec": {
+    "rss": "https://www.sosnowiec.pl/feed/",
+    "base": "http://www.sosnowiec.pl"
+  },
+  "gliwice": {
+    "rss": "https://www.gliwice.eu/rss.xml",
+    "base": "https://www.gliwice.eu/"
+  },
+  "olsztyn": {
+    "rss": "https://olsztyn.policja.gov.pl/dokumenty/rss/87-rss-1396.rss",
+    "base": "https://www.olsztyn.eu/o-olsztynie.html"
+  },
+  "bielsko-biala": {
+    "rss": "https://bielsko-biala.pl/rss.xml",
+    "base": "https://bielsko-biala.pl/"
+  },
+  "zabrze": {
+    "rss": "https://miastozabrze.pl/feed/",
+    "base": "https://miastozabrze.pl/"
+  },
+  "bytom": {
+    "rss": "http://www.bytom.pl/rss",
+    "base": "http://www.bytom.pl"
+  },
+  "zielona-gora": {
+    "rss": "https://www.zielona-gora.pl/feed/",
+    "base": "http://www.zielona-gora.pl/"
+  },
+  "ruda-slaska": {
+    "rss": "https://ruda-slaska.policja.gov.pl/dokumenty/rss/56-rss-o-310.rss",
+    "base": "http://www.rudaslaska.pl/"
+  },
+  "rybnik": {
+    "rss": "https://rybnik.policja.gov.pl/dokumenty/rss/57-rss-o-314.rss",
+    "base": "http://www.rybnik.pl/"
+  },
+  "opole": {
+    "rss": "http://www.opole.pl/rss.xml",
+    "base": "http://www.opole.pl"
+  },
+  "gorzow-wielkopolski": {
+    "rss": "https://um.gorzow.pl/rss/aktualnosci.xml",
+    "base": "https://um.gorzow.pl"
+  },
+  "elblag": {
+    "rss": "https://elblag.eu/rss/aktualnosci.xml",
+    "base": "http://www.umelblag.pl/"
+  },
+  "plock": {
+    "rss": "https://nowy.plock.eu/rss",
+    "base": "https://nowy.plock.eu"
+  },
+  "dabrowa-gornicza": {
+    "rss": "https://dabrowa-gornicza.policja.gov.pl/dokumenty/rss/43-rss-o-258.rss",
+    "base": "http://www.dabrowa-gornicza.pl/"
+  },
+  "koszalin": {
+    "rss": "https://www.koszalin.pl/rss.xml",
+    "base": "https://www.koszalin.pl/"
+  },
+  "wloclawek": {
+    "rss": "https://www.wloclawek.pl/aktualnosci.xml",
+    "base": "http://www.wloclawek.pl"
+  },
+  "walbrzych": {
+    "rss": "http://www.um.walbrzych.pl/rss.xml",
+    "base": "http://www.um.walbrzych.pl/"
+  },
+  "chorzow": {
+    "rss": "https://chorzow.policja.gov.pl/dokumenty/rss/40-rss-o-246.rss",
+    "base": "https://mieszkancy.chorzow.eu"
+  },
+  "tarnow": {
+    "rss": null,
+    "base": "http://www.tarnow.pl"
+  },
+  "kalisz": {
+    "rss": null,
+    "base": "http://www.kalisz.pl"
+  },
+  "legnica": {
+    "rss": "http://www.portal.legnica.eu/aktualnosci.xml",
+    "base": "http://www.portal.legnica.eu/"
+  },
+  "grudziadz": {
+    "rss": "http://www.grudziadz.pl/rss",
+    "base": "http://www.grudziadz.pl/"
+  },
+  "jaworzno": {
+    "rss": "https://www.jaworzno.pl/feed/",
+    "base": "https://www.jaworzno.pl"
+  },
+  "slupsk": {
+    "rss": "http://www.slupsk.pl/rss",
+    "base": "http://www.slupsk.pl"
+  },
+  "jastrzebie-zdroj": {
+    "rss": "https://jastrzebie-zdroj.policja.gov.pl/dokumenty/rss/45-rss-o-266.rss",
+    "base": "https://www.jastrzebie.pl"
+  },
+  "nowy-sacz": {
+    "rss": null,
+    "base": "http://www.nowysacz.pl"
+  },
+  "jelenia-gora": {
+    "rss": "https://www.jeleniagora.pl/rss.xml",
+    "base": "http://www.jeleniagora.pl"
+  },
+  "siedlce": {
+    "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss",
+    "base": "http://www.siedlce.pl/"
+  },
+  "myslowice": {
+    "rss": "https://myslowice.policja.gov.pl/dokumenty/rss/51-rss-o-290.rss",
+    "base": "http://www.myslowice.pl"
+  },
+  "pila": {
+    "rss": "https://www.pila.pl/rss/aktualnosci.xml",
+    "base": "https://www.pila.pl/"
+  },
+  "ostrow-wielkopolski": {
+    "rss": "https://umostrow.pl/rss/aktualnosci.xml",
+    "base": "https://umostrow.pl"
+  },
+  "lubin": {
+    "rss": "https://www.lubin.pl/feed/",
+    "base": "http://www.lubin.pl"
+  },
+  "konin": {
+    "rss": null,
+    "base": "http://www.konin.pl"
+  },
+  "inowroclaw": {
+    "rss": "https://www.inowroclaw.pl/aktualnosci.xml",
+    "base": "http://www.inowroclaw.pl"
+  },
+  "suwalki": {
+    "rss": null,
+    "base": "http://www.um.suwalki.pl/"
+  },
+  "piotrkow-trybunalski": {
+    "rss": null,
+    "base": "http://www.piotrkow.pl"
+  },
+  "stargard": {
+    "rss": "https://stargard.eu/feed/",
+    "base": "http://www.stargard.pl"
+  },
+  "gniezno": {
+    "rss": null,
+    "base": "https://gniezno.eu"
+  },
+  "pruszkow": {
+    "rss": "http://www.pruszkow.pl/rss",
+    "base": "http://www.pruszkow.pl/"
+  },
+  "ostrowiec-swietokrzyski": {
+    "rss": "https://um.ostrowiec.pl/rss/aktualnosci.xml",
+    "base": "http://www.um.ostrowiec.pl"
+  },
+  "glogow": {
+    "rss": "https://glogow.policja.gov.pl/dokumenty/rss/420-rss-o-2619.rss",
+    "base": "http://www.glogow.pl/"
+  },
+  "siemianowice-slaskie": {
+    "rss": "https://siemianowice.pl/feed/",
+    "base": "https://siemianowice.pl"
+  },
+  "pabianice": {
+    "rss": "http://www.um.pabianice.pl/rss",
+    "base": "http://www.um.pabianice.pl"
+  },
+  "zory": {
+    "rss": "https://zory.policja.gov.pl/dokumenty/rss/66-rss-o-350.rss",
+    "base": "https://www.zory.pl/"
+  },
+  "leszno": {
+    "rss": null,
+    "base": "http://www.leszno.pl/"
+  },
+  "tarnowskie-gory": {
+    "rss": "https://tarnowskiegory.pl/feed/",
+    "base": "http://www.tarnowskiegory.pl"
+  },
+  "lomza": {
+    "rss": "http://www.lomza.pl/rss/rss.xml",
+    "base": "http://www.lomza.pl/"
+  },
+  "elk": {
+    "rss": "https://elk.policja.gov.pl/dokumenty/rss/90-rss-1446.rss",
+    "base": "http://www.elk.pl/"
+  },
+  "zamosc": {
+    "rss": "http://www.zamosc.pl/rss",
+    "base": "http://www.zamosc.pl"
+  },
+  "chelm": {
+    "rss": null,
+    "base": "https://samorzad.gov.pl/web/miasto-chelm"
+  },
+  "tomaszow-mazowiecki": {
+    "rss": null,
+    "base": "https://tomaszow-maz.pl"
+  },
+  "przemysl": {
+    "rss": "https://przemysl.policja.gov.pl/dokumenty/rss/457-rss-o-3050.rss",
+    "base": "https://przemysl.pl"
+  },
+  "mielec": {
+    "rss": "https://mielec.policja.gov.pl/dokumenty/rss/455-rss-o-3040.rss",
+    "base": "http://www.mielec.pl/"
+  },
+  "tczew": {
+    "rss": "https://tczew.pl/feed/",
+    "base": "https://wrotatczewa.pl/"
+  },
+  "stalowa-wola": {
+    "rss": "https://www.stalowawola.pl/pl/rss/aktualnosci.xml",
+    "base": "http://www.stalowawola.pl"
+  },
+  "kedzierzyn-kozle": {
+    "rss": "https://kedzierzynkozle.pl/pl/rss.xml",
+    "base": "http://www.kedzierzynkozle.pl"
+  },
+  "bedzin": {
+    "rss": "https://www.bedzin.pl/aktualnosci.xml",
+    "base": "http://www.bedzin.pl"
+  },
+  "zgierz": {
+    "rss": "https://www.miasto.zgierz.pl/pl/rss.xml",
+    "base": "https://www.miasto.zgierz.pl/"
+  },
+  "swidnica": {
+    "rss": "https://swidnica.policja.gov.pl/dokumenty/rss/433-rss-o-2710.rss",
+    "base": "http://www.um.swidnica.pl"
+  },
+  "belchatow": {
+    "rss": "https://belchatow.pl/feed/",
+    "base": "http://www.belchatow.pl"
+  },
+  "legionowo": {
+    "rss": "http://www.legionowo.pl/rss",
+    "base": "http://www.legionowo.pl"
+  },
+  "piekary-slaskie": {
+    "rss": "http://www.piekary.pl/rss",
+    "base": "http://www.piekary.pl/"
+  },
+  "piaseczno": {
+    "rss": "https://piaseczno.eu/feed/",
+    "base": "https://www.piaseczno.eu"
+  },
+  "raciborz": {
+    "rss": "http://www.raciborz.pl/rss",
+    "base": "http://www.raciborz.pl/main/index.html"
+  },
+  "ostroleka": {
+    "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss",
+    "base": "https://www.ostroleka.pl/"
+  },
+  "zawiercie": {
+    "rss": "https://zawiercie.policja.gov.pl/dokumenty/rss/65-rss-o-346.rss",
+    "base": "https://zawiercie.eu"
+  },
+  "swietochlowice": {
+    "rss": "https://www.swietochlowice.pl/rss",
+    "base": "https://www.swietochlowice.pl/"
+  },
+  "wejherowo": {
+    "rss": null,
+    "base": "http://www.wejherowo.pl"
+  },
+  "starachowice": {
+    "rss": null,
+    "base": "https://starachowice.eu/"
+  },
+  "krosno": {
+    "rss": "https://www.krosno.pl/rss",
+    "base": "https://www.krosno.pl/"
+  },
+  "otwock": {
+    "rss": null,
+    "base": "http://www.otwock.pl"
+  },
+  "debica": {
+    "rss": "https://debica.pl/rss",
+    "base": "https://debica.pl/"
+  },
+  "ciechanow": {
+    "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss",
+    "base": "https://umciechanow.pl"
+  },
+  "minsk-mazowiecki": {
+    "rss": null,
+    "base": "http://www.minsk-maz.pl"
+  },
+  "zyrardow": {
+    "rss": "http://www.zyrardow.pl/rss",
+    "base": "http://www.zyrardow.pl"
+  },
+  "boleslawiec": {
+    "rss": "https://boleslawiec.policja.gov.pl/dokumenty/rss/417-rss-o-2598.rss",
+    "base": "https://bolesławiec.pl/miasto/"
+  },
+  "oswiecim": {
+    "rss": "https://oswiecim.pl/rss",
+    "base": "https://oswiecim.pl/"
+  },
+  "chrzanow": {
+    "rss": null,
+    "base": "http://www.chrzanow.pl"
+  },
+  "cieszyn": {
+    "rss": "https://cieszyn.policja.gov.pl/dokumenty/rss/41-rss-o-250.rss",
+    "base": "https://www.cieszyn.pl"
+  },
+  "jaslo": {
+    "rss": "https://um.jaslo.pl/pl/feed/",
+    "base": "https://um.jaslo.pl/pl/"
+  },
+  "grodzisk-mazowiecki": {
+    "rss": "https://grodzisk.pl/feed/",
+    "base": "http://www.grodzisk.pl"
+  },
+  "olkusz": {
+    "rss": "https://umig.olkusz.pl/index.php/feed/",
+    "base": "http://www.umig.olkusz.pl/"
+  },
+  "nowy-targ": {
+    "rss": null,
+    "base": "https://www.nowytarg.pl/"
+  },
+  "zywiec": {
+    "rss": "https://zywiec.policja.gov.pl/dokumenty/rss/67-rss-o-354.rss",
+    "base": "http://www.zywiec.pl"
+  },
+  "augustow": {
+    "rss": "https://urzad.augustow.pl/rss.xml",
+    "base": "http://urzad.augustow.pl"
+  },
+  "nowy-dwor-mazowiecki": {
+    "rss": "https://mazowiecka.policja.gov.pl/dokumenty/rss/271-rss-o-1488.rss",
+    "base": "http://www.nowydwormaz.pl/"
+  },
+  "gizycko": {
+    "rss": "https://gizycko.policja.gov.pl/dokumenty/rss/91-rss-1470.rss",
+    "base": "https://www.gizycko.pl/"
+  },
+  "wieliczka": {
+    "rss": null,
+    "base": "http://www.wieliczka.eu/"
+  },
+  "zakopane": {
+    "rss": null,
+    "base": "http://www.zakopane.pl/"
+  },
+  "skawina": {
+    "rss": "https://malopolska.policja.gov.pl/dokumenty/rss/386-rss-157.rss",
+    "base": "https://gminaskawina.pl"
+  },
+  "lubliniec": {
+    "rss": "http://www.lubliniec.pl/rss.xml",
+    "base": "http://www.lubliniec.pl"
+  },
+  "sandomierz": {
+    "rss": null,
+    "base": "https://sandomierz.eu/"
+  },
+  "wadowice": {
+    "rss": "http://www.wadowice.pl/rss",
+    "base": "http://www.wadowice.pl/"
+  },
+  "niepolomice": {
+    "rss": "https://www.niepolomice.eu/feed/",
+    "base": "https://niepolomice.eu"
+  },
+  "limanowa": {
+    "rss": null,
+    "base": "https://miasto.limanowa.pl"
+  },
+  "krzeszowice": {
+    "rss": "https://malopolska.policja.gov.pl/dokumenty/rss/386-rss-157.rss",
+    "base": "http://www.krzeszowice.pl"
+  }
+}

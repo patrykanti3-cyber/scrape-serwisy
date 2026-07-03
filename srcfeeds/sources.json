@@ -1040,11 +1040,50 @@
     "city": "Słupsk",
     "sources": [
       {
-        "type": "municipal_rss",
+        "type": "municipal_html",
         "name": "Urząd — Słupsk",
         "credit": "UM Słupsk",
         "base": "http://www.slupsk.pl",
-        "content_selector": "main",
+        "sections": [
+          {
+            "name": "Najważniejsze wiadomości",
+            "url": "/",
+            "container_selector": "section.najwazniejsze-wiadomosci a, div.main-news-card a",
+            "category_hint": "wiadomosci"
+          },
+          {
+            "name": "Na sygnale / Policja",
+            "url": "/",
+            "container_selector": "section.na-sygnale a",
+            "category_hint": "na-sygnale"
+          },
+          {
+            "name": "Ogłoszenia",
+            "url": "/ogloszenia",
+            "container_selector": "div.ogloszenia-list a",
+            "category_hint": "ogloszenia"
+          },
+          {
+            "name": "Lifestyle i Kultura",
+            "url": "/lifestyle",
+            "container_selector": "article.lifestyle a",
+            "category_hint": "lifestyle"
+          },
+          {
+            "name": "Sport",
+            "url": "/sport",
+            "container_selector": "section.sport a",
+            "category_hint": "sport"
+          },
+          {
+            "name": "Przydatne",
+            "url": "/przydatne",
+            "container_selector": "div.przydatne-links a",
+            "category_hint": "przydatne"
+          }
+        ],
+        "article_marker": "div.article-content",
+        "content_selector": "div.article-body",
         "feed": "http://www.slupsk.pl/rss"
       },
       {

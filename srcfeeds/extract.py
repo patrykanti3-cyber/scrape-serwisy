@@ -121,3 +121,33 @@ def pagination_links(html, page_url, base, selector) -> list[str]:
                 seen.add(full)
                 out.append(full)
     return out
+
+
+def links_in_container(html, page_url, base, selector) -> list[str]:
+    """<a href> found inside the elements matched by `selector` — used by the
+    section-based sources.json structure (a homepage/section container scopes
+    which links are articles of a given category). `selector` may already end in
+    ` a` (then the matched nodes are the anchors themselves) or point at a
+    container (then its descendant anchors are used). Comma-separated selectors
+    are supported. Same-host, de-duped, document order. Never raises."""
+    from urllib.parse import urljoin
+    from discovery import same_host
+
+    soup = BeautifulSoup(html or "", "html.parser")
+    try:
+        nodes = soup.select(selector or "a")
+    except Exception:
+        return []
+    out: list[str] = []
+    seen: set[str] = set()
+    for node in nodes:
+        anchors = [node] if node.name == "a" else node.find_all("a")
+        for a in anchors:
+            href = a.get("href")
+            if not href or href.startswith("#"):
+                continue
+            full = urljoin(page_url, href)
+            if same_host(full, base) and full not in seen:
+                seen.add(full)
+                out.append(full)
+    return out

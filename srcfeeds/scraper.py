@@ -30,6 +30,7 @@ from extract import (
     candidate_selectors,
     extract_body_with_fallbacks,
     pagination_links,
+    links_in_container,
 )
 from event_facts import extract_event_facts
 
@@ -271,115 +272,159 @@ async def scrape_municipal_rss(crawler, run, city: str, src: dict, limit: int) -
     return out
 
 
+SECTION_HINTS = {"wiadomosci", "na-sygnale", "sport", "kultura", "biznes",
+                 "ogloszenia", "lifestyle", "przydatne"}
+
+
+async def _gather_section_links(crawler, list_run, base: str, sections: list, limit: int) -> dict:
+    """Section-based link discovery (new sources.json structure): crawl each
+    section's page and extract links from its `container_selector`, tagging each
+    with the section's `category_hint`. Returns an ordered {article_url:
+    category_hint} map (first section to claim a URL wins). Pages shared by
+    several sections are crawled once."""
+    from urllib.parse import urljoin
+    by_url: dict[str, list] = {}
+    for s in sections:
+        u = urljoin(base if base.endswith("/") else base + "/", (s.get("url") or "/").lstrip("/"))
+        by_url.setdefault(u, []).append(s)
+    listres = await crawler.arun_many(list(by_url.keys()), config=list_run)
+    res = {getattr(r, "url", None): r for r in listres}
+
+    art_hint: dict[str, str] = {}
+    for u, secs in by_url.items():
+        r = res.get(u) or next(
+            (x for x in listres if getattr(x, "url", "").rstrip("/") == u.rstrip("/")), None)
+        if not r or not r.success or not getattr(r, "html", None):
+            print(f"  ! section page fail: {u}")
+            continue
+        for s in secs:
+            hint = (s.get("category_hint") or "").strip().lower()
+            hint = hint if hint in SECTION_HINTS else ""
+            for link in links_in_container(r.html, r.url, base, s.get("container_selector", "a")):
+                if link not in art_hint:
+                    art_hint[link] = hint
+    return art_hint
+
+
 async def scrape_municipal(crawler, run, city: str, src: dict, limit: int) -> list[NewsItem]:
     base = src["base"]
     marker = src.get("article_marker", "/aktualnosci/")
+    # New structure: article_marker may be a CSS selector (e.g. "div.article-content").
+    # Only a "/path" marker is a URL filter; a CSS one is an extra body container.
+    url_marker = marker if marker.startswith("/") else ""
     sel = src.get("content_selector", "main")
     wait_for = _wait_for(src)
     list_run = run.clone(wait_for=wait_for)
+    fallbacks = list(src.get("fallback_selectors", []))
+    if marker and not marker.startswith("/"):
+        fallbacks = [marker] + fallbacks
 
-    # 0) Pre-flight: RSS/sitemap discovery is far more stable than JS-rendered
-    #    HTML. If the site advertises an RSS feed and this source has no explicit
-    #    feed, scrape that instead of pushing Playwright at an SPA.
-    pre = preflight_discover(base, http_get)
-    if pre["rss"] and not src.get("feed") and not src.get("rss"):
-        print(f"  [preflight] discovered RSS {pre['rss']} — using RSS instead of HTML")
-        return await scrape_municipal_rss(crawler, run, city, {**src, "feed": pre["rss"]}, limit)
+    # article_url -> category_hint (section-based structure fills this per-URL;
+    # the legacy flat-listing path fills it with the source-level hint).
+    art_hint: dict[str, str] = {}
 
-    art_urls: list[str] = []
-    seen: set[str] = set()
-    render_htmls: list[tuple[str, str]] = []
+    # --- NEW: section-based discovery (homepage/section containers) ---
+    sections = src.get("sections")
+    if sections:
+        art_hint = await _gather_section_links(crawler, list_run, base, sections, limit)
+        if art_hint:
+            print(f"  [sections] {src['name']}: {len(art_hint)} links across {len(sections)} sekcji")
 
-    # 1) crawl4ai link graph from the listing pages (JS rendered via networkidle),
-    #    following pagination when `pagination_selector` is configured (urzędy
-    #    paginate their announcement listings).
-    pagination_selector = src.get("pagination_selector")
-    pages_to_crawl = list(src["listing"])
-    visited_pages: set[str] = set()
-    for _round in range(MAX_PAGINATION_PAGES + 1):
-        batch = [u for u in pages_to_crawl if u not in visited_pages]
-        if not batch:
-            break
-        visited_pages.update(batch)
-        pages_to_crawl = []
-        listres = await crawler.arun_many(batch, config=list_run)
-        for r in listres:
-            if not r.success:
-                print(f"  ! listing fail {r.url}: {r.error_message}")
-                continue
-            if r.html:
-                render_htmls.append((r.url, r.html))
-            internal = [
-                (l.get("href") if isinstance(l, dict) else l)
-                for l in (r.links.get("internal", []) if r.links else [])
-            ]
-            for full in filter_article_urls(internal, r.url, base, marker):
+    # --- Legacy flat-listing path + resilience (used when there are no sections
+    #     or they yielded nothing, so no city regresses). ---
+    if not art_hint:
+        pre = preflight_discover(base, http_get)
+        if pre["rss"] and not src.get("feed") and not src.get("rss"):
+            print(f"  [preflight] discovered RSS {pre['rss']} — using RSS instead of HTML")
+            return await scrape_municipal_rss(crawler, run, city, {**src, "feed": pre["rss"]}, limit)
+
+        art_urls: list[str] = []
+        seen: set[str] = set()
+        render_htmls: list[tuple[str, str]] = []
+        pagination_selector = src.get("pagination_selector")
+        pages_to_crawl = list(src.get("listing") or [])
+        visited_pages: set[str] = set()
+        for _round in range(MAX_PAGINATION_PAGES + 1):
+            batch = [u for u in pages_to_crawl if u not in visited_pages]
+            if not batch:
+                break
+            visited_pages.update(batch)
+            pages_to_crawl = []
+            listres = await crawler.arun_many(batch, config=list_run)
+            for r in listres:
+                if not r.success:
+                    print(f"  ! listing fail {r.url}: {r.error_message}")
+                    continue
+                if r.html:
+                    render_htmls.append((r.url, r.html))
+                internal = [
+                    (l.get("href") if isinstance(l, dict) else l)
+                    for l in (r.links.get("internal", []) if r.links else [])
+                ]
+                for full in filter_article_urls(internal, r.url, base, url_marker):
+                    if full not in seen:
+                        seen.add(full)
+                        art_urls.append(full)
+                if pagination_selector and len(art_urls) < limit and r.html:
+                    for nxt in pagination_links(r.html, r.url, base, pagination_selector):
+                        if nxt not in visited_pages:
+                            pages_to_crawl.append(nxt)
+            if len(art_urls) >= limit:
+                break
+
+        def _add(urls) -> int:
+            n = 0
+            for full in urls:
                 if full not in seen:
                     seen.add(full)
                     art_urls.append(full)
-            if pagination_selector and len(art_urls) < limit and r.html:
-                for nxt in pagination_links(r.html, r.url, base, pagination_selector):
-                    if nxt not in visited_pages:
-                        pages_to_crawl.append(nxt)
-        if len(art_urls) >= limit:
-            break
+                    n += 1
+            return n
 
-    def _add(urls) -> int:
-        n = 0
-        for full in urls:
-            if full not in seen:
-                seen.add(full)
-                art_urls.append(full)
-                n += 1
-        return n
+        if not art_urls:
+            for m in (url_marker, ""):
+                for page_url, html in render_htmls:
+                    _add(filter_article_urls(anchor_hrefs(html), page_url, base, m))
+                if art_urls:
+                    tag = "" if m else " (marker-agnostic)"
+                    print(f"  [spa-fallback] recovered {len(art_urls)} links from rendered DOM{tag}")
+                    break
 
-    # 2) SPA fallback — the link graph came back empty (common on JS portals):
-    #    parse <a href> straight from the *rendered* DOM HTML. Try the configured
-    #    marker first, then a marker-agnostic pass (same-host + article-like slug)
-    #    so a stale `article_marker` no longer blocks recovery.
-    if not art_urls:
-        for m in (marker, ""):
-            for page_url, html in render_htmls:
-                _add(filter_article_urls(anchor_hrefs(html), page_url, base, m))
-            if art_urls:
-                tag = "" if m else " (marker-agnostic)"
-                print(f"  [spa-fallback] recovered {len(art_urls)} links from rendered DOM{tag}")
-                break
+        if not art_urls:
+            sm_locs: list[tuple[str, str]] = []
+            for sm in pre["sitemaps"][:3]:
+                try:
+                    sm_locs += [(sm, u) for u in parse_sitemap_urls(http_get(sm))]
+                except Exception as e:
+                    print(f"  ! sitemap {sm}: {e}")
+            for m in (url_marker, ""):
+                for sm, u in sm_locs:
+                    _add(filter_article_urls([u], sm, base, m))
+                if art_urls:
+                    tag = "" if m else " (marker-agnostic)"
+                    print(f"  [sitemap] recovered {len(art_urls)} links from sitemap{tag}")
+                    break
 
-    # 3) Sitemap fallback (no browser at all) — pull article URLs from the
-    #    sitemaps discovered in pre-flight. Same marker-then-relaxed strategy.
-    if not art_urls:
-        sm_locs: list[tuple[str, str]] = []
-        for sm in pre["sitemaps"][:3]:
-            try:
-                sm_locs += [(sm, u) for u in parse_sitemap_urls(http_get(sm))]
-            except Exception as e:
-                print(f"  ! sitemap {sm}: {e}")
-        for m in (marker, ""):
-            for sm, u in sm_locs:
-                _add(filter_article_urls([u], sm, base, m))
-            if art_urls:
-                tag = "" if m else " (marker-agnostic)"
-                print(f"  [sitemap] recovered {len(art_urls)} links from sitemap{tag}")
-                break
+        legacy_hint = (src.get("category") or "").strip().lower()
+        if legacy_hint not in CATEGORY_HINTS:
+            legacy_hint = ""
+        for u in art_urls:
+            art_hint[u] = legacy_hint
 
-    art_urls = art_urls[:limit]
+    art_urls = list(art_hint)[:limit]
     print(f"  [municipal] {src['name']}: {len(art_urls)} article links")
     out: list[NewsItem] = []
     if not art_urls:
         return out
-    results = await crawler.arun_many(
-        art_urls, config=run.clone(target_elements=[sel], wait_for=wait_for))
+
     # police sites are scraped as HTML too, but must map to the na-sygnale
     # category — tag by source, not by adapter.
     stype = "police" if ("policja.gov.pl" in base or src["name"].lower().startswith("policja")) else "municipal"
-    # A dedicated section listing (e.g. .../sport) carries a deterministic
-    # category; otherwise leave it empty so the LLM classifies by topic.
-    cat_hint = (src.get("category") or "").strip().lower()
-    if cat_hint not in CATEGORY_HINTS:
-        cat_hint = ""
     min_len = BODY_MIN.get(stype, 250)
-    fallbacks = src.get("fallback_selectors", [])
+    hint_by_url = {u.rstrip("/"): h for u, h in art_hint.items()}
+
+    results = await crawler.arun_many(
+        art_urls, config=run.clone(target_elements=[sel], wait_for=wait_for))
     for r in results:
         if not r.success:
             continue
@@ -407,12 +452,13 @@ async def scrape_municipal(crawler, run, city: str, src: dict, limit: int) -> li
                 image = og_image(http_get(r.url).decode("utf-8", "replace"))
             except Exception:
                 pass
+        hint = "" if stype == "police" else hint_by_url.get(r.url.rstrip("/"), "")
         out.append(NewsItem(
             id=mk_id(r.url), city=city, source_type=stype,
             source_name=src["name"], source_credit=src.get("credit", src["name"]),
             source_url=r.url, title=title, lead=lead, body=body,
             image_url=image, published=meta_date(r.html) or find_date_iso(body),
-            category_hint="" if stype == "police" else cat_hint))
+            category_hint=hint))
     return out
 
 

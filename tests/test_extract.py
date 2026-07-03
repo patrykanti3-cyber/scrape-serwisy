@@ -97,3 +97,30 @@ def test_pagination_links_follows_pager():
 def test_pagination_links_bad_selector_empty():
     from extract import pagination_links
     assert pagination_links("<div/>", "https://x.pl", "https://x.pl", ">>bad") == []
+
+
+def test_links_in_container_scopes_to_section():
+    from extract import links_in_container
+    html = """
+    <section class="najwazniejsze-wiadomosci">
+      <a href="/artykul/wazna-wiadomosc-dnia">A</a>
+      <a href="/artykul/druga-wiadomosc-tego-dnia">B</a>
+    </section>
+    <section class="sport"><a href="/artykul/mecz-w-slupsku">C</a></section>
+    <footer><a href="/kontakt">stopka</a></footer>
+    """
+    base = "https://slupsk.pl"
+    # selector already ends in " a" -> matched nodes are anchors themselves
+    news = links_in_container(html, base + "/", base, "section.najwazniejsze-wiadomosci a")
+    assert news == [
+        "https://slupsk.pl/artykul/wazna-wiadomosc-dnia",
+        "https://slupsk.pl/artykul/druga-wiadomosc-tego-dnia",
+    ]
+    # container selector (no trailing a) -> descendant anchors
+    sport = links_in_container(html, base + "/", base, "section.sport")
+    assert sport == ["https://slupsk.pl/artykul/mecz-w-slupsku"]
+
+
+def test_links_in_container_bad_selector_empty():
+    from extract import links_in_container
+    assert links_in_container("<div/>", "https://x.pl", "https://x.pl", ">>bad") == []
